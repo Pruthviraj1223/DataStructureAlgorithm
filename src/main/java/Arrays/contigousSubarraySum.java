@@ -59,6 +59,7 @@ class check {
 
 public class contigousSubarraySum {
 
+
     public static void main(String[] args) {
 
         int[] a = new int[]{1,2,3};
