@@ -8,11 +8,11 @@ class MergeSortAlgoritham {
 
         int inversionCount = 0;
 
-        int middle = mid+1;
+        int middle = mid + 1;
 
-        for(int i=low;i<=mid;i++){
+        for (int i = low; i <= mid; i++) {
 
-            while (middle<=high && nums[i] >  nums[middle] * 2){
+            while (middle <= high && nums[i] > nums[middle] * 2) {
 
                 middle++;
 
@@ -90,9 +90,9 @@ class MergeSortAlgoritham {
 public class ReversePairs {
     public static void main(String[] args) {
 
-        int []nums = new int[]{1,3,2,3,1};
+        int[] nums = new int[]{1, 3, 2, 3, 1};
 
-        System.out.println(new MergeSortAlgoritham().mergeSort(nums, 0, nums.length-1));
+        System.out.println(new MergeSortAlgoritham().mergeSort(nums, 0, nums.length - 1));
 
     }
 }
