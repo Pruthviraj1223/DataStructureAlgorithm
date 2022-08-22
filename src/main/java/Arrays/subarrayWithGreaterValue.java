@@ -3,6 +3,9 @@ package Arrays;
 class SubarrayWithGrterValue {
     public int minSubArrayLen(int x, int[] arr) {
 
+        // GFG and  Leet code
+        // Lett code soltuion is more optimized
+
         if (arr.length==0 || arr==null){
 
             return 0;
