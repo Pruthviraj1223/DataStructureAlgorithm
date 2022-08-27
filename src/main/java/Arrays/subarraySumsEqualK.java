@@ -6,6 +6,8 @@ class sum{
 
     int subarraySum(int nums[],int k){
 
+        // GFG - sub array sum equal to zero
+
         if (nums.length<1){
 
             return 0;
@@ -36,10 +38,7 @@ class sum{
 
             }
 
-
             map.put(sum,map.getOrDefault(sum,0)+1);
-
-
 
         }
 
@@ -53,6 +52,8 @@ class sum{
 public class subarraySumsEqualK {
 
     public static void main(String[] args) {
+
+        // Input : arr[] = {10, 2, -2, -20, 10}, k = -10
 
     }
 
