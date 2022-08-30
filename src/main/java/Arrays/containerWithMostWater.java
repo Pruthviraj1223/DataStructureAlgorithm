@@ -36,11 +36,7 @@ class container{
 
         }
 
-
         return area;
-
-
-
 
     }
 
