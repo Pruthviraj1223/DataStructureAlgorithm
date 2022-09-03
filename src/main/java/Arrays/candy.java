@@ -6,5 +6,6 @@ public class candy {
         int []nums = new int[]{};
 
         new Solution190().candy1(new int[]{1,5,2,1,5});
+
     }
 }
