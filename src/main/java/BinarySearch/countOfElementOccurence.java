@@ -79,7 +79,7 @@ class Solution2 {
 
         }
 
-        var left= findFirst(nums,target);
+        var left= findFirst(nums,target); // you can pass parameter true/false for merging findFirst and last into one function
 
         var right = findLast(nums,target);
 
