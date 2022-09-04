@@ -44,14 +44,13 @@ class CeilOfAnElement {
         return ans;
 
     }
+
 }
-
-
 
 public class ceilOfAnElementArray {
     public static void main(String[] args) {
 
-        int ans = new CeilOfAnElement().ceil(new int[]{1, 2, 8, 10, 10, 12, 19}, 15);
+        int ans = new CeilOfAnElement().ceil(new int[]{1, 2, 8, 10, 10, 12, 19}, 8);
 
     }
 }
