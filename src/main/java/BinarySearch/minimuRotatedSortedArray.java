@@ -26,7 +26,6 @@ class Solution12 {
 
                 low = mid + 1;
 
-
             }else{
 
                 high = mid;
@@ -68,7 +67,6 @@ class Solution13 {
             }
 
             else if(nums[low] < nums[mid]){
-
 
                 low = mid+1;
 
