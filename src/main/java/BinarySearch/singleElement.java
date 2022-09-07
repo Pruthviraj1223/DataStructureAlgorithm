@@ -40,7 +40,7 @@ class single {
 
     }
 
-    public int singleNonDuplicate(int[] nums) {
+    public int singleEleDuplicate(int[] nums) {
 
         int start = 0, end = nums.length - 1, mid;
 
