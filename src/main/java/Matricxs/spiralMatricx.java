@@ -10,50 +10,56 @@ class Solution12 {
 
         List<Integer> list = new ArrayList<>();
 
-        int index, k = 0, l = 0;
+        int startRow = 0;
+        int endRow = matrix.length;
+        int startCol = 0;
+        int endCol = matrix[0].length;
 
-        int m = matrix.length;
 
-        int n = matrix[0].length;
+        while (startRow <endRow && startCol <endCol) {
 
-        while (k < m && l < n) {
 
-            for (index = l; index < n; ++index) {
+            for (int index = startCol; index < endCol; index++) {
 
-                list.add(matrix[k][index]);
-            }
-
-            k++;
-
-            // columns
-            for (index = k; index < m; ++index) {
-
-                list.add(matrix[index][n-1]);
+                list.add(matrix[startRow][index]);
 
             }
 
-            n--;
+            startRow++;
 
-            if (k < m) {
+            for (int index = startRow; index < endRow; index++) {
 
-                for (index = n - 1; index >= l; --index) {
+                list.add(matrix[index][endCol-1]);
 
-                    list.add(matrix[m-1][index]);
+            }
+
+            endCol--;
+
+            if(startRow<endRow) {
+
+                for (int index = endCol - 1; index >= startCol; index--) {
+
+                    list.add(matrix[endRow - 1][index]);
 
                 }
-                m--;
 
+                endRow--;
             }
 
-            if (l < n) {
-                for (index = m - 1; index >= k; --index) {
+            if(startCol<endCol) {
 
-                    list.add(matrix[index][l]);
+                for (int index = endRow - 1; index >= startRow; index--) {
+
+                    list.add(matrix[index][startCol]);
 
                 }
-                l++;
+
+                startCol++;
+
             }
+
         }
+
 
         return list;
 
@@ -114,6 +120,10 @@ class Solution12 {
 public class spiralMatricx {
 
     public static void main(String[] args) {
+
+        int [][]matrix = new int[][]{{1,2,3,4},{5,6,7,8},{9,10,11,12}};
+
+        new Solution12().spiralOrder(matrix);
 
     }
 }
