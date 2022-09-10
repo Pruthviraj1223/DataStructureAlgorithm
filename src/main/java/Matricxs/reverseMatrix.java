@@ -1,6 +1,6 @@
 package Matricxs;
 
-class M1{
+ class M1{
 
     public void reverse(int [][]matrix){
 

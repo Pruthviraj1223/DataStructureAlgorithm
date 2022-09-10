@@ -48,11 +48,32 @@ public class rotateMatrix90DegreeClockWise {
             System.out.println();
         }
 
-        matrix = new M2().transpose(matrix);
+        new M2().easyTranspose(matrix);
 
         new M1().reverse(matrix);
 
-        System.out.println("after ");
+        System.out.println();
+        System.out.println("after 90 ");
+        System.out.println();
+
+
+        for (int[] ints : matrix) {
+
+            for (int anInt : ints) {
+
+                System.out.print(anInt + " ");
+
+            }
+            System.out.println();
+        }
+
+        new M2().easyTranspose(matrix);
+
+        new M1().reverse(matrix);
+
+        System.out.println();
+        System.out.println("after 180");
+        System.out.println();
 
         for (int[] ints : matrix) {
 

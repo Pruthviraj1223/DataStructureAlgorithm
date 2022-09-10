@@ -1,6 +1,18 @@
 package Matricxs;
 
-class M2{
+ class M2{
+
+
+    public void easyTranspose(int[][] matrix) {
+        int n = matrix.length;
+        for (int i = 0; i < n; i++) {
+            for (int j = i + 1; j < n; j++) {
+                int tmp = matrix[j][i];
+                matrix[j][i] = matrix[i][j];
+                matrix[i][j] = tmp;
+            }
+        }
+    }
 
     public int[][] transpose(int [][]matrix){
 
@@ -11,6 +23,8 @@ class M2{
         // 1 4
         // 2 5
         // 3 6
+
+
 
         int [][]n = new int[matrix[0].length][matrix.length];
 
