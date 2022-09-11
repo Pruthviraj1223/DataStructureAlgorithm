@@ -36,7 +36,7 @@ class Solution {
     }
 }
 
-public class searchInRowColumnSortedMatrix {
+public class searchInMatrix1and2 {
     public static void main(String[] args) {
 
 
