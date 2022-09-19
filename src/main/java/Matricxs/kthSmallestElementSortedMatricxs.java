@@ -1,6 +1,6 @@
 package Matricxs;
 
-class kth { // 0 ms, faster than 100%
+class kth {
     int totalRows, totalColmuns;
     public int kthSmallest(int[][] matrix, int k) {
 
