@@ -146,6 +146,9 @@ public class basicStackOperation {
         javaStack.push(113);
         javaStack.push(114);
 
+        javaStack.pop();
+        javaStack.peek();
+
         System.out.println("java stack : " + javaStack);
 
 
