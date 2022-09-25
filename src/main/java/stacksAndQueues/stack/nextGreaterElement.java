@@ -25,6 +25,7 @@ class next{
                 stack.pop();
 
             }
+
             if(stack.isEmpty()){
 
                 ans.add(-1);
@@ -40,6 +41,10 @@ class next{
         }
 
         Collections.reverse(ans);
+
+        int[] primitive = ans.stream()
+                .mapToInt(Integer::intValue)
+                .toArray();
 
         System.out.println("ans " + ans);
 
