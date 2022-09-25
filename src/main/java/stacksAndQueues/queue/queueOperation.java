@@ -1,8 +1,5 @@
 package stacksAndQueues.queue;
 
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.Iterator;
 import java.util.PriorityQueue;
 
 class Queue {
@@ -51,12 +48,6 @@ class Queue {
             System.out.println("Queue is empty");
 
         } else {
-
-            if (front == -1) {
-
-                front++;
-
-            }
 
             int x = queue[front];
 

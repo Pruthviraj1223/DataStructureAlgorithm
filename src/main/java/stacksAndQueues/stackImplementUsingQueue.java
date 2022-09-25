@@ -1,86 +1,134 @@
 package stacksAndQueues;
 
-import java.util.Stack;
+import java.util.LinkedList;
+import java.util.Queue;
 
-class MyQueue {
-    Stack<Integer> s1 = new Stack();
-    Stack<Integer> s2 = new Stack();
+class MyStack {
 
-    public MyQueue() {
+    Queue<Integer> q1;
+    Queue<Integer> q2;
+
+    MyStack() {
+
+        q1 = new LinkedList<>();
+        q2 = new LinkedList<>();
 
     }
 
-    public void push(int x) {
+    void push(int x) {
 
-        while(!s1.isEmpty()){
+        while(!q1.isEmpty()){
+            q2.add(q1.remove());
+        }
 
-            s2.push(s1.pop());
+        q1.add(x);
+
+        while(!q2.isEmpty()){
+
+            q1.add(q2.remove());
 
         }
 
-        s2.add(x);
 
-        while(!s2.isEmpty()){
+    }
 
-            s1.add(s2.pop());
+    int pop() {
+
+
+        if(!empty()){
+            return q1.remove();
+        }
+
+        return -1;
+
+    }
+
+    int top() {
+
+        return q1.peek();
+
+    }
+
+    boolean empty() {
+
+        return q1.size()==0;
+
+    }
+};
+
+class MyStackUsingSingleQueue{
+
+    Queue<Integer> q1;
+
+    MyStackUsingSingleQueue() {
+
+        q1 = new LinkedList<>();
+
+    }
+
+    void push(int x) {
+
+        int n = q1.size();
+
+        q1.add(x);
+
+        for (int index = 0; index < n; index++) {
+
+            q1.add(q1.poll());
 
         }
 
 
     }
 
-    public int pop() {
+    int pop() {
 
 
-        return s1.pop();
+        if(!empty()){
+            return q1.remove();
+        }
 
-    }
-
-    public int peek() {
-
-
-        return s1.peek();
+        return -1;
 
     }
 
-    public boolean empty() {
+    int top() {
 
-        return s1.size()==0;
+        return q1.peek();
 
     }
+
+    boolean empty() {
+
+        return q1.size()==0;
+
+    }
+
+
+
 }
-
-/**
- * Your MyQueue object will be instantiated and called as such:
- * MyQueue obj = new MyQueue();
- * obj.push(x);
- * int param_2 = obj.pop();
- * int param_3 = obj.peek();
- * boolean param_4 = obj.empty();
- */
-
 public class stackImplementUsingQueue {
     public static void main(String[] args) {
 
+        MyStackUsingSingleQueue myStack = new MyStackUsingSingleQueue();
 
-        MyQueue myQueue = new MyQueue();
+        myStack.push(1);
+        myStack.push(2);
+        myStack.push(3);
 
-        myQueue.push(1);
-        myQueue.push(2);
-        myQueue.push(3);
-        myQueue.push(4);
+        System.out.println("top " + myStack.top());
 
-        System.out.println("top " + myQueue.peek());
-
-        System.out.println("pop " + myQueue.pop());
-
-        myQueue.pop();
-        myQueue.pop();
+        System.out.println("pop " + myStack.pop());
 
 
-        System.out.println("top " + myQueue.peek());
+        myStack.push(4);
+        myStack.push(5);
 
-        System.out.println("pop " + myQueue.pop());
+
+        System.out.println("top " + myStack.top());
+
+        System.out.println("pop " + myStack.pop());
+
 
 
     }
