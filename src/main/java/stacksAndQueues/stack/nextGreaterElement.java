@@ -159,6 +159,46 @@ class next{
     }
 
 
+    public void stockSpan(int []nums){
+
+        // Leetcode is bit diiferent
+        // this is from aditya verma and GFG
+
+        Stack<Integer> stack = new Stack<>();
+
+        List<Integer> result = new ArrayList<>();
+
+        for (int index = 0; index < nums.length; index++) {
+
+            int currentElement = nums[index];
+
+            while (!stack.isEmpty() && currentElement > nums[stack.peek()]) {
+
+                stack.pop();
+
+            }
+
+            if (stack.isEmpty()) {
+
+                result.add(index+1);
+
+            } else {
+
+                result.add(index - stack.peek());
+
+            }
+
+            stack.push(index);
+
+        }
+
+
+        System.out.println("Result : " + result);
+
+
+    }
+
+
 
 }
 
@@ -172,5 +212,8 @@ public class nextGreaterElement {
         new next().nextSmallerElementRightSide(new int[]{3,2,5,13,7,6,12});
 
         new next().nextSmallerElementLeftSide(new int[]{3,2,5,13,7,6,12});
+
+        new next().stockSpan(new int[]{ 10, 4, 5, 90, 120, 80 });
+
     }
 }
