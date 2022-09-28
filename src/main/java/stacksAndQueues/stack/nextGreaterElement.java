@@ -20,7 +20,7 @@ class next{
 
             int currentElement = nums[index];
 
-            while (!stack.isEmpty() && stack.peek() < currentElement){
+            while (!stack.isEmpty() && currentElement >= stack.peek()){
 
                 stack.pop();
 
@@ -58,7 +58,7 @@ class next{
 
         for (int currentElement : nums) {
 
-            while (!stack.isEmpty() && currentElement > stack.peek()) {
+            while (!stack.isEmpty() && currentElement >= stack.peek()) {
 
                 stack.pop();
 
@@ -84,7 +84,7 @@ class next{
 
     }
 
-    public void nextSmallerElementRightSide(int []nums){
+    public List<Integer> nextSmallerElementRightSide(int []nums){
 
         // 1 3 2 4
         // 4 5 2 25
@@ -122,9 +122,11 @@ class next{
 
         System.out.println("ans " + ans);
 
+        return ans;
+
     }
 
-    public void nextSmallerElementLeftSide(int []nums){
+    public List<Integer> nextSmallerElementLeftSide(int []nums){
 
         Stack<Integer> stack = new Stack<>();
 
@@ -155,9 +157,10 @@ class next{
 
         System.out.println("Result : " + result);
 
+        return result;
+
 
     }
-
 
     public void stockSpan(int []nums){
 
@@ -198,12 +201,79 @@ class next{
 
     }
 
+    public int leetcodeStockSpan(int price) {
+
+        Stack<int[]> stack = new Stack<>();   // it comes in global scope
+
+        int span =1;
+
+        while(!stack.isEmpty() && price >=stack.peek()[0]){
+
+            span += stack.peek()[1];
+
+            stack.pop();
+
+        }
+
+
+        stack.push(new int[]{price,span});
+
+        return span;
+
+
+
+    }
+
+    public int[] dailyTemperatures(int[] nums) {
+
+        Stack<Integer> stack = new Stack<>();
+
+        List<Integer> ans = new ArrayList<>();
+
+        int n = nums.length;
+
+        for(int index=n-1;index>=0;index--){
+
+            var currentElement = nums[index];
+
+            while(!stack.isEmpty() && currentElement >=nums[stack.peek()]){
+
+                stack.pop();
+
+            }
+
+            if(stack.isEmpty()){
+
+                ans.add(0);
+
+            }else{
+
+                ans.add(stack.peek() - index);
+
+            }
+
+            stack.push(index);
+
+        }
+
+        Collections.reverse(ans);
+
+        return ans.stream()
+                .mapToInt(Integer::intValue)
+                .toArray();
+
+    }
+
 
 
 }
 
 public class nextGreaterElement {
     public static void main(String[] args) {
+
+        // >= condition is must
+        // <= condition is must
+        // understand that scenario, you can look into maximumAreaHistogram
 
         new next().nextGreaterElementRightSide(new int[]{3,2,5,13,7,6,12});
 
