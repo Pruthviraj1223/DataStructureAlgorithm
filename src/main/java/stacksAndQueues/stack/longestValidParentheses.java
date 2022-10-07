@@ -101,6 +101,11 @@ class longestParentheses{
 
         left = right =0;
 
+        // why we need to traverse both side
+
+        // ex :  ((()()()
+        // in this case above loop will not get real answer
+
 
         for(int index=s.length()-1;index>=0;index--){
 
