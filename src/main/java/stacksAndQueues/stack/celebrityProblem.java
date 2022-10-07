@@ -8,24 +8,24 @@ class celebrity{
 
         int n = grid.length;
 
-        int i = n-1;
-        int j=0;
+        int row = n-1;
+        int col =0;
 
-        while (j < i){      // why this condition // To reduce search space
+        while (col < row){      // why this condition // To reduce search space
 
-            if(grid[i][j]==1){
+            if(grid[row][col]==1){
 
-                i--;
+                row--;
 
             }else {
 
-                j++;
+                col++;
 
             }
 
         }
 
-        var candidate = j;
+        var candidate = col;
 
 
         for (int index = 0; index < n; index++) {
