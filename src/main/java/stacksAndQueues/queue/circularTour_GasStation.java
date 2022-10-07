@@ -28,10 +28,8 @@ class GasStation {
 
             currPetrol += gas[index] - cost[index];
 
-
+            index++;
             if(currPetrol <0){
-
-                index++;
 
                 for(;index<n;index++){
 
@@ -49,12 +47,7 @@ class GasStation {
                 }
 
 
-            }else{
-
-                index++;
-
             }
-
 
 
         }
