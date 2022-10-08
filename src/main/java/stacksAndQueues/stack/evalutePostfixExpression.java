@@ -10,19 +10,19 @@ class evaluate {
 
         for (String s : tokens) {
             switch (s) {
-                case "+" -> S.add(S.pop() + S.pop());
+                case "+" -> S.push(S.pop() + S.pop());
                 case "/" -> {
                     b = S.pop();
                     a = S.pop();
-                    S.add(a / b);
+                    S.push(a / b);
                 }
-                case "*" -> S.add(S.pop() * S.pop());
+                case "*" -> S.push(S.pop() * S.pop());
                 case "-" -> {
                     b = S.pop();
                     a = S.pop();
-                    S.add(a - b);
+                    S.push(a - b);
                 }
-                default -> S.add(Integer.parseInt(s));
+                default -> S.push(Integer.parseInt(s));
             }
         }
         return S.pop();
