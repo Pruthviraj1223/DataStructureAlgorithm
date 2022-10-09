@@ -2,6 +2,8 @@ package stacksAndQueues.stack;
 
 import java.util.HashMap;
 import java.util.Iterator;
+import java.util.LinkedList;
+import java.util.Queue;
 
 class nonRpeating {
     public int firstUniqChar(String s) {
@@ -25,7 +27,6 @@ class nonRpeating {
 
 
     }
-
     public void uniqueCharacter(String s){
 
         HashMap<Character,Integer> count= new HashMap<>();
@@ -63,11 +64,47 @@ class nonRpeating {
 
 
     }
+
+    public void uniqueCharacterUsingQueue(String s){
+
+        int n = s.length();
+
+        int []cnt = new int[26];
+
+        Queue<Character> queue = new LinkedList<>();
+
+        for (int index = 0; index < n; index++) {
+
+            char ch = s.charAt(index);
+
+            queue.add(ch);
+
+            cnt[ch -'a']++;
+
+            while (!queue.isEmpty()){
+
+                if(cnt[queue.peek()-'a']>1){
+
+                    queue.remove();
+
+                }else {
+
+                    System.out.println(" " + queue.peek());
+                    break;
+                }
+            }
+        }
+
+        if(queue.isEmpty()){
+            System.out.println("-1");
+        }
+
+    }
 }
 public class firstNonRepeatingCharacterINString {
     public static void main(String[] args) {
 
-        new nonRpeating().uniqueCharacter("geeksforggeks");
+        new nonRpeating().uniqueCharacterUsingQueue("geeksforggeks");
 
     }
 }
