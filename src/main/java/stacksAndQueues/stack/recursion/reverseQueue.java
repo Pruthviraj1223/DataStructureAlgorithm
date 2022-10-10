@@ -5,7 +5,6 @@ import java.util.Queue;
 
 class reverseQ{
 
-
     Queue<Integer> queue = new LinkedList<>();
 
     void reverse(){
