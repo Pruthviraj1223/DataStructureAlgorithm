@@ -58,6 +58,8 @@ public class sortStack {
 
         r.sortstack();
 
+        // sort an array is exactly similar to this
+
         System.out.println(r.stack);
 
     }
