@@ -2,19 +2,21 @@ package stacksAndQueues.stack.recursion;
 
 import java.util.Stack;
 
-class reverse{
+class sort{
 
     Stack<Integer> stack = new Stack<>();
 
-    public void insertAtBottom(int x){
+    public void insert(int x){
 
-        if(stack.size()==0){    // conditin add for sorting
+        if(stack.size()==0 || x > stack.peek()){
+
             stack.push(x);
+
         }else{
 
             int a = stack.pop();
 
-            insertAtBottom(x);
+            insert(x);
 
             stack.push(a);
 
@@ -22,15 +24,15 @@ class reverse{
 
     }
 
-    public void reverseStck(){
+    public void sortstack(){
 
         if(stack.size()>0){
 
             int x = stack.pop();
 
-            reverseStck();
+            sortstack();
 
-            insertAtBottom(x);
+            insert(x);
 
         }
         return;
@@ -39,17 +41,24 @@ class reverse{
 }
 
 
-public class reverseStack {
+public class sortStack {
     public static void main(String[] args) {
 
-        reverse r = new reverse();
+        sort r = new sort();
+
         r.stack.push(1);
-        r.stack.push(2);
-        r.stack.push(3);
-        r.stack.push(4);
+
         r.stack.push(5);
 
-        r.reverseStck();
+        r.stack.push(3);
+
+        r.stack.push(4);
+
+        r.stack.push(2);
+
+        r.sortstack();
+
+        System.out.println(r.stack);
 
     }
 }
