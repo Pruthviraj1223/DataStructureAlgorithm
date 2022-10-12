@@ -68,7 +68,7 @@ class permutation{
 
             stack.push(num);
 
-            while (j < popped.length && stack.peek() == popped[j]) {
+            while (!stack.isEmpty() && j < popped.length && stack.peek() == popped[j]) {
 
                 stack.pop();
 
