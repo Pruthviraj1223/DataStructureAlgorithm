@@ -1,7 +1,6 @@
 package stacksAndQueues.stack;
 
 import java.util.LinkedList;
-import java.util.Objects;
 import java.util.Queue;
 import java.util.Stack;
 
@@ -59,7 +58,7 @@ class permutation{
 
     }
 
-    public boolean checkPermutation2(int []pushed,int []popped){
+    public boolean checkPermutationOptimized(int []pushed, int []popped){
 
         Stack<Integer> stack = new Stack<>();
         int j=0;
@@ -95,7 +94,7 @@ public class stackPermutation {
         // Output Array
         int[] output = { 8, 7, 6, 5, 4 };
 
-        System.out.println(new permutation().checkPermutation2(input,output));
+        System.out.println(new permutation().checkPermutationOptimized(input,output));
 
     }
 }
