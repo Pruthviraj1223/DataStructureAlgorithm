@@ -53,13 +53,11 @@ class queue {
 
         } else {
 
-            int x;
+            int x = queue[front];
 
-            x = queue[front];
+            if (front == size - 1) {
 
-            if (front==size-1) {
-
-                front =0;
+                front = 0;
 
             } else if (front == rear) {
 
@@ -72,7 +70,7 @@ class queue {
 
             }
 
-            System.out.println("Element is removed " + x + " rear : " + rear + " front : " + front);
+            System.out.println("Element is removed " + x + ". rear : " + rear + " front : " + front);
 
         }
 
@@ -106,7 +104,7 @@ class queue {
     public void print() {
 
 
-        if((front != -1 && rear != -1)) {
+        if ((front != -1 && rear != -1)) {
 
             if (front <= rear) {
 
@@ -193,7 +191,6 @@ public class circularQueue {
         q.print();
 
         q.dequeue();
-
 
 
     }

@@ -10,9 +10,11 @@ class Queue {
 
     int size;
 
+    int capacity;
+
     public Queue(int n) {
 
-        size = n;
+        capacity = n;
 
         queue = new int[n];
 
@@ -36,6 +38,8 @@ class Queue {
 
             queue[rear] = element;
 
+            size ++;
+
             System.out.println("Element is inserted " + queue[rear] + " rear : " + rear + " front : " + front);
 
         }
@@ -49,13 +53,26 @@ class Queue {
 
         } else {
 
-            int x = queue[front];
+            int x;
 
-            front++;
+            if (rear == capacity - 1 && front == capacity - 1) {
+
+                x = queue[front];
+
+                front = -1;
+
+                rear = -1;
+
+            } else {
+
+                x = queue[front];
+
+                front++;
+            }
+
+            size = size -1;
 
             System.out.println("Element is removed " + x + " rear : " + rear + " front : " + front);
-
-
         }
 
 
@@ -63,13 +80,13 @@ class Queue {
 
     public boolean isEmpty() {
 
-        return rear == -1;
+        return rear == -1 || size==0;
 
     }
 
     public boolean isFull() {
 
-        return rear == size - 1;
+        return rear == capacity - 1 || size==capacity;
 
     }
 
@@ -85,16 +102,16 @@ class Queue {
         }
     }
 
-    public void print(){
+    public void print() {
 
 
-        for (int f = front; f <=rear; f++) {
+        for (int f = front; f <= rear; f++) {
 
             System.out.print(queue[f] + " ");
 
         }
 
-        System.out.println(" size = " + (rear-front+1));
+        System.out.println(" size = " + (rear - front + 1));
 
     }
 
@@ -129,12 +146,7 @@ public class queueOperation {
         queue.enqueue(600);
         queue.enqueue(700);
 
-
         queue.print();
-
-
-        java.util.Queue<Integer> javaQueue = new PriorityQueue<>();
-        
 
 
     }

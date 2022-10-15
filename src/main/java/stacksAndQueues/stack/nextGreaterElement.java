@@ -84,7 +84,7 @@ class next{
 
     }
 
-    public List<Integer> nextSmallerElementRightSide(int []nums){
+    public void nextSmallerElementRightSide(int []nums){
 
         // 1 3 2 4
         // 4 5 2 25
@@ -122,11 +122,9 @@ class next{
 
         System.out.println("ans " + ans);
 
-        return ans;
-
     }
 
-    public List<Integer> nextSmallerElementLeftSide(int []nums){
+    public void nextSmallerElementLeftSide(int []nums){
 
         Stack<Integer> stack = new Stack<>();
 
@@ -156,8 +154,6 @@ class next{
 
 
         System.out.println("Result : " + result);
-
-        return result;
 
 
     }
@@ -263,8 +259,6 @@ class next{
                 .toArray();
 
     }
-
-
 
 }
 

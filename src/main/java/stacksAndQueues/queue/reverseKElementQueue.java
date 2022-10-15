@@ -1,4 +1,4 @@
-package stacksAndQueues.stack;
+package stacksAndQueues.queue;
 
 public class reverseKElementQueue {
     public static void main(String[] args) {

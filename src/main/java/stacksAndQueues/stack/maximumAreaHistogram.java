@@ -98,8 +98,6 @@ public class maximumAreaHistogram {
 
         var left = new Histogram().nextSmallerElementLeftSide(height);
 
-        right.set(10, 1);
-
         int maxArea = -1;
 
         System.out.println("left " + left);

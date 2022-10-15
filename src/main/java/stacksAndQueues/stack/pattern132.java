@@ -39,7 +39,7 @@ class pattern {
 
 }
 
-public class patter132 {
+public class pattern132 {
     public static void main(String[] args) {
 
     }

@@ -2,11 +2,11 @@ package stacksAndQueues;
 
 import java.util.Stack;
 
-class MyQueue {
+class MyQueueUsingTwoStack {
     Stack<Integer> s1 = new Stack();
     Stack<Integer> s2 = new Stack();
 
-    public MyQueue() {
+    public MyQueueUsingTwoStack() {
 
     }
 
@@ -67,7 +67,7 @@ class queueUsingSingleStack {
 
     }
 
-    public int pop() {
+    public int popElement() {
 
         // recursion
 
@@ -83,7 +83,7 @@ class queueUsingSingleStack {
 
             int x = s1.pop();
 
-            pop();
+            popElement();
 
             push(x);
 
@@ -141,15 +141,15 @@ public class queueImplementUsingStackk {
 
         System.out.println("Print : " + myQueue.s1);
 
-        myQueue.pop();
-        myQueue.pop();
+        myQueue.popElement();
+        myQueue.popElement();
 
         myQueue.peek();
 
         System.out.println("Print : " + myQueue.s1);
 
-        myQueue.pop();
-        myQueue.pop();
+        myQueue.popElement();
+        myQueue.popElement();
 
         myQueue.peek();
         System.out.println("Print : " + myQueue.s1 );

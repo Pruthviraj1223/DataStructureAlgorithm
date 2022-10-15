@@ -103,9 +103,9 @@ class Solution {
 
     }
 
-    public int maximalRectangle(char[][] matrix) {
+    public void maximalRectangle(char[][] matrix) {
 
-        List<Integer> ans = new ArrayList<Integer>();
+        List<Integer> ans = new ArrayList<>();
 
         int rowLength = matrix.length;
         int colLength = matrix[0].length;
@@ -144,8 +144,6 @@ class Solution {
             maxArea = Math.max(maxArea,MAH(temp));
 
         }
-
-        return maxArea;
 
     }
 }
