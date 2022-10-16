@@ -34,5 +34,6 @@ public class reverseAnArrays {
         reverseArr.arr[4] = 5;
 
         reverseArr.reverseArray(0,4);
+
     }
 }

@@ -6,26 +6,40 @@ class evaluate {
     public int evalRPN(String[] tokens) {
 
         int a,b;
-        java.util.Stack<Integer> S = new Stack<>();
+
+        java.util.Stack<Integer> stack = new Stack<>();
 
         for (String s : tokens) {
+
             switch (s) {
-                case "+" -> S.push(S.pop() + S.pop());
+
+                case "+" -> stack.push(stack.pop() + stack.pop());
+
                 case "/" -> {
-                    b = S.pop();
-                    a = S.pop();
-                    S.push(a / b);
+
+                    b = stack.pop();
+                    a = stack.pop();
+
+                    stack.push(a / b);
+
                 }
-                case "*" -> S.push(S.pop() * S.pop());
+
+                case "*" -> stack.push(stack.pop() * stack.pop());
+
                 case "-" -> {
-                    b = S.pop();
-                    a = S.pop();
-                    S.push(a - b);
+
+                    b = stack.pop();
+
+                    a = stack.pop();
+
+                    stack.push(a - b);
                 }
-                default -> S.push(Integer.parseInt(s));
+
+                default -> stack.push(Integer.parseInt(s));
+
             }
         }
-        return S.pop();
+        return stack.pop();
 
 
     }

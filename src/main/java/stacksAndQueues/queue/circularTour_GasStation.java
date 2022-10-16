@@ -5,34 +5,21 @@ class GasStation {
 
         int currPetrol = 0;
 
-        int start =0;
+        int start =0;   // assuming that we will start from 0 index
 
         int n = gas.length;
-
-        for(int index=0;index<n;index++){
-
-
-            if(gas[index]>=cost[index]){
-
-                start=index;
-
-                break;
-            }
-
-        }
 
         int index;
 
         for(index=start;index<n;){
 
-
             currPetrol += gas[index] - cost[index];
 
             index++;
+
             if(currPetrol <0){
 
                 for(;index<n;index++){
-
 
                     if(gas[index]>=cost[index]){
 
@@ -43,13 +30,8 @@ class GasStation {
                         break;
 
                     }
-
                 }
-
-
             }
-
-
         }
 
         if(currPetrol < 0){
@@ -60,28 +42,22 @@ class GasStation {
 
         for(index=0;index<start;index++){
 
-
             currPetrol += gas[index] - cost[index];
-
 
             if(currPetrol<0){
 
                 return -1;
 
             }
-
-
         }
 
         return start;
-
 
     }
 
     public int canCompleteCircuit2(int[] gas, int[] cost) {
 
         int currPetrol = 0;
-
 
         int total=0;
 
@@ -95,25 +71,16 @@ class GasStation {
 
             if (currPetrol <0){
 
-
                 start = index+1;
 
                 total += currPetrol;
 
                 currPetrol=0;
 
-
             }
-
-
-
-
         }
 
         return (currPetrol+total>=0) ? start : -1;
-
-
-
     }
 }
 

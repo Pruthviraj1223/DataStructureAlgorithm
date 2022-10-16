@@ -22,8 +22,6 @@ class longestParentheses{
 
         for(int index=0;index<s.length();index++){
 
-
-
             if(s.charAt(index)=='('){
 
                 stack.push(index);
@@ -32,10 +30,11 @@ class longestParentheses{
             else{
 
                 // understand conditions
+                // ((())))((((()))))
 
                 if(!stack.isEmpty()){
 
-                    stack.pop();
+                    stack.pop();        // ')' , will remove its pair's '(' index here.
 
                 }
 
@@ -65,7 +64,6 @@ class longestParentheses{
             return 0;
 
         }
-
 
         int left =0;
         int right=0;

@@ -11,7 +11,7 @@ class MinStack {
 
         s.push(val);
 
-        if(ss.size()==0 || ss.peek()>=val){
+        if(ss.size()==0 || ss.peek()>=val){         // >= important
 
             ss.push(val);
 
@@ -21,9 +21,7 @@ class MinStack {
 
     public void pop() {
 
-        int x = s.peek();
-
-        s.pop();
+        int x = s.pop();
 
         if(x==ss.peek()){
 
@@ -87,39 +85,20 @@ class MinStack2 {
 
     public void pop() {
 
-
         if(!s.isEmpty()){
-
 
             if(s.peek() > minEle){
 
-
-
-
                 s.pop();
-
 
             }else{
 
-                System.out.println("piop " + minEle);
-
-
-
-                minEle = 2*minEle - s.peek();
+                minEle = (2*minEle) - s.peek();
 
                 s.pop();
 
-
-
             }
-
-
-
-
         }
-
-
-
     }
 
     public int top() {
@@ -130,7 +109,6 @@ class MinStack2 {
             return s.peek();
 
         }else{
-
 
             return minEle;
 
@@ -150,7 +128,6 @@ class MinStack2 {
             return -100;
 
         }else{
-
 
             return minEle;
 
