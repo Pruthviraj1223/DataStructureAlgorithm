@@ -3,12 +3,12 @@ package stacksAndQueues.stack;
 import java.util.Stack;
 
 
-class Node{
+class Node {
 
     char ch;
     int cnt;
 
-    public Node(char ch,int cnt){
+    public Node(char ch, int cnt) {
 
         this.cnt = cnt;
         this.ch = ch;
@@ -17,53 +17,51 @@ class Node{
 
 }
 
-class Candies{
+class Candies {
 
-    public String candyCrush(String name, int k){
+    public String candyCrush(String name, int k) {
 
-
-        java.util.Stack<Node> stack= new Stack<>();
-
+        java.util.Stack<Node> stack = new Stack<>();
 
         for (int index = 0; index < name.length(); index++) {
 
             char ch = name.charAt(index);
 
-            if(stack.size()==0){
-                stack.push(new Node(ch,1));
+            if (stack.size() == 0) {
+
+                stack.push(new Node(ch, 1));
+
                 continue;
+
             }
 
-            if(ch==stack.peek().ch){
+            if (ch == stack.peek().ch) {
 
                 var temp = stack.pop();
 
                 temp.cnt = temp.cnt + 1;
 
-
-                if(temp.cnt != k){
+                if (temp.cnt != k) {
 
                     stack.push(temp);
                 }
 
-            }else {
-                stack.push(new Node(ch,1));
+            } else {
+
+                stack.push(new Node(ch, 1));
+
             }
-
-
         }
-
 
         StringBuilder result = new StringBuilder();
 
-        while (stack.size() >0){
-
+        while (stack.size() > 0) {
 
             var temp = stack.pop();
 
             int cnt = temp.cnt;
 
-            while (cnt-- >0){
+            while (cnt-- > 0) {
 
                 result.append(temp.ch);
 
@@ -71,10 +69,8 @@ class Candies{
 
         }
 
-
         return result.reverse().toString();
     }
-
 
 }
 
@@ -82,7 +78,7 @@ public class restrictiveCandyCrush {
 
     public static void main(String[] args) {
 
-       var ans = new Candies().candyCrush("geegksforgeeks",2);
+        var ans = new Candies().candyCrush("geegksforgeeks", 2);
 
         System.out.println("ans " + ans);
 

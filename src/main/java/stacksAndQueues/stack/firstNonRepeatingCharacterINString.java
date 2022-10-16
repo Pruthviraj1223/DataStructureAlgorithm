@@ -49,7 +49,6 @@ class nonRpeating {
 
         var it = count.entrySet().iterator();
 
-
         int ans = Integer.MAX_VALUE;
 
         while (it.hasNext()){
@@ -58,11 +57,7 @@ class nonRpeating {
 
             ans = Math.min(ans,item.getValue());
 
-
         }
-
-
-
     }
 
     public void uniqueCharacterUsingQueue(String s){
@@ -104,7 +99,7 @@ class nonRpeating {
 public class firstNonRepeatingCharacterINString {
     public static void main(String[] args) {
 
-        new nonRpeating().uniqueCharacterUsingQueue("geeksforggeks");
+        new nonRpeating().uniqueCharacter("geeksforggeks");
 
     }
 }

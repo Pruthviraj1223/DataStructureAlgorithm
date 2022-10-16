@@ -11,22 +11,27 @@ class pattern {
 
         Stack<Integer> stack = new Stack<>();
 
+        // 5 1 3 2
+
         for (int index = nums.length - 1; index >= 0; index--) {
 
-            if (nums[index] < two) {
+            var currentElement = nums[index];
+
+            if (currentElement < two) {
 
                 // it will be 'one'
 
                 return true;
 
             } else {
-                while (!stack.isEmpty() && nums[index] > stack.peek()) {        // 'three' > 'two'
+
+                while (!stack.isEmpty() && currentElement > stack.peek()) {        // 'three' > 'two'
 
                     two = stack.pop();
 
                 }
 
-                stack.push(nums[index]);
+                stack.push(currentElement);
 
             }
 
@@ -41,6 +46,8 @@ class pattern {
 
 public class pattern132 {
     public static void main(String[] args) {
+
+        new pattern().findPattern(new int[]{3,1,4,2});
 
     }
 }

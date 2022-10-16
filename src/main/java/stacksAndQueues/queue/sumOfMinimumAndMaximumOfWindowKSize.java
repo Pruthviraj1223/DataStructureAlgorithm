@@ -45,32 +45,32 @@ class sum{
 
             while (!min.isEmpty() && min.peek() <= index-k){
 
-                min.pop();
+                min.remove();
 
             }
 
             while (!max.isEmpty() && max.peek() <= index-k){
 
-                max.pop();
+                max.remove();
 
             }
 
 
             while (!min.isEmpty() && nums[min.peek()] >= currentEle){
 
-                min.pop();
+                min.remove();
 
             }
 
             while (!max.isEmpty() && nums[max.peek()] <= currentEle){
 
-                max.pop();
+                max.remove();
 
             }
 
-            min.addLast(index);
+            min.add(index);
 
-            max.addLast(index);
+            max.add(index);
 
         }
 

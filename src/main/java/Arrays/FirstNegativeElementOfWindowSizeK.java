@@ -3,20 +3,20 @@ package Arrays;
 import java.util.LinkedList;
 import java.util.Queue;
 
-class Negative{
+class Negative {
 
-    public void NegativeEleSizeK(int []nums,int k){
+    public void NegativeEleSizeK(int[] nums, int k) {
 
 
         Queue<Integer> queue = new LinkedList<>();
 
         int n = nums.length;
 
-        int index=0;
+        int index = 0;
 
-        for(;index<k;index++){
+        for (; index < k; index++) {
 
-            if (nums[index]<0){
+            if (nums[index] < 0) {
 
                 queue.add(index);
 
@@ -24,29 +24,27 @@ class Negative{
 
         }
 
-        int j=0;
+        int j = 0;
 
-        long []arr = new long[nums.length];
+        for (; index < n; index++, j++) {
 
-        for (;index<n;index++,j++){
+            if (queue.isEmpty()) {
 
-            if(queue.isEmpty()){
+                System.out.println("ans " + "None");
 
-                System.out.println("ans " + 0);
-
-            }else {
+            } else {
 
                 System.out.println("ans - " + nums[queue.peek()]);
 
             }
 
-            while (!queue.isEmpty() && queue.peek() < index-k+1){
+            while (!queue.isEmpty() && queue.peek() <= index - k) {
 
                 queue.poll();
 
             }
 
-            if (nums[index]<0){
+            if (nums[index] < 0) {
 
                 queue.add(index);
 
@@ -54,10 +52,10 @@ class Negative{
 
         }
 
-        if (queue.isEmpty()){
+        if (queue.isEmpty()) {
 
             System.out.println("0");
-        }else {
+        } else {
 
             System.out.println("ans -- " + nums[queue.peek()]);
 
@@ -71,7 +69,7 @@ class Negative{
 public class FirstNegativeElementOfWindowSizeK {
     public static void main(String[] args) {
 
-        new Negative().NegativeEleSizeK(new int[]{12, -1, -7, 8, -15, 30, 16, 28} ,3);
+        new Negative().NegativeEleSizeK(new int[]{12, -1, -7, 8, -15, 30, 16, 28}, 3);
 
     }
 }
