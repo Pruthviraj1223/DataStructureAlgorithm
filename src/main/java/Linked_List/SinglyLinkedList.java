@@ -165,7 +165,7 @@ class SinglyList {
 
             System.out.println("can not perform this operation");
 
-        } else if (head.val==before) {
+        } else if (head.val == before) {
 
             System.out.println("use delete begin !!!");
 
@@ -206,11 +206,44 @@ class SinglyList {
 
     void deleteAfter(Node head, int after) {
 
+        if (head == null) {
+
+            System.out.println("can not perform");
+
+        } else if (head.val == after) {
+
+            System.out.println("use delete begin");
+
+        } else {
+
+            Node temp = head;
+
+            while (temp.val != after) {
+
+                temp = temp.next;
+
+            }
+
+            if (temp.next != null){
+
+                temp.next = temp.next.next;
+
+            }
+
+        }
+
+    }
+
+    void deleteList(Node head){
+
+        this.head = null;
+
+        System.out.println("List is deleted");
+
     }
 
     void print(Node head) {
 
-        System.out.println();
 
         if (head != null) {
 
@@ -226,9 +259,11 @@ class SinglyList {
 
         } else {
 
-            System.out.println("list is empty");
+            System.out.println("List is empty");
 
         }
+
+        System.out.println();
 
     }
 
@@ -277,6 +312,15 @@ public class SinglyLinkedList {
 
         list.print(list.head);
 
+        list.deleteAfter(list.head, 20);
+
+        list.deleteAfter(list.head, 40);
+
+        list.print(list.head);
+
+        list.deleteList(list.head);
+
+        list.print(list.head);
 
     }
 }
