@@ -133,7 +133,9 @@ class CircularList {
             Node temp = head;
 
             while (temp.next != this.head) {
+
                 temp = temp.next;
+
             }
 
             this.head = head.next;
@@ -161,7 +163,15 @@ class CircularList {
 
             }
 
-            prev.next = this.head;
+            if(prev==null){
+
+                deleteList();
+
+            }else {
+
+                prev.next = this.head;
+            }
+
 
         }
 
@@ -242,7 +252,7 @@ class CircularList {
 
     }
 
-    void deleteList(Node head) {
+    void deleteList() {
 
         this.head = null;
 
@@ -295,13 +305,24 @@ public class CircularLinkedList {
 
         circularList.print(circularList.head);
 
-        circularList.deleteAtEnd(circularList.head);
-
-        circularList.print(circularList.head);
-
         circularList.insertAfter(circularList.head,10,25);
 
         circularList.print(circularList.head);
+
+        circularList.deleteAtEnd(circularList.head);
+        circularList.deleteAtEnd(circularList.head);
+        circularList.deleteAtEnd(circularList.head);
+        circularList.deleteAtEnd(circularList.head);
+        circularList.deleteAtEnd(circularList.head);
+
+
+        circularList.print(circularList.head);
+
+        circularList.deleteAtBegin(circularList.head);
+        circularList.deleteAtBegin(circularList.head);
+        circularList.deleteAtBegin(circularList.head);
+        circularList.deleteAtBegin(circularList.head);
+
 
     }
 }
