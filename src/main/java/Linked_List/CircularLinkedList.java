@@ -1,34 +1,30 @@
 package Linked_List;
 
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
-
 class CircularList {
 
-    Node head;
+    ListNode head;
 
     CircularList(int val) {
 
-        head = new Node(val);
+        head = new ListNode(val);
 
         head.next = head;
 
     }
 
-    void insertAtEnd(Node head, int val) {
+    void insertAtEnd(ListNode head, int val) {
 
         if (head == null) {
 
-            this.head = new Node(val);
+            this.head = new ListNode(val);
 
             this.head.next = this.head;
 
         } else {
 
-            Node node = new Node(val);
+            ListNode listNode = new ListNode(val);
 
-            Node temp = head;
+            ListNode temp = head;
 
             while (temp.next != this.head) {
 
@@ -36,28 +32,28 @@ class CircularList {
 
             }
 
-            temp.next = node;
+            temp.next = listNode;
 
-            node.next = head;
+            listNode.next = head;
 
         }
     }
 
-    void insertAtBegin(Node head, int val) {
+    void insertAtBegin(ListNode head, int val) {
 
         if (head == null) {
 
-            this.head = new Node(val);
+            this.head = new ListNode(val);
 
             this.head.next = this.head;
 
         } else {
 
-            Node node = new Node(val);
+            ListNode listNode = new ListNode(val);
 
-            node.next = this.head;
+            listNode.next = this.head;
 
-            Node temp = head;
+            ListNode temp = head;
 
             while (temp.next != this.head) {
 
@@ -65,19 +61,19 @@ class CircularList {
 
             }
 
-            temp.next = node;
+            temp.next = listNode;
 
-            this.head = node;
+            this.head = listNode;
 
         }
 
     }
 
-    void insertAfter(Node head, int after, int val) {
+    void insertAfter(ListNode head, int after, int val) {
 
-        Node node = new Node(val);
+        ListNode listNode = new ListNode(val);
 
-        Node temp = head;
+        ListNode temp = head;
 
         while (temp.next != this.head && temp.val != after) {
 
@@ -87,9 +83,9 @@ class CircularList {
 
         if (temp.next != this.head) {
 
-            node.next = temp.next;
+            listNode.next = temp.next;
 
-            temp.next = node;
+            temp.next = listNode;
 
         } else {
 
@@ -97,13 +93,13 @@ class CircularList {
         }
     }
 
-    void insertBefore(Node head, int before, int val) {
+    void insertBefore(ListNode head, int before, int val) {
 
-        Node node = new Node(val);
+        ListNode listNode = new ListNode(val);
 
-        Node temp = head;
+        ListNode temp = head;
 
-        Node prev = null;
+        ListNode prev = null;
 
         while (temp != null && temp.val != before) {
 
@@ -115,9 +111,9 @@ class CircularList {
 
         if (temp != null) {
 
-            prev.next = node;
+            prev.next = listNode;
 
-            node.next = temp;
+            listNode.next = temp;
 
         } else {
             System.out.println("Before value is invalid");
@@ -126,7 +122,7 @@ class CircularList {
 
     }
 
-    void deleteAtBegin(Node head) {
+    void deleteAtBegin(ListNode head) {
 
         if (head == null) {
 
@@ -134,7 +130,7 @@ class CircularList {
 
         } else {
 
-            Node temp = head;
+            ListNode temp = head;
 
             while (temp.next != this.head) {
 
@@ -149,15 +145,15 @@ class CircularList {
         }
     }
 
-    void deleteAtEnd(Node head) {
+    void deleteAtEnd(ListNode head) {
 
         if (head == null) {
             System.out.println("head  is null. Can not perform this operation");
         } else {
 
-            Node temp = head;
+            ListNode temp = head;
 
-            Node prev = null;
+            ListNode prev = null;
 
             while (temp.next != this.head) {
 
@@ -181,7 +177,7 @@ class CircularList {
 
     }
 
-    void deleteBefore(Node head, int before) {
+    void deleteBefore(ListNode head, int before) {
 
         if (head == null) {
 
@@ -193,11 +189,11 @@ class CircularList {
 
         } else {
 
-            Node next = head;
+            ListNode next = head;
 
-            Node curr = null;
+            ListNode curr = null;
 
-            Node prev = null;
+            ListNode prev = null;
 
             while (next.val != before) {
 
@@ -226,7 +222,7 @@ class CircularList {
 
     }
 
-    void deleteAfter(Node head, int after) {
+    void deleteAfter(ListNode head, int after) {
 
         if (head == null) {
 
@@ -238,7 +234,7 @@ class CircularList {
 
         } else {
 
-            Node temp = head;
+            ListNode temp = head;
 
             while (temp.val != after) {
 
@@ -264,11 +260,11 @@ class CircularList {
 
     }
 
-    void print(Node head) {
+    void print(ListNode head) {
 
         if (head != null) {
 
-            Node temp = head;
+            ListNode temp = head;
 
             while (temp.next != head) {
 

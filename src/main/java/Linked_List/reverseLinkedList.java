@@ -2,12 +2,12 @@ package Linked_List;
 
 class reverseList {
 
-    Node reverseRecursion(Node head){
+    static ListNode reverseRecursion(ListNode head){
 
         if (head == null || head.next == null)
             return head;
 
-        Node rest = reverseRecursion(head.next);
+        ListNode rest = reverseRecursion(head.next);
 
         head.next.next = head;
 
@@ -17,7 +17,7 @@ class reverseList {
 
     }
 
-    Node reverseIterative(Node head) {
+    ListNode reverseIterative(ListNode head) {
 
         if(head==null){
 
@@ -25,11 +25,11 @@ class reverseList {
 
         }
 
-        Node prev=null;
+        ListNode prev=null;
 
-        Node next=head;
+        ListNode next=head;
 
-        Node curr=head;
+        ListNode curr=head;
 
         while (curr!=null){
 
@@ -49,17 +49,18 @@ class reverseList {
 
     }
 
+
 }
 
 public class reverseLinkedList {
     public static void main(String[] args) {
 
         reverseList r = new reverseList();
-        Node head = new Node(10);
-        Node temp1 = new Node(20);
-        Node temp2 = new Node(30);
-        Node temp3 = new Node(40);
-        Node temp4  = new Node(50);
+        ListNode head = new ListNode(10);
+        ListNode temp1 = new ListNode(20);
+        ListNode temp2 = new ListNode(30);
+        ListNode temp3 = new ListNode(40);
+        ListNode temp4  = new ListNode(50);
 
         head.next = temp1;
         temp1.next = temp2;
