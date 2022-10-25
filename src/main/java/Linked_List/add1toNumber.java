@@ -46,7 +46,7 @@ class add {
 public class add1toNumber {
     public static void main(String[] args) {
 
-        new add().add1(util.getList(3));
+        new add().add1(util.getList(new int[]{1,5,7}));
 
     }
 }

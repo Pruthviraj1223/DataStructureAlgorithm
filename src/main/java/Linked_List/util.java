@@ -2,19 +2,21 @@ package Linked_List;
 
 public class util {
 
-    static ListNode getList(int n){
+    static ListNode getList(int []arr){
 
-        ListNode prev = null;
+        ListNode head = new ListNode(arr[0]);
 
-        for (int index = n; index >0; index--) {
+        ListNode prev = head;
 
-            ListNode node = new ListNode(index);
-            node.next = prev;
+        for (int index = 1; index <arr.length; index++) {
+
+            ListNode node = new ListNode(arr[index]);
+            prev.next = node;
             prev = node;
 
         }
 
-        return prev;
+        return head;
 
     }
 
@@ -23,6 +25,8 @@ public class util {
 
         // 1 -> 2 -> 3 -> 4 -> 5 -> 6-> 7 -> 8
         // n = 2
+
+        getList(new int[]{1,5,6,7,32});
 
     }
 }

@@ -51,7 +51,7 @@ class List {
 public class addTwoNumberInLinkedList {
     public static void main(String[] args) {
 
-        new List().addTwoList(util.getList(3), util.getList(3));
+        new List().addTwoList(util.getList(new int[]{1,5,7}), util.getList(new int[]{1,5,7}));
 
     }
 }

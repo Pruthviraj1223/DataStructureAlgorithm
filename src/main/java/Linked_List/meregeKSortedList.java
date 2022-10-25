@@ -27,10 +27,10 @@ public class meregeKSortedList {
     public static void main(String[] args) {
 
         ListNode []listNodes = new ListNode[4];
-        listNodes[0] = util.getList(2);
-        listNodes[1] = util.getList(3);
-        listNodes[2] = util.getList(4);
-        listNodes[3] = util.getList(5);
+        listNodes[0] = util.getList(new int[]{1,5,7});
+        listNodes[1] = util.getList(new int[]{1,5,7});
+        listNodes[2] = util.getList(new int[]{1,5,7});
+        listNodes[3] = util.getList(new int[]{1,5,7});
 
         new mergeK().mergeKList(listNodes);
 

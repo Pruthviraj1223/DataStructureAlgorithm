@@ -24,7 +24,7 @@ class middle{
 public class middleOfLInkedList {
     public static void main(String[] args) {
 
-        new middle().findMiddle(util.getList(5));
+        new middle().findMiddle(util.getList(new int[]{1,5,7}));
 
     }
 }

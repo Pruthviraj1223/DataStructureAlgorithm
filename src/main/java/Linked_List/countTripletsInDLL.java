@@ -56,7 +56,7 @@ class count {
 public class countTripletsInDLL {
     public static void main(String[] args) {
 
-        util.getList(10);
+        util.getList(new int[]{1,5,7});
 
         DoublyNode head = new DoublyNode(1);
         DoublyNode node1 = new DoublyNode(2);
