@@ -23,7 +23,7 @@ class Solution4 {
 //        }
 
 
-        if (nums==null || nums.length==1){
+        if (nums == null || nums.length == 1) {
 
             return nums[0];
 
@@ -31,12 +31,11 @@ class Solution4 {
 
         int duplicate = -1;
 
-        for(int index=0;index<nums.length;index++){
-
+        for (int index = 0; index < nums.length; index++) {
 
             int idx = Math.abs(nums[index]) - 1;
 
-            if(nums[idx]<0){
+            if (nums[idx] < 0) {
 
                 duplicate = Math.abs(nums[index]);
 
