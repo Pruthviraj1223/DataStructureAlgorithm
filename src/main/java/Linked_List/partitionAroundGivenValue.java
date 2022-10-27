@@ -12,9 +12,7 @@ class pratition {
 
         while (head != null) {
 
-
             if (head.val < x) {
-
 
                 temp.next = head;
                 temp = temp.next;
