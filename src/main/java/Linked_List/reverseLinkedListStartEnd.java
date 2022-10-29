@@ -1,34 +1,35 @@
 package Linked_List;
 
-class List2{
-    ListNode reverseListStartEndPoint(ListNode head, int left, int right){
-        if(head==null){
-            return head;
+class List2 {
+    ListNode reverseListStartEndPoint(ListNode head, int start, int end) {
+
+        if (head == null) {
+            return null;
         }
 
         ListNode prev = null;
 
         ListNode curr = head;
 
-        while(left>1){
+        while (start > 1) {
 
             prev = curr;
 
             curr = curr.next;
 
-            left--;
+            start--;
 
-            right--;
+            end--;
 
         }
 
         ListNode next;
 
-        ListNode con = prev;
+        ListNode dummyPrev = prev;
 
-        ListNode tail = curr;
+        ListNode dummyCurr = curr;
 
-        while(right>0){
+        while (end > 0) {
 
             next = curr.next;
 
@@ -38,17 +39,19 @@ class List2{
 
             curr = next;
 
-            right--;
+            end--;
         }
 
-        if(con!=null){
-            con.next = prev;
+        if (dummyPrev != null) {
 
-        }else{
+            dummyPrev.next = prev;
+
+        } else {
+
             head = prev;
         }
 
-        tail.next = curr;
+        dummyCurr.next = curr;
 
         return head;
 
@@ -64,14 +67,13 @@ public class reverseLinkedListStartEnd {
         ListNode temp1 = new ListNode(20);
         ListNode temp2 = new ListNode(30);
         ListNode temp3 = new ListNode(40);
-        ListNode temp4  = new ListNode(50);
+        ListNode temp4 = new ListNode(50);
 
         head.next = temp1;
         temp1.next = temp2;
         temp2.next = temp3;
         temp3.next = temp4;
         temp4.next = null;
-
 
 
     }

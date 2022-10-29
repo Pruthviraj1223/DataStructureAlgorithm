@@ -1,6 +1,6 @@
 package Linked_List;
 
-class reverseINGroup{
+class reverseINGroup {
 
     public ListNode reverseKGroup(ListNode head, int k) {
 
@@ -10,17 +10,17 @@ class reverseINGroup{
 
         dummy.next = head;
 
-        while(pointer!=null){
+        while (true) {
 
             ListNode node = pointer;
 
-            for(int index=0;index<k && node!=null; index++){
+            for (int index = 0; index < k && node != null; index++) {
 
                 node = node.next;           // for checking k nodes is present or not
 
             }
 
-            if(node==null){
+            if (node == null) {
 
                 break;
 
@@ -30,7 +30,7 @@ class reverseINGroup{
             ListNode curr = pointer.next;
             ListNode next;
 
-            for(int index=0;index<k;index++){
+            for (int index = 0; index < k; index++) {
 
                 next = curr.next;
 
@@ -38,7 +38,7 @@ class reverseINGroup{
 
                 prev = curr;
 
-                curr=next;
+                curr = next;
 
             }
 
@@ -60,7 +60,6 @@ class reverseINGroup{
 
 public class reversListInKGroups {
     public static void main(String[] args) {
-
 
 
     }

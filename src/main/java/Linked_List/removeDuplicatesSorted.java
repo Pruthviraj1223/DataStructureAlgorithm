@@ -1,22 +1,22 @@
 package Linked_List;
 
-class sorted{
+class sorted {
 
     public ListNode deleteDuplicates(ListNode head) {
 
-        if(head==null || head.next==null){
+        if (head == null || head.next == null) {
 
             return head;
 
         }
 
-        ListNode curr=head;
+        ListNode curr = head;
 
-        while (curr!=null){
+        while (curr != null) {
 
             ListNode temp = curr;
 
-            while(temp!=null && temp.val==curr.val){
+            while (temp != null && temp.val == curr.val) {
 
                 temp = temp.next;
 

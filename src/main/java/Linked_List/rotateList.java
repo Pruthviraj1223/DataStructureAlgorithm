@@ -42,7 +42,7 @@ class rotate {
 
         temp.next = null;
 
-        return next;
+        return next;                    // new head...
 
     }
 

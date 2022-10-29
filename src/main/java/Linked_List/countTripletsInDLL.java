@@ -5,6 +5,7 @@ class count {
     public void countTriplets(DoublyNode head, int target) {
 
         DoublyNode last = head;
+
         int count = 0;
 
         while (last.next != null) {

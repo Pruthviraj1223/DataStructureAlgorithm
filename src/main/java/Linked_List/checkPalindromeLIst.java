@@ -34,7 +34,6 @@ class check {
 
         while (head != null && st.size() > 0) {
 
-
             if (head.val != st.pop()) {
 
                 return false;
@@ -52,7 +51,6 @@ class check {
     boolean isPalindromeRecursion(ListNode head) {
 
         head1 = head;
-
 
         return isPal(head);
 

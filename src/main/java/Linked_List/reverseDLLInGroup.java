@@ -1,10 +1,6 @@
 package Linked_List;
 
-import javax.print.DocFlavor;
-import java.util.zip.CheckedOutputStream;
-
 class reverse {
-
 
     DoublyNode reverseDLL(DoublyNode head, int k) {
 
@@ -12,20 +8,26 @@ class reverse {
             return null;
         }
 
-        head.prev = null;           // imp
+        head.prev = null;   // when reversing 7 8 9 // head will be 7 and after reverse ( 9 8 7 ) 7's next should be null
+                            // when you do curr.next = prev, prev is curr.prev , so it has to set null
 
         DoublyNode curr = head;
         DoublyNode prev;
-        DoublyNode newHead = null;
+
+        DoublyNode pointer = null;
 
         int count = 0;
 
         while (curr != null && count < k) {
 
-            newHead = curr;
+            pointer = curr;
+
             prev = curr.prev;
+
             curr.prev = curr.next;
+
             curr.next = prev;
+
             curr = curr.prev;
 
             count++;
@@ -35,6 +37,7 @@ class reverse {
         if (count >= k) {
 
             DoublyNode rest = reverseDLL(curr, k);
+
             head.next = rest;
 
             if (rest != null) {
@@ -44,11 +47,9 @@ class reverse {
             }
         }
 
-        return newHead;
+        return pointer;
 
     }
-
-
 }
 
 
@@ -86,7 +87,7 @@ public class reverseDLLInGroup {
 
         head = new reverse().reverseDLL(head, 3);
 
-        System.out.println();
+        System.out.println(head);
 
 
     }

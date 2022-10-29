@@ -14,9 +14,9 @@ class unsorted{
 
         while (current != null) {
 
-            int curval = current.val;
+            int currVal = current.val;
 
-            if (duplicates.contains(curval)) {
+            if (duplicates.contains(currVal)) {
 
                 prev.next = current.next;
 
@@ -24,7 +24,7 @@ class unsorted{
 
             else {
 
-                duplicates.add(curval);
+                duplicates.add(currVal);
 
                 prev = current;
 

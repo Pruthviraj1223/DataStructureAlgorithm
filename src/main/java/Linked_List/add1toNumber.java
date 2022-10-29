@@ -28,7 +28,7 @@ class add {
 
         }
 
-        if (carry > 0 && temp != null) {
+        if (carry > 0 && temp != null) {            // if its 9 9 9 then we have create node of value 1. (0 0 0 1)
 
             temp.next = new ListNode(carry);
 

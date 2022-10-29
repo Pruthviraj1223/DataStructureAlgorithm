@@ -18,7 +18,7 @@ class clone {
 
     }
 
-    public Node cloneWithRandom(Node head) {
+    public Node cloneWithHashMap(Node head) {
         if (head == null) {
             return null;
         }
@@ -61,7 +61,7 @@ class clone {
 
     }
 
-    public Node cloneList(Node head) {
+    public Node cloneWithoutHashMap(Node head) {
 
         if (head == null) {
             return null;

@@ -1,11 +1,8 @@
-package Stack_Queue;
-
 public class Notes {
     public static void main(String[] args) {
 
 
         // topic - theory which is needed to be done before coding
-
 
         // 1. Array - nothing
 
