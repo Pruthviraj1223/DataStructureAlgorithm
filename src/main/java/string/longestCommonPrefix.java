@@ -8,7 +8,9 @@ public class longestCommonPrefix {
 
         Arrays.sort(arr);
 
-        int minLen = Math.min(arr[0].length(), arr[arr.length - 1].length());
+//        int minLen = Math.min(arr[0].length(), arr[arr.length - 1].length());
+
+        int minLen = arr[0].length();
 
         int i = 0;
 
@@ -123,7 +125,7 @@ public class longestCommonPrefix {
 
     public static void main(String[] args) {
 
-        String[] arr = {"geeksfor", "gee", "geeks", "geeksforgeeks"};
+        String[] arr = {"geeksfor", "gee", "gecks", "geeksforgeeks"};
 
         String prefix = longestPrefixSorting(arr);
 
