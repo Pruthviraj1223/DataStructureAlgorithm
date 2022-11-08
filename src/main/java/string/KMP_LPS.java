@@ -12,7 +12,7 @@ public class KMP_LPS {
 
         int j = 0; // index for pat[]
 
-        longestPrefix(pat, lps);
+        longestPrefix(pat);
 
         int i = 0;
 
