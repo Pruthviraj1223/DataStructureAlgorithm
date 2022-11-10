@@ -14,15 +14,11 @@ public class longestCommonSubsequence {
 
         int[][] mat = new int[m + 1][n + 1];        // why m+1 , n+1 bcoz m=6 n=6 then need to store 6 row 6 col in matrix and one row,col of zero's
 
-        for (int i = 0; i <= m; i++) {
+        for (int i = 1; i <= m; i++) {
 
-            for (int j = 0; j <= n; j++) {
+            for (int j = 1; j <= n; j++) {
 
-                if (i == 0 || j == 0) {
-
-                    mat[i][j] = 0;
-
-                } else if (str1[i - 1] == str2[j - 1]) {
+               if (str1[i - 1] == str2[j - 1]) {
 
                     mat[i][j] = mat[i - 1][j - 1] + 1;
 
