@@ -22,6 +22,8 @@ public class printAllSubSequence {
 
     public static void main(String[] args) {
 
+        // Time complexity - O(2^n)
+
         print("abcd", "");
 
 
