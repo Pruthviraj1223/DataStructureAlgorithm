@@ -75,5 +75,7 @@ public class minimumNumberOfBracketReversal {
 
     public static void main(String[] args) {
 
+        //min number of bracket need to reverse to make balanced sting
+
     }
 }
