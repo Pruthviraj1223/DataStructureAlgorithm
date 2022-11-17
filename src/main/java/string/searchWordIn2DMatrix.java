@@ -48,17 +48,23 @@ public class searchWordIn2DMatrix {
         int rowLength = grid.length;
         int colLength = grid[0].length;
 
+        int count=0;
+
         for (int row = 0; row < rowLength; row++) {
 
             for (int col = 0; col < colLength; col++) {
 
                 if (grid[row][col] == word.charAt(0) && exists(grid, row, col, word)) {
 
+                    count++;
+
                     System.out.println("Found  Row : " + row + " Col : " + col);
 
                 }
             }
         }
+
+        System.out.println("count : " + count);
 
     }
 
