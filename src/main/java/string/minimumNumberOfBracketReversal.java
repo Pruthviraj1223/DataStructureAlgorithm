@@ -106,6 +106,34 @@ public class minimumNumberOfBracketReversal {
 
     }
 
+    public int minSwaps(String s) {
+
+        int ans = 0;
+        int temp = 0;
+
+        for (int index = 0; index < s.length(); index++) {
+
+            if (s.charAt(index) == '[') {
+
+                temp++;
+
+            } else {
+
+                if (temp > 0) {
+
+                    temp--;
+
+                } else {
+
+                    ans++;
+
+                }
+            }
+        }
+
+        return (ans + 1) / 2;
+    }
+
 
     public static void main(String[] args) {
 
@@ -113,5 +141,10 @@ public class minimumNumberOfBracketReversal {
 
         // leetcode version is added . It's bit different
 
+        // similar other leetcode question is added.
+
+        // THIS 4 is different version so understand question and then look solution accordingly
+
+        // but this are similar questions
     }
 }
