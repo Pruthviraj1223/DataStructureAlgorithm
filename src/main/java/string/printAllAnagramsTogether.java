@@ -7,7 +7,7 @@ import java.util.List;
 
 public class printAllAnagramsTogether {
 
-    static void print(String []words){
+    static List<List<String>> print(String[] words) {
 
         HashMap<String, List<String>> anagrams = new HashMap<>();
 
@@ -19,11 +19,11 @@ public class printAllAnagramsTogether {
 
             String letter = new String(ch);
 
-            if(anagrams.get(letter)==null){
+            if (anagrams.get(letter) == null) {
 
                 List<String> list = new ArrayList<>();
 
-                anagrams.put(letter,list);
+                anagrams.put(letter, list);
 
             }
 
@@ -31,25 +31,19 @@ public class printAllAnagramsTogether {
 
         }
 
-        for (var key:anagrams.keySet()){
+        List<List<String>> result = new ArrayList<>(anagrams.values());
 
-            var values = anagrams.get(key);
-
-            if(values.size()>1){
-
-                System.out.println(values);
-
-            }
-
-        }
+        return result;
 
     }
 
     public static void main(String[] args) {
 
-        print(new String[]{"act","god","cat","dog","tac"});
+        print(new String[]{"act", "god", "cat", "dog", "tac"});
 
         // another approach is about sorting , you 'should' watch on GFG.
+
+        // group anagrams on leetcode is same
 
     }
 }
