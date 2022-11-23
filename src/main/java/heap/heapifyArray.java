@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class heapifyArray {
 
-    static void heapify(int[] arr, int index) {
+    static void heapify(int[] arr,int n, int index) {
 
         // you give index, and it will heapify all the children of it recursively.
         // but only its children or subtree, not other children or subtree
@@ -14,8 +14,6 @@ public class heapifyArray {
         if (index >= arr.length) {
             return;
         }
-
-        int n = arr.length;
 
         int left = 2 * index + 1;
         int right = 2 * index + 2;
@@ -32,7 +30,7 @@ public class heapifyArray {
 
             util.swap(arr, largest, index);
 
-            heapify(arr, largest);
+            heapify(arr, n,largest);
 
         }
 
@@ -42,7 +40,7 @@ public class heapifyArray {
 
         int[] arr = {16, 11, 18, 5, 13,17};
 
-        heapify(arr,1);
+        heapify(arr,arr.length, 1);
 
         System.out.println(Arrays.toString(arr));
 

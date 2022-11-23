@@ -25,6 +25,11 @@ public class Notes {
         //               - iii. time complexity of all operation - IMP
         //               - iv. before solve any coding question , use pen and paper solve on it.
 
+        // 7. String -
+
+        // 8. Heap - First understand the theory then heapify , build heap , heap sort , insert , delete
+        //         - tech dose heap series is very good to revise fundamentals
+
 
     }
 }

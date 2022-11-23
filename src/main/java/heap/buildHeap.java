@@ -10,7 +10,7 @@ public class buildHeap {
 
         for (int index = n / 2 - 1; index >= 0; index--) {
 
-            heapifyArray.heapify(arr, index);
+            heapifyArray.heapify(arr,n, index);
 
         }
 
