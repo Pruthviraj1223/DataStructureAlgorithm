@@ -9,6 +9,8 @@ public class heapifyArray {
         // you give index, and it will heapify all the children of it recursively.
         // but only its children or subtree, not other children or subtree
 
+        // Rule : given index's right and left subtree or heap should already be heapify.
+
         if (index >= arr.length) {
             return;
         }
