@@ -3,12 +3,12 @@ package heap;
 import java.text.CollationElementIterator;
 import java.util.*;
 
-class sorting implements Comparator<Integer> {
+class sorting implements Comparator<int[]> {
 
     @Override
-    public int compare(Integer o1, Integer o2) {
+    public int compare(int[] o1, int[] o2) {
 
-        return o2 - o1;
+        return o2[1] - o1[1];       // descending on first params
 
     }
 }
@@ -31,6 +31,13 @@ public class comparatorPractice {
         list2.add(new int[]{3,40});
         list2.add(new int[]{2,81});
         list2.add(new int[]{7,47});
+
+        list2.sort(new sorting());
+
+        System.out.println(Arrays.toString(list2.get(0)));
+        System.out.println(Arrays.toString(list2.get(1)));
+        System.out.println(Arrays.toString(list2.get(2)));
+        System.out.println();
 
         list2.sort((a,b) -> a[0]-b[0]);             // based on first param ,  a - b means ascending
         list2.sort((a,b) -> b[0]-a[0]);             // based on first param ,  b - a means descending
