@@ -1,54 +1,54 @@
 package heap;
 
 import java.util.Comparator;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.PriorityQueue;
 
-class minHeapComparator implements Comparator<int[]> {
-
+class maxHeapComparator implements Comparator<int[]> {
     @Override
-    public int compare(int[] b, int[] a) {
-        return a[0] * a[0] + a[1] * a[1] - b[0] * b[0] - b[1] * b[1];
+    public int compare(int[] a, int[] b) {
+        return b[0] * b[0] + b[1] * b[1] - a[0] * a[0] - a[1] * a[1];   // b-a means descending
     }
-
 
 }
 
 public class kClosestPointOrigin {
 
-        public static int[][] closePoint(int[][] nums, int k) {
+    public static int[][] closePoint(int[][] nums, int k) {
 
-            PriorityQueue<int[]> minheap = new PriorityQueue<>(new minHeapComparator());
+        PriorityQueue<int[]> maxheap = new PriorityQueue<>(new maxHeapComparator());
 
-            for (int index = 0; index < nums.length; index++) {
+        for (int index = 0; index < nums.length; index++) {
 
-                minheap.add(nums[index]);
+            maxheap.add(nums[index]);
 
-                if(minheap.size() > k){
-                    minheap.poll();
-                }
+            if (maxheap.size() > k) {
 
-            }
-
-            int[][] res = new int[k][2];
-
-            while (k > 0) {
-
-                var item = minheap.poll();
-
-                res[--k] = item;
+                maxheap.poll();
 
             }
-
-            return res;
 
         }
 
+        // at then end we will have only k int[] in maxHeap.
+
+        int[][] res = new int[k][2];
+
+        while (k > 0) {
+
+            var item = maxheap.poll();
+
+            res[--k] = item;
+
+        }
+
+        return res;
+
+    }
+
     public static void main(String[] args) {
 
-        int[][] points = {{0, 1},
-                {1, 0}};
+        int[][] points = {{1, 3},
+                {2, 3}};
 
         int K = 2;
 
