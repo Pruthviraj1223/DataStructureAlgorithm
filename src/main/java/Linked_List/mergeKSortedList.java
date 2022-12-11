@@ -61,7 +61,7 @@ class mergeK {
 
 }
 
-public class mergeKSSortedList {
+public class mergeKSortedList {
     public static void main(String[] args) {
 
         ListNode[] listNodes = new ListNode[4];
