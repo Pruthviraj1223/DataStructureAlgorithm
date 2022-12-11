@@ -40,6 +40,9 @@ public class kClosestElement {
 
         List<Integer> ans = new ArrayList<>();
 
+        // instead of pair you can use map or int[]
+        // just like we did in any other questions
+
         PriorityQueue<Pair> maxHeap = new PriorityQueue<>((p1, p2) -> p2.getKey().compareTo(p1.getKey()));
 
         for (int index = 0; index < arr.length; index++) {
@@ -69,7 +72,7 @@ public class kClosestElement {
 
     public static void main(String[] args) {
 
-        int arr[] = {1,2,3,4,5};
+        int[] arr = {1,2,3,4,5};
         int X = 3, K = 4;
 
         kCloseElement(arr,K,X);

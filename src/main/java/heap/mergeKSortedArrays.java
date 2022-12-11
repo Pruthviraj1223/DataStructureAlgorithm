@@ -23,6 +23,8 @@ public class mergeKSortedArrays {
 
         List<Integer> result = new ArrayList<>();
 
+        // add first node of every array
+
         for (int index = 0; index < arr.length; index++) {
 
             minHeap.add(new HeapNode(index, 0, arr[index][0]));
@@ -50,9 +52,9 @@ public class mergeKSortedArrays {
 
         // similar approach of merge two sorted list
 
-        int[][] arr = { { 2, 6, 12 },
-                { 1, 9 },
-                { 23, 34, 90, 2000 } };
+        int[][] arr = {{2, 6, 12},
+                {1, 9},
+                {23, 34, 90, 2000}};
 
         mergeKArrays(arr);
 

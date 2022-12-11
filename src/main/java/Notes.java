@@ -31,5 +31,15 @@ public class Notes {
         //         - tech dose heap series is very good to revise fundamentals
 
 
+        // Revision
+
+        // Heap
+        // String
+        // Array
+        // Matrix
+        // Binary search
+        // Stack , Queue
+        // Linked List
+
     }
 }

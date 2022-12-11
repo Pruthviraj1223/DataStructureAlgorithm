@@ -36,7 +36,7 @@ class Solution {
 
             minHeap.add(node);
 
-            max = Math.max(max,  nums.get(index).get(0));
+            max = Math.max(max, nums.get(index).get(0));
 
         }
 
@@ -76,7 +76,7 @@ class Solution {
             }
         }
 
-        return new int[] { start, end };
+        return new int[]{start, end};
 
 
     }
@@ -84,12 +84,12 @@ class Solution {
 
 public class smallestRangeContainingElementsFromKLists {
 
-    static class Node{
+    static class Node {
         int ele; // element itself
         int index; // index of the list
         int next; // next position
 
-        Node(int ele,int index,int next){
+        Node(int ele, int index, int next) {
 
             this.ele = ele;
 
@@ -100,22 +100,22 @@ public class smallestRangeContainingElementsFromKLists {
 
     }
 
-    static void smallestRange(int [][]nums,int k){
+    static void smallestRange(int[][] nums, int k) {
 
-        PriorityQueue<Node> minHeap = new PriorityQueue<>((a,b) -> a.ele - b.ele);
+        PriorityQueue<Node> minHeap = new PriorityQueue<>((a, b) -> a.ele - b.ele);
 
         int range = Integer.MAX_VALUE;
-        int start = -1,end = -1;
+        int start = -1, end = -1;
         int max = Integer.MIN_VALUE;
         int min = Integer.MAX_VALUE;
 
         for (int index = 0; index < k; index++) {
 
-            Node node = new Node(nums[index][0],index,1);
+            Node node = new Node(nums[index][0], index, 1);
 
             minHeap.add(node);
 
-            max = Math.max(max,node.ele);
+            max = Math.max(max, node.ele);
 
         }
 
@@ -123,8 +123,7 @@ public class smallestRangeContainingElementsFromKLists {
 
             Node root = minHeap.poll();
 
-            if (range > max - root.ele + 1)
-            {
+            if (range > max - root.ele + 1) {
 
                 range = max - min + 1;
 
@@ -160,12 +159,14 @@ public class smallestRangeContainingElementsFromKLists {
 
     public static void main(String[] args) {
 
-        int[][] arr = { {4,10,15,24,26 },
-                { 0,9,12,20 },
-                { 5,18,22,30} };
+        int[][] arr = {{4, 10, 15, 24, 26},
+                {0, 9, 12, 20},
+                {5, 18, 22, 30}};
+
+        // structure is similar to merge k sorted array using heap
 
 
-        smallestRange(arr,arr.length);
+        smallestRange(arr, arr.length);
 
     }
 }

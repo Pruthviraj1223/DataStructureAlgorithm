@@ -7,7 +7,6 @@ import java.util.PriorityQueue;
 public class reorganizeString {
     public String reorganizeString(String s) {
 
-
         PriorityQueue<int[]> pq = new PriorityQueue<>((a, b) -> b[1] - a[1]);
 
         Map<Character, Integer> freq = new HashMap<>();
@@ -21,8 +20,10 @@ public class reorganizeString {
             freq.put(c, count);
         }
 
-        for (char c : freq.keySet()) {
-            pq.add(new int[]{c, freq.get(c)});
+        for (char ch : freq.keySet()) {
+
+            pq.add(new int[]{ch, freq.get(ch)});
+
         }
 
         StringBuilder sb = new StringBuilder();
@@ -37,7 +38,9 @@ public class reorganizeString {
                 first[1]--;
 
                 if (first[1] > 0) {
+
                     pq.add(first);
+
                 }
 
             } else {

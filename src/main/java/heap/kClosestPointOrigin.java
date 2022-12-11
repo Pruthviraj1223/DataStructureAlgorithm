@@ -23,7 +23,7 @@ public class kClosestPointOrigin {
 
             if (maxheap.size() > k) {
 
-                maxheap.poll();
+                maxheap.poll();             // maximum distance point will be on top and it will be removed
 
             }
 
