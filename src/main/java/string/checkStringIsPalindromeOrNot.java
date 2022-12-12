@@ -5,11 +5,12 @@ import java.util.HashMap;
 public class checkStringIsPalindromeOrNot {
     public static boolean main(String[] args) {
 
+
         // solution 1
 
-        String s =  "A man, a plan, a canal: Panama";
+        String s = "A man, a plan, a canal: Panama";
 
-        String actual = s.replaceAll("[^A-Za-z0-9]","").toLowerCase();
+        String actual = s.replaceAll("[^A-Za-z0-9]", "").toLowerCase();
 
         String rev = new StringBuilder(actual).reverse().toString();
 
@@ -17,33 +18,38 @@ public class checkStringIsPalindromeOrNot {
 
         // solution 2
 
-        int i=0,j=s.length()-1;
-        char a,b;
+        int i = 0, j = s.length() - 1;
 
-        while(i<=j){
+        char ch1, ch2;
 
-            a = s.charAt(i);
-            b = s.charAt(j);
+        while (i <= j) {
 
-            if(!Character.isLetterOrDigit(a)){
+            ch1 = s.charAt(i);
+            ch2 = s.charAt(j);
+
+            if (!Character.isLetterOrDigit(ch1)) {
+
                 i++;
-            }else if(!Character.isLetterOrDigit(b)){
+
+            } else if (!Character.isLetterOrDigit(ch2)) {
+
                 j--;
-            }else{
 
+            } else {
 
-                if(Character.toLowerCase(a)!=Character.toLowerCase(b)){
+                if (Character.toLowerCase(ch1) != Character.toLowerCase(ch2)) {
                     return false;
                 }
 
-                i++;j--;
+                i++;
+                j--;
 
             }
         }
 
         return true;
 
-
+        // you can use stack approach as well
 
 
     }
