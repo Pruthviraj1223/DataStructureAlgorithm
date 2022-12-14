@@ -8,37 +8,42 @@ public class reverseWordsInString {
 
         // split , reverse , join
 
-        String s = "a good   example";
+        String string = "a good   example";
 
-        String[] arr = s.trim().split(" +");
+        String[] arr = string.trim().split(" +");
 
-        int i = 0, j = arr.length - 1;
+        int start = 0, end = arr.length - 1;
 
-        while (i < j) {
+        while (start < end) {
 
-            String temp = arr[i];
-            arr[i] = arr[j];
-            arr[j] = temp;
+            String temp = arr[start];
+            arr[start] = arr[end];
+            arr[end] = temp;
 
-            i++;
-            j--;
+            start++;
+            end--;
 
         }
-        s = "";
+
+        string = "";
 
         System.out.println(String.join(" ", arr));      // answer
 
+        // watch out 2 pointer solution in leetcode without using trim,concat function
 
-        // watch out 2 pointer solution in leetcode without using trim,concate function
+        // Nice Solution. MUST watch.
 
+        // https://leetcode.com/problems/reverse-words-in-a-string/solutions/47720/clean-java-two-pointers-solution-no-trim-no-split-no-stringbuilder/
 
-        // 3rd solution which use built in function very much
+        // 3rd solution which use built-in function very much
 
-        String[] words = s.trim().split(" +");
+        String[] words = string.trim().split(" +");
 
         Collections.reverse(Arrays.asList(words));
 
         System.out.println(String.join(" ", words));        // answer
+
+        // https://leetcode.com/problems/reverse-words-in-a-string/
 
 
     }
