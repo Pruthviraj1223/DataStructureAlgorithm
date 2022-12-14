@@ -53,5 +53,10 @@ public class checkIfStringIsRotatedByTwoPlaces {
 
     public static void main(String[] args) {
 
+        // GFG : https://www.geeksforgeeks.org/check-string-can-obtained-rotating-another-string-2-places/
+
+        // amazon
+        // azonam
+
     }
 }
