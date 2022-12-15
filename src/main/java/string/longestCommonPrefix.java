@@ -1,6 +1,7 @@
 package string;
 
 import java.util.Arrays;
+import java.util.Objects;
 
 public class longestCommonPrefix {
 
@@ -14,6 +15,12 @@ public class longestCommonPrefix {
 
         int i = 0;
 
+        // here we sort the array by alphabetically
+        // so that's why we are checking to the last element
+        // because if it's match the last element upto i length
+        // then we found our substring or longest prefix
+        // ex : gee, gee, gee, gee, gez Result : ge
+
         while (i < minLen && arr[0].charAt(i) == arr[arr.length - 1].charAt(i)) {
             i++;
         }
@@ -22,6 +29,10 @@ public class longestCommonPrefix {
     }
 
     static String commonUtil(String s1, String s2) {
+
+        if(s1 == null || s2 == null){
+            return "";
+        }
 
         int n1 = s1.length();
         int n2 = s2.length();
@@ -42,26 +53,35 @@ public class longestCommonPrefix {
 
         return result.toString();
 
-
     }
 
     static String longestPrefixWordByWord(String[] arr) {
 
-        String prefix = arr[0];
+        // w1, w2, w3 , w4, w5
+        // w1 + w2 = prefix1
+        // prefix1  + w3 = prefix2
+        // prefix2 + w4 = prefix3
+        // prefix3 + w5 = longest prefix (answer)
+
+        String longestPrefix = arr[0];
 
         for (int index = 1; index < arr.length; index++) {
 
-            prefix = commonUtil(prefix, arr[index]);
+            longestPrefix = commonUtil(longestPrefix, arr[index]);
 
         }
 
-        return prefix;
+        return longestPrefix;
 
     }
 
-    static String longestPrefixDivideConquer(String[] arr, int low, int high) {
+    static String longestPrefixMergeSort(String[] arr, int low, int high) {
 
-        if (arr[low] == arr[high]) {
+        // exact like merge sort
+        // instead of merging arr1 and arr2 into main array
+        // we are using common util
+
+        if (Objects.equals(arr[low], arr[high])) {
             return arr[low];
         }
 
@@ -69,9 +89,9 @@ public class longestCommonPrefix {
 
             int mid = low + (high-low)/2;
 
-            String s1 = longestPrefixDivideConquer(arr,low,mid);
+            String s1 = longestPrefixMergeSort(arr,low,mid);
 
-            String s2 = longestPrefixDivideConquer(arr,mid+1,high);
+            String s2 = longestPrefixMergeSort(arr,mid+1,high);
 
             return commonUtil(s1,s2);
 
@@ -135,7 +155,7 @@ public class longestCommonPrefix {
 
         System.out.println(prefix);
 
-        prefix = longestPrefixDivideConquer(arr,0,arr.length-1);
+        prefix = longestPrefixMergeSort(arr,0,arr.length-1);
 
         System.out.println(prefix);
 
