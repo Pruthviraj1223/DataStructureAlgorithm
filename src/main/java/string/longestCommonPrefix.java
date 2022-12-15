@@ -81,6 +81,10 @@ public class longestCommonPrefix {
         // instead of merging arr1 and arr2 into main array
         // we are using common util
 
+        // here we are returning common util s1 and s2 , and in merge sort we are not returning anything.
+        // In merge sort we are persisting result in arr3
+        // here we are just returning result of prefix
+
         if (Objects.equals(arr[low], arr[high])) {
             return arr[low];
         }
