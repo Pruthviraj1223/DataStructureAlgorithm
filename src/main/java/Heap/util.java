@@ -1,4 +1,4 @@
-package heap;
+package Heap;
 
 public class util {
     public static void swap(int[] arr, int largest, int index) {

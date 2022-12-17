@@ -1,4 +1,4 @@
-package heap;
+package Heap;
 
 public class sumOfElementBetweenK1andK2 {
     public static void main(String[] args) {

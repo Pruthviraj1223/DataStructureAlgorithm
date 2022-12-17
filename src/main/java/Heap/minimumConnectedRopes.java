@@ -1,4 +1,4 @@
-package heap;
+package Heap;
 
 public class minimumConnectedRopes {
     public static void main(String[] args) {

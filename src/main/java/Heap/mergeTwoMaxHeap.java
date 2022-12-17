@@ -1,4 +1,4 @@
-package heap;
+package Heap;
 
 public class mergeTwoMaxHeap {
     public static void main(String[] args) {

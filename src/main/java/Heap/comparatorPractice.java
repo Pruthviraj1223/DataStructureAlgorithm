@@ -1,6 +1,5 @@
-package heap;
+package Heap;
 
-import java.text.CollationElementIterator;
 import java.util.*;
 
 class sorting implements Comparator<int[]> {
