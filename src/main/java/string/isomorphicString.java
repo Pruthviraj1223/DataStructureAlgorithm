@@ -24,7 +24,7 @@ public class isomorphicString {
 
             } else if (!mapper.containsValue(s2.charAt(index))) {       // here we are creating new entry , before that will check that s2 value must not be present in map . If it is present and also not mapped with s1 key in map then return false.
 
-                mapper.put(s1.charAt(index), s2.charAt(index));
+                mapper.put(s1.charAt(index), s2.charAt(index));         // this if condition represent a good quality code and good thinking
 
             } else {
 
