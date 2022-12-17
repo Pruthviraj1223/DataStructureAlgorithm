@@ -6,11 +6,11 @@ public class checkIfStringIsRotatedByTwoPlaces {
 
         int len = s1.length();
 
-        String clock = "" + s1.substring(len-k,len) + s1.substring(0,len);
+        String anti = "" + s1.substring(len-k,len) + s1.substring(0,len-k);
 
-        String anti = "" + s1.substring(k) + s1.substring(0,k);
+        String clock = "" + s1.substring(k) + s1.substring(0,k);
 
-        return clock.equalsIgnoreCase(s2) || anti.equalsIgnoreCase(s2);
+        return anti.equalsIgnoreCase(s2) || clock.equalsIgnoreCase(s2);
 
     }
 
