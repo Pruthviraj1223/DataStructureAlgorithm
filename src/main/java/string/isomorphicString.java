@@ -16,13 +16,13 @@ public class isomorphicString {
 
             if (mapper.containsKey(s1.charAt(index))) {
 
-                if (s2.charAt(index) != mapper.get(s1.charAt(index))) {
+                if (s2.charAt(index) != mapper.get(s1.charAt(index))) {     // we are checking s1's existing key, and it's value with current s2 value
 
                     return false;
 
                 }
 
-            } else if (!mapper.containsValue(s2.charAt(index))) {
+            } else if (!mapper.containsValue(s2.charAt(index))) {       // here we are creating new entry , before that will check that s2 value must not be present in map . If it is present and also not mapped with s1 key in map then return false.
 
                 mapper.put(s1.charAt(index), s2.charAt(index));
 
