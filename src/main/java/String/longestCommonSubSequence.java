@@ -1,6 +1,6 @@
 package String;
 
-public class longestCommonSubsequence {
+public class longestCommonSubSequence {
 
     public static int LCS(String text1, String text2) {
 
@@ -18,7 +18,7 @@ public class longestCommonSubsequence {
 
             for (int j = 1; j <= n; j++) {
 
-               if (str1[i - 1] == str2[j - 1]) {
+                if (str1[i - 1] == str2[j - 1]) {
 
                     mat[i][j] = mat[i - 1][j - 1] + 1;
 
@@ -36,6 +36,8 @@ public class longestCommonSubsequence {
     public static void main(String[] args) {
 
         LCS("ABCDGH", "AEDFHR");
+
+        // https://leetcode.com/problems/longest-common-subsequence/
 
         // watch out recursive solution for practice
 
