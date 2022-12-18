@@ -13,6 +13,8 @@ public class customerWhoCouldNotGetComputer {
 
         int occupied = 0; // To keep track of occupied computers
 
+        // Note : Here we have used 0 1 2 code based on our need.
+
         for (int index = 0; index < seq.length; index++) {
 
             int ind = seq[index] - 'A';
