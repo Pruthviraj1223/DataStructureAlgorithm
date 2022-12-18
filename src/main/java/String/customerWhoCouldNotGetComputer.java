@@ -57,5 +57,7 @@ public class customerWhoCouldNotGetComputer {
 
         // nice thinking , not specific to string but a god one
 
+        // good example of simulation
+
     }
 }
