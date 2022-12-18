@@ -1,8 +1,7 @@
 package String;
 
 public class countAndSay {
-
-    public String countAndSay(int n) {
+    public static String countAndSay(int n) {
 
         String s = "1";
 
@@ -18,12 +17,12 @@ public class countAndSay {
 
     }
 
-    public String countIndex(String s) {
+    public static String countIndex(String s) {
 
         int index = 0;
         int count;
 
-        StringBuilder sb = new StringBuilder();
+        StringBuilder result = new StringBuilder();
 
         while (index < s.length()) {
 
@@ -38,12 +37,22 @@ public class countAndSay {
 
             }
 
-            sb.append(count);
-            sb.append(ch);
+            result.append(count);       // first append the count of character
+
+            result.append(ch);          // then append the character
 
         }
 
-        return sb.toString();
+        return result.toString();
+
+    }
+
+    public static void main(String[] args) {
+
+        countAndSay(4);
+
+        // https://leetcode.com/problems/count-and-say/
+        // ex : 1211
 
     }
 
