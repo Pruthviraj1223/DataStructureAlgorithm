@@ -2,7 +2,6 @@ package String;
 
 public class minimumNumberOfFlipsBinaryString {
 
-
     static char flip(Character ch) {
 
         return (ch == '0') ? '1' : '0';
@@ -31,6 +30,7 @@ public class minimumNumberOfFlipsBinaryString {
 
     public static void main(String[] args) {
 
+        // https://www.geeksforgeeks.org/number-flips-make-binary-string-alternate/
 
         var ans = Math.min(getFlippedCount("0001010111",'0'),getFlippedCount("0001010111",'1'));
 
