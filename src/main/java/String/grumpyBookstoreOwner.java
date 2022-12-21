@@ -18,29 +18,31 @@ public class grumpyBookstoreOwner {
             }
         }
 
-        int maxSum = 0;
-        int currSum = 0;
+        int maxCustomer = 0;
+        int currCustomer = 0;
         int left = 0;
 
         // now we'll check for windows(minutes) using secret technique
         // it's simple you add from right and subtract from left
         // additional condition is only is that , owner must be grumpy
 
+        // NOTE : below code is just sliding window problem only added condition is owner must be grumpy
+
         for (int right = 0; right < customers.length; right++) {
 
             if (grumpy[right] == 1) {
 
-                currSum += customers[right];
+                currCustomer += customers[right];
 
             }
 
-            if (right - left + 1 >= minutes) {
+            if (right - left + 1 >= minutes) {                          /// this is for the first window
 
-                maxSum = Math.max(maxSum, currSum);
+                maxCustomer = Math.max(maxCustomer, currCustomer);
 
                 if (grumpy[left] == 1) {
 
-                    currSum -= customers[left];
+                    currCustomer -= customers[left];
 
                 }
 
@@ -48,10 +50,15 @@ public class grumpyBookstoreOwner {
             }
         }
 
-        return satisfied + maxSum;
+        return satisfied + maxCustomer;
     }
 
     public static void main(String[] args) {
+
+        // https://leetcode.com/problems/grumpy-bookstore-owner/
+
+        //            Input: customers = [1,0,1,2,1,1,7,5],
+        //                      grumpy = [0,1,0,1,0,1,0,1], minutes = 3
 
     }
 }
