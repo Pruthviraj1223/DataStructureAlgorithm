@@ -19,8 +19,11 @@ class Solution {
         }
 
         int left = 0;
+
         int minLeft = 0;
+
         int minLen = s.length() + 1;
+
         int length = 0;
 
 //        Input: s = "ADOBECODEBANC", t = "ABC"
@@ -32,15 +35,19 @@ class Solution {
 
                 count.put(s.charAt(right), count.get(s.charAt(right)) - 1);
 
-                if (count.get(s.charAt(right)) >= 0) {      // if count goes less than zero , its duplicate
+                if (count.get(s.charAt(right)) >= 0) {                  // if count goes less than zero , its duplicate
+
                     length++;
+
                 }
+
+                // once length == t.length() it means we have qualified for the window
 
                 // (length == t.length()) :  why this condition because length keep track of that , do we have removed important character or not , if yes then do length-- and break the loop else it continues to shrink the left pointer
 
                 while (length == t.length()) {
 
-                    if (right - left + 1 < minLen) {        // for minLeft and minLen
+                    if (right - left + 1 < minLen) {        // update minLeft and minLen
                         minLeft = left;
                         minLen = right - left + 1;
                     }
@@ -52,13 +59,14 @@ class Solution {
 
                         count.put(s.charAt(left), count.get(s.charAt(left)) + 1);
 
-                        if (count.get(s.charAt(left)) > 0) {    // even after adding one it is zero or less than then it's duplicate character , let left be ++.
+                        if (count.get(s.charAt(left)) > 0) {    // if it is > 0 then means we are ready remove actual important character . even after adding one it is zero or less than then it's duplicate character , let left be ++ and shrink the left pointer because it shows that we can still minimize our window string.
 
-                            length--;
+                            length--;                           // means we have removed important character , so let's do length-- and break the loop
+
                         }
                     }
 
-                    left++;                     // this is for shrinking left towards right
+                    left++;                     // this is for shrinking left towards right         // garbage character will be shrink down by thus left pointer
 
                 }
             }
@@ -76,6 +84,12 @@ class Solution {
 
 public class minimumWindowsSubString {
     public static void main(String[] args) {
+
+        //https://leetcode.com/problems/minimum-window-substring/
+
+        // Nice question and coding
+
         new Solution().minWindow("ADOBECODEBANC", "ABC");
+
     }
 }
