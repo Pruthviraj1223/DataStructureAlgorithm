@@ -7,7 +7,8 @@ public class minimumNumberOfBracketReversal {
     static int reversalUsingStack(String s) {
 
         Stack<Character> stack = new Stack<>();
-        int ans = 0;
+
+        int result = 0;
 
         for (int index = 0; index < s.length(); index++) {
 
@@ -22,16 +23,18 @@ public class minimumNumberOfBracketReversal {
                     stack.pop();
 
                 } else {
-                    ans++;
+
+                    result++;
+
                     stack.push('{');
 
                 }
             }
         }
 
-        ans += stack.size() / 2;
+        result += stack.size() / 2;
 
-        return ans;
+        return result;
 
     }
 
@@ -108,8 +111,11 @@ public class minimumNumberOfBracketReversal {
 
     public int minSwaps(String s) {
 
-        int ans = 0;
+        int result = 0;
+
         int temp = 0;
+
+        //Input: s = "]]][[["
 
         for (int index = 0; index < s.length(); index++) {
 
@@ -125,26 +131,22 @@ public class minimumNumberOfBracketReversal {
 
                 } else {
 
-                    ans++;
+                    result++;
 
                 }
             }
         }
 
-        return (ans + 1) / 2;
+        return (result + 1) / 2;        // why divide by 2 ?
     }
 
 
     public static void main(String[] args) {
 
-        //min number of bracket need to reverse to make balanced sting
+        // https://leetcode.com/problems/minimum-number-of-swaps-to-make-the-string-balanced/submissions/
 
-        // leetcode version is added . It's bit different
+        // only focus on this one question.
 
-        // similar other leetcode question is added.
-
-        // THIS 4 is different version so understand question and then look solution accordingly
-
-        // but this are similar questions
+        // minSwaps
     }
 }
