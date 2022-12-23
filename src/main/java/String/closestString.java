@@ -6,9 +6,11 @@ public class closestString {
 
         int n = s.length();
 
-        int[] ans = new int[n];
+        int[] result = new int[n];
 
         int prev = Integer.MIN_VALUE / 2;           // for overflow condition
+
+        // from left to right
 
         for (int index = 0; index < n; ++index) {
 
@@ -18,11 +20,13 @@ public class closestString {
 
             }
 
-            ans[index] = index - prev;
+            result[index] = index - prev;
 
         }
 
         prev = Integer.MAX_VALUE / 2;
+
+        // from right to left
 
         for (int index = n - 1; index >= 0; --index) {
 
@@ -32,21 +36,18 @@ public class closestString {
 
             }
 
-            ans[index] = Math.min(ans[index], prev - index);
+            result[index] = Math.min(result[index], prev - index);
 
         }
 
-        return ans;
+        return result;
     }
 
     public static void main(String[] args) {
 
-        // this is leetcode
-        // https://leetcode.com/problems/determine-if-two-strings-are-close/
+        // how much given character is closed to every character in string
 
-        // divisible y 7
-        // encrypt the string -2
-        // just read out the solution
+        // https://www.geeksforgeeks.org/shortest-distance-to-every-other-character-from-given-character/
 
     }
 }
