@@ -8,7 +8,7 @@ public class textJustification {
     static int findRight(int left, String[] words, int maxWidth) {
 
         // check length < maxWidth and increase right
-        // sum + 1 bcoz for space
+        // sum + 1 because for space between two words
 
         int right = left;
 
@@ -39,23 +39,23 @@ public class textJustification {
 
         int totalWord = right - left;               // how many word between left and right. It will be one less.
 
-        int numSpace = maxWidth - wordsLength(left, right, words);      // how many spaces are left
+        int totalSpace = maxWidth - wordsLength(left, right, words);      // how many spaces are left
 
-        String space = isLastLine ? " " : blank(numSpace / totalWord);      // evenly space that we need to append after every word
+        String space = isLastLine ? " " : blankString(totalSpace / totalWord);      // evenly space that we need to append after every word
 
-        int remainder = isLastLine ? 0 : (numSpace % totalWord);            // for left justification
+        int remainder = isLastLine ? 0 : (totalSpace % totalWord);            // for left justification
 
-        StringBuilder res = new StringBuilder();
+        StringBuilder result = new StringBuilder();
 
         for (int index = left; index <= right; index++) {
 
-                 res.append(words[index])                           // word
+                 result.append(words[index])                           // word
                     .append(space)                                  // evenly space
                     .append(remainder-- > 0 ? " " : "");            // left justification. else move ahead.
 
         }
 
-        return padResult(res.toString().trim(), maxWidth);
+        return padResult(result.toString().trim(), maxWidth);
 
     }
 
@@ -79,19 +79,17 @@ public class textJustification {
 
         int len = s.length();
 
-        return s + (blank(maxWidth - len));
-
+        return s + (blankString(maxWidth - len));
 
     }
 
     // return empty string of given length
     // remember to replace '\0' character
-    static String blank(int width) {
+    static String blankString(int width) {
 
         return new String(new char[width]).replace('\0', ' ');
 
     }
-
 
     public static List<String> fullJustify(String[] words, int maxWidth) {
 
@@ -123,6 +121,8 @@ public class textJustification {
         var words = new String[]{"This", "is", "an", "example", "of", "text", "justification."};
 
         fullJustify(words,16);
+
+        // https://leetcode.com/problems/text-justification/description/
 
     }
 }
