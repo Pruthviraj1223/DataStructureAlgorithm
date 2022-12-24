@@ -2,23 +2,21 @@ package String;
 
 public class KMP_LPS {
 
-    void KMPSearch(String pat, String txt) {
+    void KMPSearch(String pattern, String text) {
 
-        int M = pat.length();
+        int M = pattern.length();
 
-        int N = txt.length();
+        int N = text.length();
 
-        int[] lps = new int[M];
+        int[] LPS = longestPrefix(pattern);
 
         int j = 0; // index for pat[]
-
-        longestPrefix(pat);
 
         int i = 0;
 
         while ((N - i) >= (M - j)) {
 
-            if (pat.charAt(j) == txt.charAt(i)) {
+            if (pattern.charAt(j) == text.charAt(i)) {
 
                 j++;
 
@@ -27,32 +25,33 @@ public class KMP_LPS {
 
             if (j == M) {
 
-                System.out.println("Found pattern "
-                        + "at index " + (i - j));
+                System.out.println("Found pattern " + "at index " + (i - j));
 
-                j = lps[j - 1];
+                j = LPS[j - 1];
 
-            } else if (i < N && pat.charAt(j) != txt.charAt(i)) {
+            } else if (i < N && pattern.charAt(j) != text.charAt(i)) {       // if char dont match ,then backtrack
 
-                if (j != 0)
+                if (j != 0) {
 
-                    j = lps[j - 1];
+                    j = LPS[j - 1];                                 // backtrack using LPS and at that you don't increase the i.
 
-                else
+                } else {
 
-                    i = i + 1;
+                    i = i + 1;                                        // it means j = 0 , you can not backtrack anymore
+
+                }
             }
         }
     }
 
-    public String longestPrefix(String s) {
+    public int[] longestPrefix(String s) {
 
         // abcdefabclpoabcbczetabcde
         // all scenario will be cover in this example
 
         int n = s.length();
 
-        int len = 0;
+        int position = 0;
 
         int index = 1;
 
@@ -60,19 +59,19 @@ public class KMP_LPS {
 
         while (index < n) {
 
-            if (s.charAt(index) == s.charAt(len)) {
+            if (s.charAt(index) == s.charAt(position)) {
 
-                len++;
+                position++;
 
-                longestPrefixSuffix[index] = len;
+                longestPrefixSuffix[index] = position;
 
                 index++;
 
             } else {
 
-                if (len != 0) {     // backtrack len
+                if (position != 0) {     // backtrack len           // ex : 'abc'zisdufdj'abcbc'sap
 
-                    len = longestPrefixSuffix[len - 1];
+                    position = longestPrefixSuffix[position - 1];       // do not increase index
 
                 } else {        // len == 0
 
@@ -82,12 +81,13 @@ public class KMP_LPS {
             }
         }
 
-        return s.substring(0, longestPrefixSuffix[n - 1]);
-
+        return longestPrefixSuffix;
 
     }
 
     public static void main(String[] args) {
+
+        // Abdul bari to understand the concept
 
     }
 }
