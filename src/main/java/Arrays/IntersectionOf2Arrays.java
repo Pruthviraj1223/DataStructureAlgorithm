@@ -33,38 +33,31 @@ public class IntersectionOf2Arrays {
 
             // leetcode question
 
+            // union and intersection on sorted array is easy.
 
             // union is not tough // go to geeks for geeks if you want
+
+            // below is for unsorted
 
             Set<Integer> set1 = new HashSet<>();
             Set<Integer> set2 = new HashSet<>();
 
-            for(int i:nums1){
-
-                set1.add(i);
-
+            for (int num : nums1) {
+                set1.add(num);
             }
 
-
-
-            for(int i:nums2){
-
-
-                if(set1.contains(i)){
-                    set2.add(i);
+            for (int num : nums2) {
+                if (set1.contains(num)) {
+                    set2.add(num);
                 }
-
             }
 
+            int[] nums3 = new int[set2.size()];
 
-            int []nums3 = new int[set2.size()];
+            int index = 0;
 
-            int k=0;
-            for(Integer i:set2){
-
-
-                nums3[k++] = i;
-
+            for (Integer num : set2) {
+                nums3[index++] = num;
             }
 
             return nums3;
