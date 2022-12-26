@@ -6,10 +6,9 @@ class NumArray {
 
     public NumArray(int[] nums) {
 
-        for(int index=1;index<nums.length;index++){
+        for (int index = 1; index < nums.length; index++) {
 
-            nums[index] += nums[index-1];
-
+            nums[index] += nums[index - 1];
 
         }
 
@@ -19,14 +18,13 @@ class NumArray {
 
     public int sumRange(int left, int right) {
 
-        if(left==0){
+        if (left == 0) {
 
             return nums[right];
 
         }
 
-        return nums[right] - nums[left-1];
-
+        return nums[right] - nums[left - 1];
 
     }
 }
@@ -37,7 +35,7 @@ class NumArray {
  * int param_1 = obj.sumRange(left,right);
  */
 
-public class rangeSumQuery1Immuatable {
+public class rangeSumQuery1 {
     public static void main(String[] args) {
 
     }
