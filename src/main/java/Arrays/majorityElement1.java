@@ -31,6 +31,8 @@ class solution6 {
 
         }
 
+        // for safer side you can check that count is greater than n/2 size or not.
+
         return majorityElement;
 
     }
