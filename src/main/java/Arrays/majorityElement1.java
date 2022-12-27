@@ -1,46 +1,46 @@
 package Arrays;
 
-class solution6{
+class solution6 {
 
-    void majorityElement(int []nums){
+    int majorityElement(int[] nums) {
 
-        // we can sort and then chek
+        // we can sort and then check
         // we can use map and store the count
 
         int count = 0;
 
         int majorityElement = -1;
 
-        for(int num:nums){
+        for (int num : nums) {
 
-            if (count==0){
+            if (count == 0) {
 
                 majorityElement = num;
 
             }
 
-            if (num == majorityElement)
-            {
-                count +=1;
-            }
-            else{
+            if (num == majorityElement) {
 
-                count-=1;
+                count += 1;
+
+            } else {
+
+                count -= 1;
 
             }
 
         }
 
-//        return majorityElement;
-
+        return majorityElement;
 
     }
-
 }
 
 public class majorityElement1 {
 
     public static void main(String[] args) {
+
+        //https://leetcode.com/problems/majority-element/
 
     }
 }
