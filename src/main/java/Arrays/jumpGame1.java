@@ -1,21 +1,19 @@
 package Arrays;
 
 public class jumpGame1 {
-
-
-    boolean canJump(int[] nums){
+    boolean canJump(int[] nums) {
 
         int max = 0;
 
-        for(int i=0;i<nums.length;i++){
+        for (int index = 0; index < nums.length; index++) {
 
-            if(i>max){
+            if (index > max) {      // it means we have reached to that position by walking , not by jumping.
 
                 return false;
 
             }
 
-            max = Math.max(i+nums[i],max);
+            max = Math.max(index + nums[index], max);
 
         }
 
@@ -45,7 +43,8 @@ public class jumpGame1 {
 
     public static void main(String[] args) {
 
-//        new jumpGame1().canJump();
+
+        // https://leetcode.com/problems/jump-game/description/
 
 
     }
