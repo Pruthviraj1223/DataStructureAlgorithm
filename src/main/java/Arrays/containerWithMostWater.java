@@ -1,34 +1,31 @@
 package Arrays;
 
 
-class container{
+class container {
 
     public int maxArea(int[] height) {
 
-        if (height.length==0){
+        if (height.length == 0) {
 
             return 0;
 
         }
 
-        int left =0;
-        int right = height.length-1;
+        int left = 0;
 
-        int area = 0;
+        int right = height.length - 1;
 
-        while(left<right){
+        int maxArea = 0;
 
+        while (left < right) {
 
-            area = Math.max(area,(right-left) * Math.min(height[left],height[right]));
+            maxArea = Math.max(maxArea, (right - left) * Math.min(height[left], height[right]));      // width * height
 
-
-
-            if (height[left]<height[right]){
-
+            if (height[left] < height[right]) {
 
                 left = left + 1;
 
-            }else{
+            } else {
 
                 right = right - 1;
 
@@ -36,7 +33,7 @@ class container{
 
         }
 
-        return area;
+        return maxArea;
 
     }
 
@@ -45,6 +42,8 @@ class container{
 public class containerWithMostWater {
 
     public static void main(String[] args) {
+
+        // https://leetcode.com/problems/container-with-most-water/
 
     }
 }
