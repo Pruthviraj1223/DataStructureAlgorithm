@@ -1,9 +1,9 @@
 package Arrays;
 
-class Solution2 {
+class Product {
     public int maxProduct(int[] nums) {
 
-        if (nums == null || nums.length == 1) {
+        if (nums.length == 1) {
 
             return nums[0];
 
@@ -14,9 +14,9 @@ class Solution2 {
         int rightSum = 0;
         int n = nums.length;
 
+        //[2,-3,20,1,2,-4]
 
         for (int index = 0; index < nums.length; index++) {
-
 
             leftSum = (leftSum == 0 ? 1 : leftSum) * nums[index];
 
@@ -35,5 +35,10 @@ class Solution2 {
 
 public class MaximumProductSubarray {
 
+    public static void main(String[] args) {
+
+        //https://leetcode.com/problems/maximum-product-subarray/
+
+    }
 
 }
