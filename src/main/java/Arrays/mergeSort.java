@@ -4,7 +4,6 @@ import java.util.Arrays;
 
 class mergeArrays {
 
-
     public void merge(int[] arr, int left, int mid, int right) {
 
         int[] Left = Arrays.copyOfRange(arr, left, mid + 1);
@@ -32,17 +31,13 @@ class mergeArrays {
 
         }
 
-
         for (; j < Right.length; j++) {
 
             arr[k++] = Right[j];
 
         }
 
-
-
     }
-
 
     public void mergeSort(int[] arr, int left, int right) {
 
@@ -57,11 +52,7 @@ class mergeArrays {
             merge(arr, left, mid, right);
 
         }
-
-
     }
-
-
 }
 
 
