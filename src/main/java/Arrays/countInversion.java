@@ -78,6 +78,7 @@ public class countInversion {
 
     public static void main(String[] args) {
 
+        //https://www.geeksforgeeks.org/inversion-count-in-array-using-merge-sort/
 
         new MergeSortAlgorithm().mergeSort(new int[]{8, 4, 2, 1}, 0, 3);
 
