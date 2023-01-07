@@ -3,29 +3,9 @@ package Arrays;
 class Solution4 {
     public int findDuplicate(int[] nums) {
 
-        // 1 3 4 2 2
-
-        // 3 1 4 2 2
-
-        // 2 1 4 3 2
-
-        // 4 1 2 3 2
-
-        // 2 1 2 3 4
-
-//        public int findDuplicate(int[] nums) {
-//            while (nums[0] != nums[nums[0]]) {
-//                int nxt = nums[nums[0]];
-//                nums[nums[0]] = nums[0];
-//                nums[0] = nxt;
-//            }
-//            return nums[0];
-//        }
-
-
         if (nums == null || nums.length == 1) {
 
-            return nums[0];
+            return 0;
 
         }
 
@@ -48,9 +28,12 @@ class Solution4 {
 
         return duplicate;
 
-
     }
 }
 
 public class FindDuplicate {
+
+    public static void main(String[] args) {
+        //https://leetcode.com/problems/find-the-duplicate-number/submissions/873453283/
+    }
 }
