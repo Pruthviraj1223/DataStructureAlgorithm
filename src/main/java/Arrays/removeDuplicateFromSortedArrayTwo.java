@@ -1,23 +1,26 @@
 package Arrays;
 
 public class removeDuplicateFromSortedArrayTwo {
-
     public int removeDuplicates(int[] nums) {
 
-        int i=0;
+//         to understand this , first understand previous question removeDuplicateFromSortedArray
+
+//        https://leetcode.com/problems/remove-duplicates-from-sorted-array-ii/
+//        Input: nums = [0,0,1,1,1,1,2,3,3]
+
+        int index = 0;
         int k = 2; // k is for general
-        for(int num:nums){
 
-            if(i < k || num > nums[i-k]){
+        for (int num : nums) {
 
-                nums[i++] = num;
+            if (index < k || num > nums[index - k]) {
+
+                nums[index++] = num;
 
             }
-
         }
 
-        return i;
-
+        return index;
 
     }
 }
