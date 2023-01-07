@@ -1,9 +1,8 @@
 package Arrays;
 
-
 // try out in leetcode first
 
-class solution5 {
+class missingAndDuplicate {
 
     public void duplicate(int[] nums) {
 
@@ -24,7 +23,6 @@ class solution5 {
                 index++;
 
             }
-
         }
 
         for (int i = 0; i < nums.length; i++) {
@@ -33,8 +31,10 @@ class solution5 {
 
                 System.out.println(nums[i]);
 
-                // return nums[i]
+                // i + 1 will be missing element
+                // nums[i] will be duplicate element
 
+                // return nums[i]
 
             }
 
@@ -50,6 +50,6 @@ public class findMissingDuplicateAdityaVerma {
 
         int[] nums = new int[]{3, 1, 3, 4, 2};
 
-        new solution5().duplicate(nums);
+        new missingAndDuplicate().duplicate(nums);
     }
 }
