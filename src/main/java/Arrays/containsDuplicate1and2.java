@@ -3,9 +3,9 @@ package Arrays;
 
 import java.util.HashMap;
 
-class duplicate{
+class duplicate {
 
-    public boolean check(int []nums,int k){
+    public boolean check(int[] nums, int k) {
 
         // leetcode
         // contains duplicate 1 and 2
@@ -13,35 +13,22 @@ class duplicate{
 
         int n = nums.length;
 
-
-        if (n==0 ){
-
+        if (n == 0) {
             return false;
-
         }
 
+        HashMap<Integer, Integer> check = new HashMap<>();
 
-        HashMap<Integer,Integer> map = new HashMap<Integer,Integer>();
+        for (int index = 0; index < n; index++) {
 
-
-
-        for(int index=0;index<n;index++){
-
-
-            if(map.containsKey(nums[index]) && Math.abs(index - map.get(nums[index])) <= k){
-
+            if (check.containsKey(nums[index]) && Math.abs(index - check.get(nums[index])) <= k) {
                 return true;
-
             }
 
-            map.put(nums[index],index);
-
-
+            check.put(nums[index], index);
         }
 
-
         return false;
-
     }
 
 }
@@ -49,8 +36,7 @@ class duplicate{
 public class containsDuplicate1and2 {
     public static void main(String[] args) {
 
-
-        new duplicate().check(new int[]{8,7,15,1,6,1,9,15},1);
+        new duplicate().check(new int[]{8, 7, 15, 1, 6, 1, 9, 15}, 1);
 
     }
 }
