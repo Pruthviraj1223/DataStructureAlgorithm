@@ -1,9 +1,9 @@
 package Arrays;
 
 
-class MinSwap{
+class MinSwap {
 
-    public void check(int []nums,int k){
+    public void check(int[] nums, int k) {
 
         /// GFG
 
@@ -15,10 +15,9 @@ class MinSwap{
 
         int n = nums.length;
 
-        for (int num : nums){
+        for (int num : nums) {
 
-            if (num <= k)
-            {
+            if (num <= k) {
                 ++count;
 
             }
@@ -26,9 +25,9 @@ class MinSwap{
 
         int bad = 0;
 
-        for (int index = 0; index < count; ++index)
-        {
-            if (nums[index] > k){
+        for (int index = 0; index < count; ++index) {
+
+            if (nums[index] > k) {
 
                 ++bad;
             }
@@ -39,14 +38,12 @@ class MinSwap{
 
         for (int i = 0, j = count; j < n; ++i, ++j) {
 
-            if (nums[i] > k)
-            {
+            if (nums[i] > k) {
                 --bad;
 
             }
 
-            if (nums[j] > k)
-            {
+            if (nums[j] > k) {
                 ++bad;
             }
 
@@ -60,37 +57,34 @@ class MinSwap{
 
         // 2nd approach is easy
 
-        int window =0;
+        int window = 0;
 
-        int count2 =0;
+        int count2 = 0;
 
-        for (int index=0;index<nums.length;index++){
+        for (int index = 0; index < nums.length; index++) {
 
-            if (nums[index]>k){
+            if (nums[index] > k) {
 
                 window++;
 
-            } else if (window>0) {
+            } else if (window > 0) {
 
+                // swap
 
                 int temp = nums[index];
 
-                nums[index] = nums[index-window];
+                nums[index] = nums[index - window];
 
-                nums[index-window] = temp;
+                nums[index - window] = temp;
 
                 count2++;
-
 
             }
 
         }
 
         System.out.println("ans 2 = " + count2);
-
-
     }
-
 
 }
 
@@ -99,7 +93,9 @@ public class MinimumSwapsRequiredBringElementsLessThanKTogether {
 
     public static void main(String[] args) {
 
-        new MinSwap().check(new int[]{2, 1, 5, 6, 3},3);
+        new MinSwap().check(new int[]{2, 1, 5, 6, 3}, 3);
+
+        //https://www.geeksforgeeks.org/minimum-swaps-required-bring-elements-less-equal-k-together/
 
     }
 }
