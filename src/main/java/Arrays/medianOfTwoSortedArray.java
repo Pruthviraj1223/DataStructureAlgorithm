@@ -77,5 +77,8 @@ public class medianOfTwoSortedArray {
 
         new median().findMedian(new int[]{1, 2}, new int[]{3, 4});
 
+        // for better understand watch take u forward video
+        // understand the concept of cut1,cut2 and left,left2,right1,right2 and all conditions
+
     }
 }
