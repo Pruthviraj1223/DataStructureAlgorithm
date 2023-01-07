@@ -1,4 +1,4 @@
-package Arrays;
+package Arrays.SlidingWindow;
 
 class SubarrayGraterValue {
     public int minSubArrayLen(int x, int[] arr) {
@@ -34,8 +34,9 @@ class SubarrayGraterValue {
     }
 }
 
-public class subarrayWithGreaterValue {
+public class minimumSizeSubArraySum {
     public static void main(String[] args) {
 
+//        https://leetcode.com/problems/minimum-size-subarray-sum/
     }
 }

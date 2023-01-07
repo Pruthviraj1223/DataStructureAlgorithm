@@ -1,4 +1,4 @@
-package Arrays;
+package Arrays.SlidingWindow;
 
 class SubarrayProduct {
     public int numSubarrayProductLessThanK(int[] nums, int k) {
@@ -45,6 +45,8 @@ public class subarrayProductLessThanK {
     public static void main(String[] args) {
 
         new SubarrayProduct().numSubarrayProductLessThanK(new int[]{10, 5, 2, 6}, 100);
+
+        //https://leetcode.com/problems/subarray-product-less-than-k/
 
     }
 }
