@@ -1,4 +1,4 @@
-package Arrays;
+package Arrays.SlidingWindow;
 
 import java.util.LinkedList;
 import java.util.Queue;
@@ -6,7 +6,6 @@ import java.util.Queue;
 class Negative {
 
     public void NegativeEleSizeK(int[] nums, int k) {
-
 
         Queue<Integer> queue = new LinkedList<>();
 
@@ -55,6 +54,7 @@ class Negative {
         if (queue.isEmpty()) {
 
             System.out.println("0");
+
         } else {
 
             System.out.println("ans -- " + nums[queue.peek()]);
@@ -70,6 +70,8 @@ public class FirstNegativeElementOfWindowSizeK {
     public static void main(String[] args) {
 
         new Negative().NegativeEleSizeK(new int[]{12, -1, -7, 8, -15, 30, 16, 28}, 3);
+
+        //https://www.geeksforgeeks.org/first-negative-integer-every-window-size-k/
 
     }
 }
