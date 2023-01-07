@@ -3,77 +3,80 @@ package Stack_Queue.queue;
 import java.util.Deque;
 import java.util.LinkedList;
 
-class sum{
+class sum {
 
-    public void sumOfMinMax(int []nums,int k){
+    public void sumOfMinMax(int[] nums, int k) {
 
         Deque<Integer> min = new LinkedList<>();    // it will be in increasing order , peek ele would be the smallest
 
         Deque<Integer> max = new LinkedList<>();    // it will be in decreasing order , peek ele would be the maximum
 
         int index;
-        int sum=0;
+        int sum = 0;
 
         for (index = 0; index < k; index++) {
 
             int currentEle = nums[index];
 
-            while (!min.isEmpty() && nums[min.peekLast()]>=currentEle){
+            while (!min.isEmpty() && nums[min.peekLast()] >= currentEle) {
 
-                min.pop();
-
-            }
-
-            while (!max.isEmpty() && nums[max.peekLast()]<=currentEle){
-
-                max.pop();
+                min.removeLast();
 
             }
 
-            min.add(index);
+            while (!max.isEmpty() && nums[max.peekLast()] <= currentEle) {
 
-            max.add(index);
+                max.removeLast();
+
+            }
+
+            min.addLast(index);
+
+            max.addLast(index);
 
         }
 
-        for (;index < nums.length && !min.isEmpty() && !max.isEmpty(); index++) {
+        for (; index < nums.length && !min.isEmpty() && !max.isEmpty(); index++) {
 
             sum += nums[min.peek()] + nums[max.peek()];
 
             int currentEle = nums[index];
 
-            while (!min.isEmpty() && min.peek() <= index-k){
+            while (!min.isEmpty() && min.peek() <= index - k) {
 
-                min.remove();
-
-            }
-
-            while (!max.isEmpty() && max.peek() <= index-k){
-
-                max.remove();
+                min.removeFirst();
 
             }
 
+            while (!max.isEmpty() && max.peek() <= index - k) {
 
-            while (!min.isEmpty() && nums[min.peek()] >= currentEle){
-
-                min.remove();
-
-            }
-
-            while (!max.isEmpty() && nums[max.peek()] <= currentEle){
-
-                max.remove();
+                max.removeFirst();
 
             }
 
-            min.add(index);
+            while (!min.isEmpty() && nums[min.peek()] >= currentEle) {
 
-            max.add(index);
+                min.removeLast();
+
+            }
+
+            while (!max.isEmpty() && nums[max.peek()] <= currentEle) {
+
+                max.removeLast();
+
+            }
+
+            min.addLast(index);
+
+            max.addLast(index);
 
         }
 
-        sum += nums[min.peek()] + nums[max.peek()];
+        if (!min.isEmpty() && !max.isEmpty()) {
+
+            sum += nums[min.peek()] + nums[max.peek()];
+
+        }
 
         System.out.println(sum);
 
@@ -85,7 +88,7 @@ class sum{
 public class sumOfMinimumAndMaximumOfWindowKSize {
     public static void main(String[] args) {
 
-        new sum().sumOfMinMax(new int[]{2, 5, -1, 7, -3, -1, -2},3);
+        new sum().sumOfMinMax(new int[]{2, 5, -1, 7, -3, -1, -2}, 3);
 
     }
 }
