@@ -2,17 +2,17 @@ package Stack_Queue.stack.recursion;
 
 import java.util.Stack;
 
-class sort{
+class sort {
 
     Stack<Integer> stack = new Stack<>();
 
-    public void insert(int x){
+    public void insert(int x) {
 
-        if(stack.size()==0 || x > stack.peek()){
+        if (stack.size() == 0 || x > stack.peek()) {
 
             stack.push(x);
 
-        }else{
+        } else {
 
             int a = stack.pop();
 
@@ -24,18 +24,17 @@ class sort{
 
     }
 
-    public void sortstack(){
+    public void sortStack() {
 
-        if(stack.size()>0){
+        if (stack.size() > 0) {
 
             int x = stack.pop();
 
-            sortstack();
+            sortStack();
 
             insert(x);
 
         }
-        return;
 
     }
 }
@@ -56,7 +55,7 @@ public class sortStack {
 
         r.stack.push(2);
 
-        r.sortstack();
+        r.sortStack();
 
         // sort an array is exactly similar to this
 
