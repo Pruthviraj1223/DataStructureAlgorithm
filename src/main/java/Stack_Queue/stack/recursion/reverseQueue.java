@@ -13,7 +13,6 @@ class reverseQ{
             return;
         }
 
-
         int a = queue.remove();
 
         reverse();
