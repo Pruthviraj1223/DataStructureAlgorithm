@@ -1,30 +1,30 @@
 package Stack_Queue.stack.recursion;
 
-class recur{
+class recur {
 
-    public void print(int n){
+    public void print(int n) {
 
-        if(n==1){
+        if (n == 1) {
             System.out.println("1");
             return;
         }
 
-        print(n-1);
+        print(n - 1);
 
         System.out.println(n);
 
     }
 
-    public void printNto1(int n){
+    public void printNto1(int n) {
 
-        if(n==1){
+        if (n == 1) {
             System.out.println("1");
             return;
         }
 
         System.out.println(n);
 
-        printNto1(n-1);
+        printNto1(n - 1);
 
     }
 
@@ -36,6 +36,7 @@ public class print1toN {
 
         System.out.println("1 to N");
         new recur().print(5);
+
         System.out.println("N to 1");
         new recur().printNto1(5);
     }
