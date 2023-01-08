@@ -2,48 +2,48 @@ package Stack_Queue.stack.recursion;
 
 import java.util.LinkedList;
 
-class QueueSort{
+class QueueSort {
 
     java.util.Queue<Integer> queue = new LinkedList<>();
 
-    public void frontToLast(int size){
+    public void frontToLast(int size) {
 
-        if(size==0){
+        if (size == 0) {
             return;
         }
 
         queue.add(queue.remove());
 
-        frontToLast(size-1);
+        frontToLast(size - 1);
 
     }
 
-    public void insert(int x,int size){
+    public void insert(int x, int size) {
 
-        if(size==0){
+        if (size == 0) {
 
             queue.add(x);
-            return;
+
         } else if (!queue.isEmpty() && x <= queue.peek()) {
 
             queue.add(x);
 
             frontToLast(size);
 
-        }else {
+        } else {
 
             queue.add(queue.remove());
 
-            insert(x,size-1);
+            insert(x, size - 1);
 
         }
 
 
     }
 
-    public void queueSort(){
+    public void queueSort() {
 
-        if(queue.size()==0){
+        if (queue.size() == 0) {
             return;
         }
 
@@ -51,7 +51,7 @@ class QueueSort{
 
         queueSort();
 
-        insert(temp,queue.size());
+        insert(temp, queue.size());
 
 
     }
