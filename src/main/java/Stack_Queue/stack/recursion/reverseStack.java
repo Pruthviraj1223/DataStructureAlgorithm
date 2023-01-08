@@ -8,7 +8,7 @@ class reverse {
 
     public void insertAtBottom(int x) {
 
-        if (stack.size() == 0) {    // condition add for sorting\
+        if (stack.size() == 0) {    // condition add for sorting
 
             stack.push(x);
 
