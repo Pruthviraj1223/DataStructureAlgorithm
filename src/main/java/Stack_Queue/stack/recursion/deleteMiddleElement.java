@@ -4,7 +4,6 @@ import java.util.Stack;
 
 public class deleteMiddleElement {
 
-
     static Stack<Integer> stack = new Stack<>();
     static int n = 6;
 
