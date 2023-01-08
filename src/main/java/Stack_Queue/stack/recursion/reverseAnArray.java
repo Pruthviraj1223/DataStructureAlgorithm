@@ -1,36 +1,38 @@
 package Stack_Queue.stack.recursion;
 
 class ReverseArr {
-    int []arr = new int[5];
+    int[] arr = new int[5];
 
-    void swap(int i,int j){
+    void swap(int i, int j) {
 
         int temp = arr[i];
 
-        arr[i] =arr[j];
+        arr[i] = arr[j];
 
         arr[j] = temp;
 
     }
-    void reverseArray(int i,int j){
 
-        if(i==j){
+    void reverseArray(int i, int j) {
+
+        if (i == j) {
 
             return;
 
         }
 
-        swap(i,j);
+        swap(i, j);
 
         i++;
 
         j--;
 
-        reverseArray(i,j);
+        reverseArray(i, j);
 
 
     }
 }
+
 public class reverseAnArray {
     public static void main(String[] args) {
 
@@ -41,7 +43,7 @@ public class reverseAnArray {
         reverseArr.arr[3] = 4;
         reverseArr.arr[4] = 5;
 
-        reverseArr.reverseArray(0,4);
+        reverseArr.reverseArray(0, 4);
 
     }
 }
