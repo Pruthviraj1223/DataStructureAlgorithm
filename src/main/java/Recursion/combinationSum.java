@@ -17,6 +17,9 @@ public class combinationSum {
 
         }
 
+        // we can do target - candidates[index] and then check for target == 0
+        // we don't need currSum
+
         for (int index = currIndex; index < candidates.length; index++) {
 
             partialResult.add(candidates[index]);
