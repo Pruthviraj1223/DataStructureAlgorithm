@@ -37,8 +37,6 @@ public class subset {
 
         subset(candidates, result, new ArrayList<>(), 0, 0, target);
 
-        System.out.println(result);
-
         return result;
 
     }
