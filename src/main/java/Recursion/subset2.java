@@ -42,8 +42,6 @@ public class subset2 {
 
         susbset(nums, result, new ArrayList<>(), 0, 0, 0);
 
-        System.out.println(result);
-
         return result;
 
     }
