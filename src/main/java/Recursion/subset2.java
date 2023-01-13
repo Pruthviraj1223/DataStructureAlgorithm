@@ -5,22 +5,22 @@ import java.util.List;
 
 public class subset2 {
 
-    public static void subset(int[] candidates, List<List<Integer>> result, List<Integer> partialResult, int currIndex) {
+    public static void subset(int[] nums, List<List<Integer>> result, List<Integer> partialResult, int currIndex) {
 
         result.add(new ArrayList<>(partialResult));
 
-        // we can do target - candidates[index] and then check for target == 0
+        // we can do target - nums[index] and then check for target == 0
         // we don't need currSum
 
-        for (int index = currIndex; index < candidates.length; index++) {
+        for (int index = currIndex; index < nums.length; index++) {
 
-            if (index != currIndex && candidates[index] == candidates[index - 1]) {         // to avoid duplicates
+            if (index != currIndex && nums[index] == nums[index - 1]) {         // to avoid duplicates
                 continue;
             }
 
-            partialResult.add(candidates[index]);
+            partialResult.add(nums[index]);
 
-            subset(candidates, result, partialResult, index + 1);
+            subset(nums, result, partialResult, index + 1);
 
             partialResult.remove(partialResult.size() - 1);                         // for backtracking
 
