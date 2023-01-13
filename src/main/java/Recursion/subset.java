@@ -6,11 +6,10 @@ import java.util.List;
 
 public class subset {
 
-    public static void subset(int[] candidates, List<List<Integer>> result, List<Integer> partialResult, int currSum, int currIndex, int target) {
+    public static void subset(int[] candidates, List<List<Integer>> result, List<Integer> partialResult, int currIndex) {
 
-        if (currSum > target) {
-            return;
-        }
+        // here we are increasing index every time as we want subset so.
+        // we will backtrack once loop is completed. No base condition used here.
 
         result.add(new ArrayList<>(partialResult));
 
@@ -18,13 +17,9 @@ public class subset {
 
             partialResult.add(candidates[index]);
 
-//            System.out.println("step 1 "+ partialResult + " index " + index);
+            subset(candidates, result, partialResult, index + 1);
 
-            subset(candidates, result, partialResult, currSum, index + 1, target);
-
-            partialResult.remove(partialResult.size() - 1);
-
-//            System.out.println("step 2 "+ partialResult + " index " + index);
+            partialResult.remove(partialResult.size() - 1);                     // for backtracking
 
         }
     }
@@ -35,7 +30,7 @@ public class subset {
 
         List<List<Integer>> result = new ArrayList<>();
 
-        subset(candidates, result, new ArrayList<>(), 0, 0, target);
+        subset(candidates, result, new ArrayList<>(), 0);
 
         return result;
 
@@ -43,7 +38,7 @@ public class subset {
 
     public static void main(String[] args) {
 
-        subsetSum(new int[]{1, 2, 3, 4}, 6);
+        subsetSum(new int[]{1, 2, 3,4}, 6);
 
     }
 }

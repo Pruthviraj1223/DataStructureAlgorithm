@@ -6,11 +6,14 @@ public class combinationSum {
 
     public static void combination(int[] candidates, List<List<Integer>> result, List<Integer> partialResult, int currSum, int currIndex, int target) {
 
+        // here we are not increasing index every time because we can use one element multiple time
+        // we will backtrack once we match any of below conditions or loop is completed
+
         if (currSum > target) {
             return;
         }
 
-        if (currSum == target) {
+        if (currSum == target) {            // base condition
 
             result.add(new ArrayList<>(partialResult));             // because of reference issue we have stored new ArrayList<>()
             return;
@@ -28,7 +31,7 @@ public class combinationSum {
 
             combination(candidates, result, partialResult, currSum, index, target);
 
-            currSum -= candidates[index];
+            currSum -= candidates[index];                                   // backtracking conditions
 
             partialResult.remove(partialResult.size() - 1);
 

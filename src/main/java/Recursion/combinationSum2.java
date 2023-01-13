@@ -10,7 +10,7 @@ public class combinationSum2 {
             return;
         }
 
-        if (currSum == target) {
+        if (currSum == target) {                // base condition
 
             result.add(new ArrayList<>(partialResult));             // because of reference issue we have stored new ArrayList<>()
             return;
@@ -22,7 +22,7 @@ public class combinationSum2 {
 
         for (int index = currIndex; index < candidates.length; index++) {
 
-            if (index > currIndex && candidates[index] == candidates[index-1]){
+            if (index > currIndex && candidates[index] == candidates[index - 1]) {          // to avoid duplicates
                 continue;
             }
 
@@ -30,9 +30,9 @@ public class combinationSum2 {
 
             currSum += candidates[index];
 
-            combination(candidates, result, partialResult, currSum, index +  1, target);
+            combination(candidates, result, partialResult, currSum, index + 1, target);
 
-            currSum -= candidates[index];
+            currSum -= candidates[index];                           // for backtracking
 
             partialResult.remove(partialResult.size() - 1);
 
@@ -53,7 +53,7 @@ public class combinationSum2 {
 
     public static void main(String[] args) {
 
-        var ans = combinationSum(new int[]{10,1,2,7,6,1,5}, 8);
+        var ans = combinationSum(new int[]{10, 1, 2, 7, 6, 1, 5}, 8);
 
         // https://leetcode.com/problems/combination-sum-ii/solutions/16878/combination-sum-i-ii-and-iii-java-solution-see-the-similarities-yourself/
 

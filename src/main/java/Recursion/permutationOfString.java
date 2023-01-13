@@ -1,16 +1,12 @@
 package Recursion;
 
-// Java program to print all permutations of a
-// given string.
 class Permutation {
 
     public void permute(String str, int left, int right) {
 
-        // A B C
-        // watch GFG tree for ABC , it might help you
-        //https://www.geeksforgeeks.org/write-a-c-program-to-print-all-permutations-of-a-given-string/
+        // recursion tree is important
 
-        if (left == right) {
+        if (left == right) {                                // base condition
 
             System.out.println("ANS : " + str);
 
@@ -18,15 +14,11 @@ class Permutation {
 
             for (int index = left; index <= right; index++) {
 
-                str = swap(str, left, index);                   // for swapping
-
-//                System.out.println("step 1 : left " + left + " index " + index + " str " + str);
+                str = swap(str, left, index);
 
                 permute(str, left + 1, right);
 
                 str = swap(str, left, index);                   // for backtracking
-
-//                System.out.println("step 2 : left " + left + " index " + index + " str " + str);
 
             }
         }
@@ -46,13 +38,13 @@ class Permutation {
 public class permutationOfString {
     public static void main(String[] args) {
 
+        // watch GFG tree for ABC , it might help you
+
         // https://www.geeksforgeeks.org/write-a-c-program-to-print-all-permutations-of-a-given-string/
 
         String str = "ABC";
 
-        int n = str.length();
-
-        new Permutation().permute(str, 0, n - 1);
+        new Permutation().permute(str, 0, str.length() - 1);
 
     }
 }
