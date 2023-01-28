@@ -1,6 +1,9 @@
 package Tree;
 
 public class MaximumHeightOfBinaryTree {
+
+    // Explanation : you go to the depth of tree, and then you backtrack from the leaf node and add left and right child.
+
     public int maxDepth(TreeNode root) {
 
         if (root == null) {
@@ -15,6 +18,10 @@ public class MaximumHeightOfBinaryTree {
     }
 
     public static void main(String[] args) {
+
+        // https://leetcode.com/problems/maximum-depth-of-binary-tree/
+
+        // NOTE : This is the most fundamental question. So understand properly.
 
         // A binary tree's maximum depth is the number of nodes along the longest path from the root node down to the farthest leaf node.
 
