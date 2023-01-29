@@ -21,7 +21,7 @@ public class VerticalOrderTraversal {
 
     }
 
-    public List<List<Integer>> vertical(TreeNode root) {
+    public static List<List<Integer>> vertical(TreeNode root) {
 
         // key -> vertical , value -> key -> level ,value -> nodes
         TreeMap<Integer, TreeMap<Integer, PriorityQueue<Integer>>> traversal = new TreeMap<>();
@@ -62,7 +62,7 @@ public class VerticalOrderTraversal {
 
             result.add(new ArrayList<>());
 
-            for (PriorityQueue<Integer> nodes : levels.values()) {                      // traversing on nodes ( total nodes no that level)
+            for (PriorityQueue<Integer> nodes : levels.values()) {                      // traversing on nodes ( total nodes on that level)
 
                 while (!nodes.isEmpty()) {
 
@@ -78,6 +78,8 @@ public class VerticalOrderTraversal {
     public static void main(String[] args) {
 
         // https://leetcode.com/problems/vertical-order-traversal-of-a-binary-tree/submissions/
+
+        vertical(NodeUtil.insert(new int[]{1,2,3,4,5,6,7}));
 
     }
 }
