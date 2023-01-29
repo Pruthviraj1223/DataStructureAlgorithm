@@ -1,25 +1,23 @@
 package Tree;
 
 import java.util.*;
+ class VerticalTreeNode {
 
+    TreeNode node;
+    int x;
+    int y;
 
-public class VerticalOrderTraversal {
+    VerticalTreeNode(TreeNode node, int x, int y) {
 
-    static class VerticalTreeNode {
-
-        TreeNode node;
-        int x;
-        int y;
-
-        VerticalTreeNode(TreeNode node, int x, int y) {
-
-            this.node = node;
-            this.x = x;
-            this.y = y;
-
-        }
+        this.node = node;
+        this.x = x;
+        this.y = y;
 
     }
+
+}
+
+public class VerticalOrderTraversal {
 
     public static List<List<Integer>> vertical(TreeNode root) {
 
