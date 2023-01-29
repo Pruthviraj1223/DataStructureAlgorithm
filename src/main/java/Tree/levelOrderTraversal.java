@@ -24,16 +24,22 @@ public class levelOrderTraversal {
 
             for (int index = 0; index < size; index++) {
 
-                if (queue.size() > 0 && queue.peek().left != null) {
-                    queue.add(queue.peek().left);
-                }
+                var node = queue.poll();
 
-                if (queue.size() > 0 && queue.peek().right != null) {
-                    queue.add(queue.peek().right);
-                }
+                if (node != null) {
 
-                subList.add(Objects.requireNonNull(queue.poll()).val);
+                    if (node.left != null) {
+                        queue.add(node.left);
+                    }
+
+                    if (node.right != null) {
+                        queue.add(node.right);
+                    }
+
+                    subList.add(node.val);
+                }
             }
+
             result.add(subList);
         }
 
