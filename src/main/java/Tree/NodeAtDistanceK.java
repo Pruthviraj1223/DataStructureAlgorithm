@@ -93,6 +93,10 @@ public class NodeAtDistanceK {
 
         // First understand concept , Code is nothing.
 
+        // https://www.youtube.com/watch?v=2r5wLmQfD6g&list=PLgUwDviBIf0q8Hkd7bK2Bpryj2xVJk8Vk&index=32
+
+        // above one is minimum time to burn tree. exact this code. Only need to add one variable.
+
         var root = NodeUtil.insert(new int[]{1, 2, 3, 4, 5, 6, 7});
 
         distanceK(root, root.left, 1);
