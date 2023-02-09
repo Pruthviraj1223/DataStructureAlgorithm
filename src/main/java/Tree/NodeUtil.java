@@ -5,6 +5,13 @@ class TreeNode {
     int val;
     TreeNode left, right;
 
+    TreeNode(int val)
+    {
+        this.val = val;
+        this.left = null;
+        this.right = null;
+    }
+
     TreeNode(int val, TreeNode left, TreeNode right) {
         this.val = val;
         this.left = left;
@@ -31,7 +38,6 @@ public class NodeUtil {
         root.right.left = new TreeNode(values[5], null, null);
 
         root.right.right = new TreeNode(values[6], null, null);
-
 
         return root;
 
