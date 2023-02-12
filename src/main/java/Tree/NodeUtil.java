@@ -43,6 +43,47 @@ public class NodeUtil {
 
     }
 
+    public static void insertBST(int []data)
+    {
+        TreeNode root = new TreeNode(data[0]);
+
+        for (int index = 1; index < data.length; index++)
+        {
+            int currVal = data[index];
+
+            TreeNode curr = root;
+
+            while (true)
+            {
+                if (currVal < curr.val)
+                {
+                    if (curr.left == null)
+                    {
+                        curr.left = new TreeNode(currVal);
+                        break;
+                    }
+                    else
+                    {
+                        curr = curr.left;
+                    }
+                }
+                else
+                {
+                    if (curr.right == null)
+                    {
+                        curr.right = new TreeNode(currVal);
+                        break;
+                    }
+                    else
+                    {
+                        curr = curr.right;
+                    }
+                }
+            }
+        }
+
+    }
+
     public static void main(String[] args) {
 
     }
