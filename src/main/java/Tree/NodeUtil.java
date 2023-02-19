@@ -43,7 +43,7 @@ public class NodeUtil {
 
     }
 
-    public static void insertBST(int []data)
+    public static TreeNode insertBST(int []data)
     {
         TreeNode root = new TreeNode(data[0]);
 
@@ -82,6 +82,7 @@ public class NodeUtil {
             }
         }
 
+        return root;
     }
 
     public static void main(String[] args) {
