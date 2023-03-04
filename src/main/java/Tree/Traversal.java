@@ -65,11 +65,11 @@ public class Traversal {
             return;
         }
 
-        preOrder(root.left);
+        inOrder(root.left);
 
         System.out.println(root.val);
 
-        preOrder(root.right);
+        inOrder(root.right);
 
     }
 
@@ -119,9 +119,9 @@ public class Traversal {
             return;
         }
 
-        preOrder(root.left);
+        postOrder(root.left);
 
-        preOrder(root.right);
+        postOrder(root.right);
 
         System.out.println(root.val);
 
