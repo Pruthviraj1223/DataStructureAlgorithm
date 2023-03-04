@@ -3,7 +3,7 @@ package Tree;
 import java.util.LinkedList;
 import java.util.Queue;
 
-public class WidthOfTreee {
+public class WidthOfTree {
 
     static class Pair {
 
