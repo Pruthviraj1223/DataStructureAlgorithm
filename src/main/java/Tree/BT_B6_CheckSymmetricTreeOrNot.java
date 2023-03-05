@@ -8,11 +8,7 @@ public class BT_B6_CheckSymmetricTreeOrNot {
             return left == right;
         }
 
-        if (left.val != right.val) {
-            return false;
-        }
-
-        return (check(left.left, right.right) && check(left.right, right.left));
+        return (left.val == right.val) && (check(left.left, right.right) && check(left.right, right.left));
 
     }
 
