@@ -9,20 +9,21 @@ public class TopOrderTraversal {
         Map<Integer, Integer> traversal = new TreeMap<>();
         Queue<VerticalTreeNode> queue = new LinkedList<>();
 
-        queue.add(new VerticalTreeNode(root, 0, 0));            // here 'y' does not make sense
+        queue.add(new VerticalTreeNode(root, 0, 0));            // here 'level' does not make sense
 
         while (!queue.isEmpty()) {
 
-            var node = queue.poll();
+            var curr = queue.poll();
+            int vertical = curr.vertical;
 
-            traversal.computeIfAbsent(node.x, k -> node.node.val);          // once first value is dumped then it is the final value for that vertical  // in vertical order we had another map for levels and queue for multiple nodes
+            traversal.computeIfAbsent(curr.vertical, k -> curr.node.val);          // once first value is dumped then it is the final value for that vertical  // in vertical order we had another map for levels and queue for multiple nodes
 
-            if (node.node.left != null) {
-                queue.add(new VerticalTreeNode(node.node.left, node.x - 1, 0));
+            if (curr.node.left != null) {
+                queue.add(new VerticalTreeNode(curr.node.left, vertical - 1, 0));
             }
 
-            if (node.node.right != null) {
-                queue.add(new VerticalTreeNode(node.node.right, node.x + 1, 0));
+            if (curr.node.right != null) {
+                queue.add(new VerticalTreeNode(curr.node.right, vertical + 1, 0));
             }
         }
 

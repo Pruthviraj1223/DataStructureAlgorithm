@@ -9,20 +9,20 @@ public class BottomOrderTraversal {
         Map<Integer, Integer> traversal = new TreeMap<>();
         Queue<VerticalTreeNode> queue = new LinkedList<>();
 
-        queue.add(new VerticalTreeNode(root, 0, 0));            // here 'y' does not make sense
+        queue.add(new VerticalTreeNode(root, 0, 0));            // here 'level' does not make sense
 
         while (!queue.isEmpty()) {
 
-            var node = queue.poll();
+            var curr = queue.poll();
 
-            traversal.put(node.x, node.node.val);          // only thing we have changed because we want to override it.
+            traversal.put(curr.vertical, curr.node.val);          // only thing we have changed because we want to override it.        // we have used put here , and in top order we used computeIfAbsent
 
-            if (node.node.left != null) {
-                queue.add(new VerticalTreeNode(node.node.left, node.x - 1, 0));
+            if (curr.node.left != null) {
+                queue.add(new VerticalTreeNode(curr.node.left, curr.vertical - 1, 0));
             }
 
-            if (node.node.right != null) {
-                queue.add(new VerticalTreeNode(node.node.right, node.x + 1, 0));
+            if (curr.node.right != null) {
+                queue.add(new VerticalTreeNode(curr.node.right, curr.vertical + 1, 0));
             }
         }
 

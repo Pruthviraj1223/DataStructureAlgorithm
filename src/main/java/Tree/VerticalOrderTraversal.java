@@ -4,14 +4,14 @@ import java.util.*;
  class VerticalTreeNode {
 
     TreeNode node;
-    int x;
-    int y;
+    int vertical;
+    int level;
 
-    VerticalTreeNode(TreeNode node, int x, int y) {
+    VerticalTreeNode(TreeNode node, int vertical, int level) {
 
         this.node = node;
-        this.x = x;
-        this.y = y;
+        this.vertical = vertical;
+        this.level = level;
 
     }
 
@@ -37,8 +37,8 @@ public class VerticalOrderTraversal {
 
             var curr = queue.poll();
 
-            int vertical = curr.x;
-            int level = curr.y;
+            int vertical = curr.vertical;
+            int level = curr.level;
 
             if (!traversal.containsKey(vertical)) {
                 traversal.put(vertical, new TreeMap<>());
