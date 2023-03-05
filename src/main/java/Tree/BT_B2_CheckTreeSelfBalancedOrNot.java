@@ -1,6 +1,6 @@
 package Tree;
 
-public class CheckTreeSelfBalancedOrNot {
+public class BT_B2_CheckTreeSelfBalancedOrNot {
 
     public boolean isBalanced(TreeNode root) {
 

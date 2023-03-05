@@ -20,7 +20,7 @@ class TreeNode {
 }
 
 
-public class NodeUtil {
+public class Z_NodeUtil {
 
 
     static TreeNode insert(int[] values) {

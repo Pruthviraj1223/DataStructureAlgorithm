@@ -1,6 +1,6 @@
 package Tree;
 
-public class PredecessorSuccessor {
+public class BT_B9_PredecessorSuccessor {
 
     public static TreeNode Successor(TreeNode root,TreeNode target)
     {

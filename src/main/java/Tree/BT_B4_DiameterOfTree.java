@@ -1,6 +1,6 @@
 package Tree;
 
-public class diameterOfTree {
+public class BT_B4_DiameterOfTree {
 
     public int maxDiameter(TreeNode root, int[] d) {
 

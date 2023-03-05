@@ -2,7 +2,7 @@ package Tree;
 
 import java.util.*;
 
-public class NodeAtDistanceK {
+public class BT_M5_NodeAtDistanceK {
 
     public static void getParents(Map<TreeNode, TreeNode> parents, Map<TreeNode, Boolean> visited, TreeNode root) {
         Queue<TreeNode> queue = new LinkedList<>();
@@ -97,7 +97,7 @@ public class NodeAtDistanceK {
 
         // above one is minimum time to burn tree. exact this code. Only need to add one variable.
 
-        var root = NodeUtil.insert(new int[]{1, 2, 3, 4, 5, 6, 7});
+        var root = Z_NodeUtil.insert(new int[]{1, 2, 3, 4, 5, 6, 7});
 
         distanceK(root, root.left, 1);
 

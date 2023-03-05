@@ -3,7 +3,7 @@ package Tree;
 import java.util.ArrayList;
 import java.util.List;
 
-public class PathFromRootToNode {
+public class BT_M6_PathFromRootToNode {
 
     public boolean getPath(TreeNode node, List<Integer> result, int target) {
 

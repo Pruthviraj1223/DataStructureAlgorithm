@@ -1,6 +1,6 @@
 package Tree;
 
-public class checkTwoTreeIsIdentiticalOrNot {
+public class BT_B5_CheckTwoTreeIsIdentiticalOrNot {
     public boolean isSameTree(TreeNode p, TreeNode q) {
 
         if (p == null || q == null) {

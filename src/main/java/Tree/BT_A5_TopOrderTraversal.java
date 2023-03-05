@@ -2,9 +2,9 @@ package Tree;
 
 import java.util.*;
 
-public class BottomOrderTraversal {
+public class BT_A5_TopOrderTraversal {
 
-    public static List<Integer> BottomOrder(TreeNode root) {
+    public static List<Integer> TopOrder(TreeNode root) {
 
         Map<Integer, Integer> traversal = new TreeMap<>();
         Queue<VerticalTreeNode> queue = new LinkedList<>();
@@ -14,15 +14,16 @@ public class BottomOrderTraversal {
         while (!queue.isEmpty()) {
 
             var curr = queue.poll();
+            int vertical = curr.vertical;
 
-            traversal.put(curr.vertical, curr.node.val);          // only thing we have changed because we want to override it.        // we have used put here , and in top order we used computeIfAbsent
+            traversal.computeIfAbsent(curr.vertical, k -> curr.node.val);          // once first value is dumped then it is the final value for that vertical  // in vertical order we had another map for levels and queue for multiple nodes
 
             if (curr.node.left != null) {
-                queue.add(new VerticalTreeNode(curr.node.left, curr.vertical - 1, 0));
+                queue.add(new VerticalTreeNode(curr.node.left, vertical - 1, 0));
             }
 
             if (curr.node.right != null) {
-                queue.add(new VerticalTreeNode(curr.node.right, curr.vertical + 1, 0));
+                queue.add(new VerticalTreeNode(curr.node.right, vertical + 1, 0));
             }
         }
 
@@ -38,6 +39,8 @@ public class BottomOrderTraversal {
     }
 
     public static void main(String[] args) {
+
+        TopOrder(Z_NodeUtil.insert(new int[]{1,2,3,4,5,6,7}));
 
     }
 }

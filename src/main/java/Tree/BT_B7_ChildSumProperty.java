@@ -1,6 +1,6 @@
 package Tree;
 
-public class ChildSumProperty {
+public class BT_B7_ChildSumProperty {
 
     public static void childSum(TreeNode root) {
 

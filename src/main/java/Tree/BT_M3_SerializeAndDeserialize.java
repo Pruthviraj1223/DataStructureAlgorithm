@@ -2,7 +2,7 @@ package Tree;
 
 import java.util.*;
 
-public class SerializeAndDeserialize {
+public class BT_M3_SerializeAndDeserialize {
 
 
     public static String serialize(TreeNode root)
@@ -102,9 +102,9 @@ public class SerializeAndDeserialize {
 
     public static void main(String[] args) {
 
-        serialize(NodeUtil.insert(new int[]{1,2,3,-4,-5,6,7}));
+        serialize(Z_NodeUtil.insert(new int[]{1,2,3,-4,-5,6,7}));
 
-        deSerialize(serialize(NodeUtil.insert(new int[]{1,2,3,-4,-5,6,7})));
+        deSerialize(serialize(Z_NodeUtil.insert(new int[]{1,2,3,-4,-5,6,7})));
 
     }
 }

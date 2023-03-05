@@ -1,6 +1,6 @@
 package Tree;
 
-public class CeilAndFloorOfBST {
+public class BT_B8_CeilAndFloorOfBST {
 
     public static int Floor(TreeNode root,int val)
     {

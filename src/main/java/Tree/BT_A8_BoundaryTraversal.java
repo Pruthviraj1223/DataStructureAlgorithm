@@ -3,7 +3,7 @@ package Tree;
 import java.util.ArrayList;
 import java.util.Collections;
 
-public class BoundaryTraversal {
+public class BT_A8_BoundaryTraversal {
 
     // Explanation :
     // First add root value

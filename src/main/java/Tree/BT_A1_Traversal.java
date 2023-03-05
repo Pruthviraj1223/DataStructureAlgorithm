@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Stack;
 
-public class Traversal {
+public class BT_A1_Traversal {
 
     // remember
     // when go in depth of any tree side, at that time you add node in stack

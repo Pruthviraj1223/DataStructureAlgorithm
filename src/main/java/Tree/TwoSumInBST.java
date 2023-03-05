@@ -88,7 +88,7 @@ public class TwoSumInBST {
 
         // here in the above approach we won't require the extra list
 
-        TwoSum(NodeUtil.insertBST(new int[]{10, 7, 5, 2, 9, 1, 15, 13, 14, 18}),9);
+        TwoSum(Z_NodeUtil.insertBST(new int[]{10, 7, 5, 2, 9, 1, 15, 13, 14, 18}),9);
 
     }
 }

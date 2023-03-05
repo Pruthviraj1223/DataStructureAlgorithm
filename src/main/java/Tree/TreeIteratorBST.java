@@ -35,7 +35,7 @@ class BSTIterator {
 }
 
 
-public class TreeIterator {
+public class TreeIteratorBST {
     public static void main(String[] args) {
 
         // 1st approach is you store all inorder value in list and then perform next,hasNext operation.
@@ -44,7 +44,7 @@ public class TreeIterator {
 
         // understand the design first , code is nothing..
 
-        BSTIterator iterator = new BSTIterator(NodeUtil.insertBST(new int[]{10,7,5,8,2,9,1,15,13,14,18}));
+        BSTIterator iterator = new BSTIterator(Z_NodeUtil.insertBST(new int[]{10,7,5,8,2,9,1,15,13,14,18}));
 
         System.out.println(iterator.next());
 

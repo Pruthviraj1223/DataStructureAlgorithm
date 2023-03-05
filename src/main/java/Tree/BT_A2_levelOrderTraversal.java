@@ -2,9 +2,9 @@ package Tree;
 
 import java.util.*;
 
-public class zigZagTraversal {
+public class BT_A2_levelOrderTraversal {
 
-    public List<List<Integer>> zigZag(TreeNode root){
+    public List<List<Integer>> levelOrder(TreeNode root) {
 
         List<List<Integer>> result = new ArrayList<>();
 
@@ -15,8 +15,6 @@ public class zigZagTraversal {
         }
 
         queue.add(root);
-
-        boolean leftToRight = true;
 
         while (!queue.isEmpty()) {
 
@@ -30,8 +28,6 @@ public class zigZagTraversal {
 
                 if (node != null) {
 
-                    subList.add(node.val);
-
                     if (node.left != null) {
                         queue.add(node.left);
                     }
@@ -40,29 +36,19 @@ public class zigZagTraversal {
                         queue.add(node.right);
                     }
 
+                    subList.add(node.val);
                 }
             }
-
-            if (!leftToRight) {
-                Collections.reverse(subList);
-            }
-
-            leftToRight = !leftToRight;
 
             result.add(subList);
         }
 
         return result;
+
+
     }
 
     public static void main(String[] args) {
-
-        //https://leetcode.com/problems/binary-tree-zigzag-level-order-traversal/submissions/
-
-        // similar to level order traversal
-
-        // just need to introduce new variable  leftToRight.
-        // which will keep track that in which direction we need to traverse
 
     }
 }

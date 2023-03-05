@@ -3,7 +3,7 @@ package Tree;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MorrisTraversal {
+public class BT_A10_MorrisTraversal {
 
     static List<TreeNode> preOrder(TreeNode root)
     {

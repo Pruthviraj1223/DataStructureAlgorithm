@@ -1,6 +1,6 @@
 package Tree;
 
-public class FlattenBinaryTreeToLinkedList {
+public class BT_M2_FlattenBinaryTreeToLinkedList {
 
     TreeNode prev = null;
 

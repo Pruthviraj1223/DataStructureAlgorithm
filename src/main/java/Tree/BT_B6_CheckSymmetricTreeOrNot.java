@@ -1,6 +1,6 @@
 package Tree;
 
-public class checkSymmetricTreeOrNot {
+public class BT_B6_CheckSymmetricTreeOrNot {
 
     public boolean check(TreeNode left, TreeNode right) {
 

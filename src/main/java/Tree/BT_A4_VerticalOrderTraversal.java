@@ -17,7 +17,7 @@ import java.util.*;
 
 }
 
-public class VerticalOrderTraversal {
+public class BT_A4_VerticalOrderTraversal {
 
     public static List<List<Integer>> vertical(TreeNode root) {
 
@@ -82,7 +82,7 @@ public class VerticalOrderTraversal {
 
         // https://leetcode.com/problems/vertical-order-traversal-of-a-binary-tree/submissions/
 
-        vertical(NodeUtil.insert(new int[]{1,2,3,4,5,6,7}));
+        vertical(Z_NodeUtil.insert(new int[]{1,2,3,4,5,6,7}));
 
     }
 }

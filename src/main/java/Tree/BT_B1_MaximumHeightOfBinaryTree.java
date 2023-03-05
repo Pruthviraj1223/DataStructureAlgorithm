@@ -1,6 +1,6 @@
 package Tree;
 
-public class MaximumHeightOfBinaryTree {
+public class BT_B1_MaximumHeightOfBinaryTree {
 
     // Explanation : you go to the depth of tree, and then you backtrack from the leaf node and add left and right child.
 

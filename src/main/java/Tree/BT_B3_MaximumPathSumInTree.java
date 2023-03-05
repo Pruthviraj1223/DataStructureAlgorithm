@@ -1,6 +1,6 @@
 package Tree;
 
-public class maximumPathSumInTree {
+public class BT_B3_MaximumPathSumInTree {
 
     public int maxPathSum(TreeNode node, int[] d) {
 

@@ -3,7 +3,7 @@ package Tree;
 import java.util.HashMap;
 import java.util.Map;
 
-public class constructTreeFromPreorderInorder {
+public class BT_C2_constructTreeFromPreorderInorder {
 
     public static TreeNode buildTree(Map<Integer, Integer> inOrderIndexes, int[] preOrder, int preStart, int preEnd, int[] inorder, int inStart, int inEnd) {
 

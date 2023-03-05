@@ -1,6 +1,6 @@
 package Tree;
 
-public class countNodeInCompleteBinaryTree {
+public class BT_M4_CountNodeInCompleteBinaryTree {
 
     public static int getLeft(TreeNode root) {
         int count = 0;

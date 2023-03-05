@@ -1,6 +1,6 @@
 package Tree;
 
-public class LowestCommonAncestor {
+public class BT_M1_LowestCommonAncestor {
 
     public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
 

@@ -4,7 +4,7 @@ public class InsertInBST {
 
     public static void insert(int []data)
     {
-        NodeUtil.insertBST(data);
+        Z_NodeUtil.insertBST(data);
     }
 
     public TreeNode insertRecursion(TreeNode root, int val)

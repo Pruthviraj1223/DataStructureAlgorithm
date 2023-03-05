@@ -3,7 +3,7 @@ package Tree;
 import java.util.ArrayList;
 import java.util.List;
 
-public class RightLeftSideOfTree {
+public class BT_A7_RightLeftSideOfTree {
 
     public List<Integer> rightSide(TreeNode node, List<Integer> result, int currDepth) {
 
