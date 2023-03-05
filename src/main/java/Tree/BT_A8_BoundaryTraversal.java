@@ -50,6 +50,10 @@ public class BT_A8_BoundaryTraversal {
             if (!isLeafNode(current)) {
                 result.add(current.val);
             }
+            else
+            {
+                break;
+            }
 
             if (current.left != null) {
 
@@ -92,6 +96,10 @@ public class BT_A8_BoundaryTraversal {
 
             if (!isLeafNode(current)) {
                 temp.add(current.val);
+            }
+            else
+            {
+                break;
             }
 
             if (current.right != null) {
