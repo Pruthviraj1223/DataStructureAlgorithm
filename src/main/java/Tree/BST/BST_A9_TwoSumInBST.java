@@ -1,4 +1,4 @@
-package Tree;
+package Tree.BST;
 
 import java.util.Stack;
 class TwoWayIterator {
@@ -49,9 +49,9 @@ class TwoWayIterator {
     }
 }
 
-public class TwoSumInBST {
+public class BST_A9_TwoSumInBST {
 
-    static boolean TwoSum(TreeNode root,int sum) {
+    static boolean TwoSum(TreeNode root, int sum) {
 
         TwoWayIterator left = new TwoWayIterator(root, true);
 

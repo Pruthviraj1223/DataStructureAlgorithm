@@ -1,6 +1,6 @@
-package Tree;
+package Tree.BST;
 
-public class LCAinBST {
+public class BST_A6_LCAinBST {
 
     public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
 

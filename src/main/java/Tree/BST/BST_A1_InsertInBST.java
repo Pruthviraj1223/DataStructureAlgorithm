@@ -1,6 +1,6 @@
-package Tree;
+package Tree.BST;
 
-public class InsertInBST {
+public class BST_A1_InsertInBST {
 
     public static void insert(int []data)
     {

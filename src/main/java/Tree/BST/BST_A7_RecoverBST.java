@@ -1,6 +1,6 @@
-package Tree;
+package Tree.BST;
 
-public class RecoverBST {
+public class BST_A7_RecoverBST {
 
     static TreeNode first, last, middle, prev;
 

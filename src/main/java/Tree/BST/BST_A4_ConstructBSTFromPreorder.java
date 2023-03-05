@@ -1,8 +1,8 @@
-package Tree;
+package Tree.BST;
 
-public class ConstructBSTFromPreorder {
+public class BST_A4_ConstructBSTFromPreorder {
 
-    public TreeNode constructTree(int[] pre,int bound,int []index)
+    public TreeNode constructTree(int[] pre, int bound, int []index)
     {
         if (index[0]==pre.length || pre[index[0]] > bound)
         {

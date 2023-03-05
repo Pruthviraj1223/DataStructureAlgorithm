@@ -1,6 +1,6 @@
-package Tree;
+package Tree.BST;
 
-public class KthSmallestBST {
+public class BST_A3_KthSmallestBST {
 
     int count = 0;
     int result = Integer.MIN_VALUE;

@@ -1,6 +1,6 @@
-package Tree;
+package Tree.BST;
 
-public class IsValidBST {
+public class BST_A2_IsValidBST {
 
     public long min = Long.MIN_VALUE;
     public long max = Long.MAX_VALUE;

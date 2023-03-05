@@ -1,4 +1,5 @@
-package Tree;
+
+package Tree.BST;
 
 import java.util.Stack;
 
@@ -35,7 +36,7 @@ class BSTIterator {
 }
 
 
-public class TreeIteratorBST {
+public class BST_A8_TreeIteratorBST {
     public static void main(String[] args) {
 
         // 1st approach is you store all inorder value in list and then perform next,hasNext operation.

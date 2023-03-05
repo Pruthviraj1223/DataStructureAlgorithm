@@ -1,4 +1,4 @@
-package Tree;
+package Tree.BST;
 
 class NodeValue{
     int minValue;
@@ -13,7 +13,7 @@ class NodeValue{
     }
 }
 
-public class LargestBST {
+public class BST_A5_LargestBST {
     static NodeValue findLargestSize(TreeNode root)
     {
         if (root == null)
