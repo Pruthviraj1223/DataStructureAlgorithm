@@ -22,6 +22,11 @@ public class VerticalOrderTraversal {
     public static List<List<Integer>> vertical(TreeNode root) {
 
         // key -> vertical , value -> key -> level ,value -> nodes
+
+        // one vertical will have different level
+
+        // we have used tree map because I need result from left to right ( - to + ) for vertical and for level vise node ( up to down )
+
         TreeMap<Integer, TreeMap<Integer, PriorityQueue<Integer>>> traversal = new TreeMap<>();
 
         Queue<VerticalTreeNode> queue = new LinkedList<>();
@@ -30,10 +35,10 @@ public class VerticalOrderTraversal {
 
         while (!queue.isEmpty()) {
 
-            var node = queue.poll();
+            var curr = queue.poll();
 
-            int vertical = node.x;
-            int level = node.y;
+            int vertical = curr.x;
+            int level = curr.y;
 
             if (!traversal.containsKey(vertical)) {
                 traversal.put(vertical, new TreeMap<>());
@@ -43,24 +48,24 @@ public class VerticalOrderTraversal {
                 traversal.get(vertical).put(level, new PriorityQueue<>());
             }
 
-            traversal.get(vertical).get(level).add(node.node.val);
+            traversal.get(vertical).get(level).add(curr.node.val);
 
-            if (node.node.left != null) {
-                queue.add(new VerticalTreeNode(node.node.left, vertical - 1, level + 1));
+            if (curr.node.left != null) {
+                queue.add(new VerticalTreeNode(curr.node.left, vertical - 1, level + 1));
             }
 
-            if (node.node.right != null) {
-                queue.add(new VerticalTreeNode(node.node.right, vertical + 1, level + 1));
+            if (curr.node.right != null) {
+                queue.add(new VerticalTreeNode(curr.node.right, vertical + 1, level + 1));
             }
         }
 
         List<List<Integer>> result = new ArrayList<>();
 
-        for (TreeMap<Integer, PriorityQueue<Integer>> levels : traversal.values()) {    // traversing on diff. levels
+        for (TreeMap<Integer, PriorityQueue<Integer>> levels : traversal.values()) {    // traversing on diff. levels , vertical vise traversing
 
             result.add(new ArrayList<>());
 
-            for (PriorityQueue<Integer> nodes : levels.values()) {                      // traversing on nodes ( total nodes on that level)
+            for (PriorityQueue<Integer> nodes : levels.values()) {                      // traversing on nodes ( total nodes on that level), level vise traversing
 
                 while (!nodes.isEmpty()) {
 
