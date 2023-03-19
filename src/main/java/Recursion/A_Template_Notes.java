@@ -1,6 +1,6 @@
 package Recursion;
 
-public class template {
+public class A_Template_Notes {
     public static void main(String[] args) {
 
         // This needs to be understood before you solve any recursion or backtracking question
