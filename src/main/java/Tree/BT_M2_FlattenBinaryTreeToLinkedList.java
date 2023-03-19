@@ -34,7 +34,8 @@ public class BT_M2_FlattenBinaryTreeToLinkedList {
 
                 TreeNode node = curr.left;
 
-                while (node.right != null) {
+                while (node.right != null)
+                {
                     node = node.right;
                 }
 
