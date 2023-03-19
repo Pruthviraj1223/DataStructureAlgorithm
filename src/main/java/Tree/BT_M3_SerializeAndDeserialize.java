@@ -28,7 +28,8 @@ public class BT_M3_SerializeAndDeserialize {
 
                 if (node != null) {
 
-                    if (node.left != null) {
+                    if (node.left != null)
+                    {
                         queue.add(node.left);
                         stringBuilder.append(node.left.val).append(",");
                     }
@@ -37,11 +38,13 @@ public class BT_M3_SerializeAndDeserialize {
                         stringBuilder.append("#,");
                     }
 
-                    if (node.right != null) {
+                    if (node.right != null)
+                    {
                         queue.add(node.right);
                         stringBuilder.append(node.right.val).append(",");
                     }
-                    else {
+                    else
+                    {
                         stringBuilder.append("#,");
                     }
                 }
@@ -59,6 +62,7 @@ public class BT_M3_SerializeAndDeserialize {
         {
             return null;
         }
+
         int index = 0;
 
         var arr = tree.split(",");
@@ -102,9 +106,9 @@ public class BT_M3_SerializeAndDeserialize {
 
     public static void main(String[] args) {
 
-        serialize(Z_NodeUtil.insert(new int[]{1,2,3,-4,-5,6,7}));
+        var serializesTree = serialize(Z_NodeUtil.insert(new int[]{1,2,3,-4,-5,6,7}));
 
-        deSerialize(serialize(Z_NodeUtil.insert(new int[]{1,2,3,-4,-5,6,7})));
+        deSerialize(serializesTree);
 
     }
 }
