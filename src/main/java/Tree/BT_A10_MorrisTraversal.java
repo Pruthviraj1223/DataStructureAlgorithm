@@ -79,7 +79,7 @@ public class BT_A10_MorrisTraversal {
                     temp.right = curr;
                     curr = curr.left;
 
-                }else {
+                } else {
 
                     temp.right = null;
                     result.add(curr);
@@ -97,7 +97,15 @@ public class BT_A10_MorrisTraversal {
     public static void main(String[] args) {
 
         // concept here is of threaded binary tree
+
         // where we don't need stack
+        // Inorder traversal of a Binary tree can either be done using recursion or with the use of a auxiliary stack.
+        // The idea of threaded binary trees is to make inorder traversal faster and do it without stack and without recursion.
+        //  A binary tree is made threaded by making all right child pointers that would normally be NULL point to the inorder successor of the node (if it exists).
+
+        // also look advantages:
+        // https://www.geeksforgeeks.org/threaded-binary-tree/
+
 
         // important understand all use case
 
