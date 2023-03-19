@@ -5,7 +5,9 @@ import java.util.Map;
 
 public class BT_C2_constructTreeFromPreorderInorder {
 
-    public static TreeNode buildTree(Map<Integer, Integer> inOrderIndexes, int[] preOrder, int preStart, int preEnd, int[] inorder, int inStart, int inEnd) {
+    public static TreeNode buildTree(Map<Integer, Integer> inOrderIndexes, int[] preOrder, int preStart, int preEnd, int inStart, int inEnd) {
+
+        // IMP is parameter
 
         if (preStart > preEnd || inStart > inEnd) {
             return null;
@@ -17,9 +19,9 @@ public class BT_C2_constructTreeFromPreorderInorder {
 
         int numsLeft = rootIndex - inStart;
 
-        root.left = buildTree(inOrderIndexes, preOrder, preStart + 1, preStart + numsLeft, inorder, inStart, rootIndex - 1);
+        root.left = buildTree(inOrderIndexes, preOrder, preStart + 1, preStart + numsLeft, inStart, rootIndex - 1);
 
-        root.right = buildTree(inOrderIndexes, preOrder, preStart + numsLeft + 1, preEnd, inorder, rootIndex+1, inEnd);
+        root.right = buildTree(inOrderIndexes, preOrder, preStart + numsLeft + 1, preEnd, rootIndex+1, inEnd);
 
         return root;
 
@@ -33,9 +35,7 @@ public class BT_C2_constructTreeFromPreorderInorder {
             indexes.put(inorder[index], index);
         }
 
-        var root=  buildTree(indexes, preorder, 0, preorder.length - 1, inorder, 0, inorder.length - 1);
-
-        return root;
+        return buildTree(indexes, preorder, 0, preorder.length - 1, 0, inorder.length - 1);
 
     }
 

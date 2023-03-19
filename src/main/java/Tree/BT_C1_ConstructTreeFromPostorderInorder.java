@@ -17,7 +17,7 @@ public class BT_C1_ConstructTreeFromPostorderInorder {
 
         int numsLeft = rootIndex - inStart;
 
-        root.left = buildTree(inOrderIndexes, postOrder, postStart , postStart + numsLeft -1, inorder, inStart, rootIndex - 1);
+        root.left = buildTree(inOrderIndexes, postOrder, postStart , postStart + numsLeft - 1, inorder, inStart, rootIndex - 1);
 
         root.right = buildTree(inOrderIndexes, postOrder, postStart + numsLeft, postEnd-1, inorder, rootIndex+1, inEnd);
 
@@ -43,6 +43,8 @@ public class BT_C1_ConstructTreeFromPostorderInorder {
         // https://leetcode.com/problems/construct-binary-tree-from-inorder-and-postorder-traversal/submissions/
 
         // concept is important
+
+        // understand first preorder question and then here you just need to understand the parameter
 
     }
 }
