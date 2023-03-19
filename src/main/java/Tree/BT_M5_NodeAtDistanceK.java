@@ -4,7 +4,8 @@ import java.util.*;
 
 public class BT_M5_NodeAtDistanceK {
 
-    public static void getParents(Map<TreeNode, TreeNode> parents, Map<TreeNode, Boolean> visited, TreeNode root) {
+    public static void getParents(Map<TreeNode, TreeNode> parents, Map<TreeNode, Boolean> visited, TreeNode root)
+    {
         Queue<TreeNode> queue = new LinkedList<>();
 
         queue.add(root);
@@ -46,28 +47,34 @@ public class BT_M5_NodeAtDistanceK {
 
         visited.put(target, true);
 
-        while (!queue.isEmpty()) {
+        while (!queue.isEmpty())
+        {
             int size = queue.size();
 
             if (currLevel == k) {
                 break;
             }
 
-            for (int index = 0; index < size; index++) {
+            for (int index = 0; index < size; index++)
+            {
                 var node = queue.poll();
 
-                if (node.left != null && !visited.get(node.left)) {
+                if (node.left != null && !visited.get(node.left))
+                {
                     queue.add(node.left);
+
                     visited.put(node.left, true);
                 }
 
-                if (node.right != null && !visited.get(node.right)) {
+                if (node.right != null && !visited.get(node.right))
+                {
                     queue.add(node.right);
 
                     visited.put(node.right, true);
                 }
 
-                if (parents.get(node) != null && !visited.get(parents.get(node))) {
+                if (parents.get(node) != null && !visited.get(parents.get(node)))
+                {
                     queue.add(parents.get(node));
 
                     visited.put(parents.get(node), true);
