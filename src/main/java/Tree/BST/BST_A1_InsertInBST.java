@@ -11,11 +11,19 @@ public class BST_A1_InsertInBST {
     {
         // this just more elegant way
 
-        if(root == null) return new TreeNode(val);
+        if(root == null)
+        {
+            return new TreeNode(val);
+        }
 
-        if(root.val > val) root.left = insertRecursion(root.left, val);
-
-        else root.right = insertRecursion(root.right, val);
+        if(val < root.val)
+        {
+            root.left = insertRecursion(root.left, val);
+        }
+        else
+        {
+            root.right = insertRecursion(root.right, val);
+        }
 
         return root;
     }
