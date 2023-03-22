@@ -4,6 +4,8 @@ public class BST_A4_ConstructBSTFromPreorder {
 
     public TreeNode constructTree(int[] pre, int bound, int []index)
     {
+        // bound is value of parent
+
         if (index[0]==pre.length || pre[index[0]] > bound)
         {
             return null;
