@@ -6,14 +6,12 @@ public class BST_A4_ConstructBSTFromPreorder {
     {
         // bound is value of parent
 
-        var curr = pre[index[0]];
-
-        if (curr > bound)
+        if (index[0]==pre.length || pre[index[0]] > bound)
         {
             return null;
         }
 
-        TreeNode root = new TreeNode(curr);
+        TreeNode root = new TreeNode(pre[index[0]]);
         index[0]++;
 
         // first check from root's value
