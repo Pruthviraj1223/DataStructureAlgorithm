@@ -39,6 +39,7 @@ public class BT_A1_Traversal {
         stack.push(root);
 
         while (!stack.isEmpty()) {
+
             var node = stack.pop();
 
             if (node.right != null) {
@@ -84,14 +85,14 @@ public class BT_A1_Traversal {
         }
 
         Stack<TreeNode> stack = new Stack<>();
-        TreeNode node = root;
+        TreeNode curr = root;
 
         while (true)
         {
-            if (node != null)
+            if (curr != null)
             {
-                stack.push(node);
-                node = node.left;
+                stack.push(curr);
+                curr = curr.left;
             }
             else
             {
@@ -100,9 +101,11 @@ public class BT_A1_Traversal {
                     break;
                 }
 
-                node = stack.pop();
-                result.add(node.val);
-                stack.push(node);
+                curr = stack.pop();
+
+                result.add(curr.val);                                   // once you add the left most node then apply same philosophy in right node
+
+                curr = curr.right;
 
             }
         }
@@ -135,6 +138,10 @@ public class BT_A1_Traversal {
 
         List<Integer> result = new ArrayList<>();
 
+        // here as we have left right root
+        // so in st2 we'll push first root then right(s) and then left(s)
+        // so eventually in stack it will be left right root
+
         st1.push(root);
 
         while (!st1.isEmpty()) {
@@ -163,39 +170,37 @@ public class BT_A1_Traversal {
     }
 
     public static List<Integer> postOrderIterativeUsingOneStack(TreeNode root) {
-
-
         // left -> right -> root
 
-        Stack<TreeNode> st1 = new Stack<>();
+        Stack<TreeNode> stack = new Stack<>();
         List<Integer> result = new ArrayList<>();
 
-        st1.push(root);
+        stack.push(root);
 
         TreeNode curr = root;
         TreeNode temp;
 
-        while (curr != null || !st1.isEmpty()) {
+        while (curr != null || !stack.isEmpty()) {
 
-            if (curr != null) {                     // common important code // here you will go in depth of tree on left side
+            if (curr != null) {                     // common important code // here you will go in depth of tree on left side to get left most node
 
-                st1.push(curr);
+                stack.push(curr);
 
                 curr = curr.left;
 
             } else {
 
-                temp = st1.peek().right;
+                temp = stack.peek().right;
 
                 if (temp == null) {                          // you don't have right node , so now backtrack
 
-                    temp = st1.pop();
+                    temp = stack.pop();
 
                     result.add(temp.val);
 
-                    while (st1.size() > 0 && temp == st1.peek().right) {
+                    while (stack.size() > 0 && temp == stack.peek().right) {                                // need to understand this condition,watch video of  striver. there is case when tree node has 5 right nodes like skewed tree. in that case this condition will occur.
 
-                        temp = st1.pop();
+                        temp = stack.pop();
 
                         result.add(temp.val);
                     }
