@@ -6,7 +6,7 @@ public class BT_A6_BottomOrderTraversal {
 
     public static List<Integer> BottomOrder(TreeNode root) {
 
-        Map<Integer, Integer> traversal = new TreeMap<>();
+        TreeMap<Integer, Integer> traversal = new TreeMap<>();
         Queue<VerticalTreeNode> queue = new LinkedList<>();
 
         queue.add(new VerticalTreeNode(root, 0, 0));            // here 'level' does not make sense
@@ -15,7 +15,7 @@ public class BT_A6_BottomOrderTraversal {
 
             var curr = queue.poll();
 
-            traversal.put(curr.vertical, curr.node.val);          // only thing we have changed because we want to override it.        // we have used put here , and in top order we used computeIfAbsent
+            traversal.put(curr.vertical, curr.node.val);          // only thing we have changed because we want to override it.        // we have used put here , and in top order we used putIfAbsent
 
             if (curr.node.left != null) {
                 queue.add(new VerticalTreeNode(curr.node.left, curr.vertical - 1, 0));

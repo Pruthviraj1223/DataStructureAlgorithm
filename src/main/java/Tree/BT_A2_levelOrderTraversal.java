@@ -40,7 +40,7 @@ public class BT_A2_levelOrderTraversal {
                 }
             }
 
-            result.add(subList);
+            result.add(subList);                                            // sublist is just for adding nodes level wise
         }
 
         return result;
