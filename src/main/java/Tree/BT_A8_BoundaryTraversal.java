@@ -47,13 +47,16 @@ public class BT_A8_BoundaryTraversal {
 
         while (current != null) {
 
-            if (!isLeafNode(current)) {
+            if (!isLeafNode(current))
+            {
                 result.add(current.val);
             }
             else
             {
                 break;
             }
+
+            // first check left side , if that is null then go for right side.
 
             if (current.left != null) {
 
@@ -90,6 +93,7 @@ public class BT_A8_BoundaryTraversal {
         }
 
         TreeNode current = node.right;
+
         ArrayList<Integer> temp = new ArrayList<>();
 
         while (current != null) {
@@ -171,7 +175,8 @@ public class BT_A8_BoundaryTraversal {
 
         printLeaves(node.left, result);
 
-        if (node.left == null && node.right == null) {
+        if (isLeafNode(node))
+        {
             result.add(node.val);
         }
 
@@ -198,6 +203,9 @@ public class BT_A8_BoundaryTraversal {
             result.add(node.val);                               // adding after
 
         }
+
+        // here it's recursion so you don't have to reverse the list
+        // we are adding after it so , it will get set up.
 
     }
 

@@ -17,8 +17,8 @@ public class BT_A9_WidthOfTree {
         }
     }
 
-    public int widthOfBinaryTree(TreeNode root) {
-
+    public int widthOfBinaryTree(TreeNode root)
+    {
         int ans = 0;
 
         Queue<Pair> queue = new LinkedList<>();
