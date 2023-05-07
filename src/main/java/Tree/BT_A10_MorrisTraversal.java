@@ -74,16 +74,18 @@ public class BT_A10_MorrisTraversal {
                     temp = temp.right;
                 }
 
-                if (temp.right == null)
+                if (temp.right == null)                             // here you create thread
                 {
                     temp.right = curr;
                     curr = curr.left;
 
-                } else {
+                }
+                else
+                {                                                   // here you remove thread
 
                     temp.right = null;
                     result.add(curr);
-                    curr = curr.right;
+                    curr = curr.right;                               // at this moment you'll have added left and root
 
                 }
             }
