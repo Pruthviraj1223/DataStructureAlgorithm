@@ -4,6 +4,8 @@ public class BT_B4_DiameterOfTree {
 
     public int maxDiameter(TreeNode root, int[] d) {
 
+        // understand the concept of diameter
+
         if (root == null) {
             return 0;
         }
@@ -31,7 +33,8 @@ public class BT_B4_DiameterOfTree {
 
         //https://leetcode.com/problems/diameter-of-binary-tree/submissions/
 
-        // here we are just taking the maximum of left and right height
+        // here we are just taking the maximum of left and right height and adding it
+        // because its diameter
 
     }
 }

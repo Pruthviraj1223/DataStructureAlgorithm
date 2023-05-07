@@ -33,5 +33,7 @@ public class BT_B3_MaximumPathSumInTree {
 
         // here instead of calculating height we will calculate the sum
 
+        // path sum and diameter question are similar
+
     }
 }

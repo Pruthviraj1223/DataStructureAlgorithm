@@ -13,7 +13,7 @@ public class BT_B1_MaximumHeightOfBinaryTree {
         int lh = maxDepth(root.left);
         int rh = maxDepth(root.right);
 
-        return 1 + Math.max(lh, rh);
+        return 1 + Math.max(lh, rh);                            // here left subtree's height/depth + right subtree's height/depth + 1 (for node itself)
 
     }
 
