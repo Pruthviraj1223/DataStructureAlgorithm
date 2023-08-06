@@ -30,6 +30,9 @@ public class Notes {
         // 8. Heap - First understand the theory then heapify , build heap , heap sort , insert , delete
         //         - tech dose heap series is very good to revise fundamentals
 
+        // 9. Binary Tree - Traversal is most important and then rest question
+
+        // 10. Binary Search Tree - insertion,deletion,traversal and rest IMP question
 
         // Revision
 
