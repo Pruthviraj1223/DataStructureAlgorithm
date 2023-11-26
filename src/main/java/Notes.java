@@ -34,6 +34,8 @@ public class Notes {
 
         // 10. Binary Search Tree - insertion,deletion,traversal and rest IMP question
 
+        // TODO : few remaining question for TREE
+
         // Revision
 
         // Heap
