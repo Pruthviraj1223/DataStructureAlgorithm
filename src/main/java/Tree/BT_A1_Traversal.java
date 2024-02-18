@@ -10,7 +10,8 @@ public class BT_A1_Traversal {
     // when go in depth of any tree side, at that time you add node in stack
     // and when you backtrack you add node in the actual result
 
-    public static void preOrder(TreeNode root) {
+    public static void preOrder(TreeNode root)
+    {
         // root -> left -> right
 
         if (root == null)
@@ -26,39 +27,8 @@ public class BT_A1_Traversal {
 
     }
 
-    public List<Integer> preOrderIterative(TreeNode root) {
-
-        List<Integer> result = new ArrayList<>();
-
-        Stack<TreeNode> stack = new Stack<>();
-
-        if (root == null) {
-            return result;
-        }
-
-        stack.push(root);
-
-        while (!stack.isEmpty()) {
-
-            var node = stack.pop();
-
-            if (node.right != null) {
-                stack.push(node.right);
-            }
-
-            if (node.left != null) {
-                stack.push(node.left);
-            }
-
-            result.add(node.val);
-
-        }
-
-        return result;
-
-    }
-
-    public static void inOrder(TreeNode root) {
+    public static void inOrder(TreeNode root)
+    {
         // left -> root -> right
 
         if (root == null)
@@ -74,7 +44,59 @@ public class BT_A1_Traversal {
 
     }
 
-    public static List<Integer>  inOrderIterative(TreeNode root) {
+    public static void postOrder(TreeNode root)
+    {
+        // left -> right -> root
+
+        if (root == null)
+        {
+            return;
+        }
+
+        postOrder(root.left);
+
+        postOrder(root.right);
+
+        System.out.println(root.val);
+
+    }
+
+    public List<Integer> preOrderIterative(TreeNode root)
+    {
+        List<Integer> result = new ArrayList<>();
+
+        Stack<TreeNode> stack = new Stack<>();
+
+        if (root == null)
+        {
+            return result;
+        }
+
+        stack.push(root);
+
+        while (!stack.isEmpty())
+        {
+            var node = stack.pop();
+
+            if (node.right != null)
+            {
+                stack.push(node.right);
+            }
+
+            if (node.left != null)
+            {
+                stack.push(node.left);
+            }
+
+            result.add(node.val);
+        }
+
+        return result;
+
+    }
+
+    public static List<Integer>  inOrderIterative(TreeNode root)
+    {
         // left -> root -> right
 
         List<Integer> result = new ArrayList<>();
@@ -86,6 +108,8 @@ public class BT_A1_Traversal {
 
         Stack<TreeNode> stack = new Stack<>();
         TreeNode curr = root;
+
+        // here , stack will have all latest element on top. for us, it is left node.
 
         while (true)
         {
@@ -114,23 +138,8 @@ public class BT_A1_Traversal {
 
     }
 
-    public static void postOrder(TreeNode root) {
-        // left -> right -> root
-
-        if (root == null)
-        {
-            return;
-        }
-
-        postOrder(root.left);
-
-        postOrder(root.right);
-
-        System.out.println(root.val);
-
-    }
-
-    public static List<Integer> postOrderIterativeUsingTwoStack(TreeNode root) {
+    public static List<Integer> postOrderIterativeUsingTwoStack(TreeNode root)
+    {
         // left -> right -> root
 
         Stack<TreeNode> st1 = new Stack<>();
@@ -138,38 +147,40 @@ public class BT_A1_Traversal {
 
         List<Integer> result = new ArrayList<>();
 
-        // here as we have left right root
+        // here, we have left right root
         // so in st2 we'll push first root then right(s) and then left(s)
         // so eventually in stack it will be left right root
 
         st1.push(root);
 
-        while (!st1.isEmpty()) {
-
+        while (!st1.isEmpty())
+        {
             root = st1.pop();
+
             st2.push(root);
 
-            if (root.left != null) {
+            if (root.left != null)
+            {
                 st1.push(root.left);
             }
 
-            if (root.right != null) {
+            if (root.right != null)
+            {
                 st1.push(root.right);
             }
-
         }
 
-        while (!st2.isEmpty()) {
-
+        while (!st2.isEmpty())
+        {
             result.add(st2.pop().val);
-
         }
 
         return result;
 
     }
 
-    public static List<Integer> postOrderIterativeUsingOneStack(TreeNode root) {
+    public static List<Integer> postOrderIterativeUsingOneStack(TreeNode root)
+    {
         // left -> right -> root
 
         Stack<TreeNode> stack = new Stack<>();
@@ -180,35 +191,38 @@ public class BT_A1_Traversal {
         TreeNode curr = root;
         TreeNode temp;
 
-        while (curr != null || !stack.isEmpty()) {
+        // here we are only adding left and root node in stack. not right node.
 
-            if (curr != null) {                     // common important code // here you will go in depth of tree on left side to get left most node
-
+        while (curr != null || !stack.isEmpty())
+        {
+            if (curr != null)                                   // common important code // here you will go in depth of tree on left side to get left most node
+            {
                 stack.push(curr);
 
                 curr = curr.left;
-
-            } else {
+            }
+            else
+            {
 
                 temp = stack.peek().right;
 
-                if (temp == null) {                          // you don't have right node , so now backtrack
-
+                if (temp == null)                                   // you don't have right node , so now backtrack
+                {
                     temp = stack.pop();
 
                     result.add(temp.val);
 
-                    while (stack.size() > 0 && temp == stack.peek().right) {                                // need to understand this condition,watch video of  striver. there is case when tree node has 5 right nodes like skewed tree. in that case this condition will occur.
-
+                    while (!stack.isEmpty() && temp == stack.peek().right)                          // need to understand this condition,watch video of  striver. there is case when tree node has 5 right nodes like skewed tree. in that case this condition will occur.
+                    {
                         temp = stack.pop();
 
                         result.add(temp.val);
                     }
 
-                } else {
-
-                    curr = temp;
-
+                }
+                else
+                {
+                    curr = temp;                                        // if right node is not null then apply same philosophy in right node
                 }
             }
         }
@@ -217,11 +231,8 @@ public class BT_A1_Traversal {
 
     }
 
-    public static void main(String[] args) {
-
-        // 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
-
-        // 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
+    public static void main(String[] args)
+    {
 
     }
 }
