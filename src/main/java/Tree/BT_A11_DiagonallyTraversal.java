@@ -4,7 +4,7 @@ import java.util.*;
 
 public class BT_A11_DiagonallyTraversal {
     public static void main(String[] args) {
-        //need to add code.
+
 
 //        TreeNode root = new TreeNode(0);
 //
@@ -24,5 +24,23 @@ public class BT_A11_DiagonallyTraversal {
 //            if (curr.node.right != null)
 //                q.add(new TNode(curr.node.right, curr.level));
 //        }
-    }
+
+//        for (Map.Entry<Integer, List<Integer> > entry : map.entrySet()) {
+//            int k = entry.getKey();
+//
+//            List<Integer> l = map.get(k);
+//            int size = l.size();
+//
+//            for (int i = 0; i < l.size(); i++) {
+//                System.out.print(l.get(i));
+//                System.out.print(" ");
+//            }
+
+
+        // Nice question
+
+//        https://www.geeksforgeeks.org/diagonal-traversal-of-binary-tree/
+
+
+        }
 }

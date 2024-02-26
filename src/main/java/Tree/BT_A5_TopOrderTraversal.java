@@ -2,18 +2,20 @@ package Tree;
 
 import java.util.*;
 
-public class BT_A5_TopOrderTraversal {
-
-    public static List<Integer> topOrder(TreeNode root) {
-
+public class BT_A5_TopOrderTraversal
+{
+    public static List<Integer> topOrder(TreeNode root)
+    {
         TreeMap<Integer, Integer> traversal = new TreeMap<>();
+
         Queue<VerticalTreeNode> queue = new LinkedList<>();
 
-        queue.add(new VerticalTreeNode(root, 0, 0));            // here 'level' does not make sense
+        queue.add(new VerticalTreeNode(root, 0, 0));             // here 'horizontal' does not make sense, because it is bottom and top VIEW.
 
         while (!queue.isEmpty())
         {
             var curr = queue.poll();
+
             int vertical = curr.vertical;
 
             traversal.putIfAbsent(curr.vertical, curr.node.val);          // once first value is dumped then it is the final value for that vertical  // in vertical order we had another map for levels and queue for multiple nodes

@@ -5,15 +5,15 @@ import java.util.Queue;
 
 public class BT_A9_WidthOfTree {
 
-    static class Pair {
-
+    static class Pair
+    {
         int index;
         TreeNode node;
 
-        Pair(TreeNode node, int index) {
+        Pair(TreeNode node, int index)
+        {
             this.index = index;
             this.node = node;
-
         }
     }
 
@@ -28,33 +28,42 @@ public class BT_A9_WidthOfTree {
         while (!queue.isEmpty()) {
 
             int size = queue.size();
+
             int first = 0;
+
             int last = 0;
 
-            for (int index = 0; index < size; index++) {
+            for (int index = 0; index < size; index++)
+            {
+                var item = queue.poll();
 
-                var node = queue.peek().node;
-                var idx = queue.peek().index;
+                if (item != null)
+                {
+                    var node = item.node;
 
-                if (index == 0) {
-                    first = idx;
+                    var idx = item.index;
+
+                    if (index == 0)                                                     // first in the queue is left most node
+                    {
+                        first = idx;
+                    }
+
+                    if (index == size - 1)                                              // last in the queue is right most mode
+                    {
+                        last = idx;
+                    }
+
+
+                    if (node.left != null)
+                    {
+                        queue.offer(new Pair(node.left, 2 * idx + 1));
+                    }
+
+                    if (node.right != null)
+                    {
+                        queue.offer(new Pair(node.right, 2 * idx + 2));
+                    }
                 }
-
-                if (index == size - 1) {
-                    last = idx;
-                }
-
-
-                if (node.left != null) {
-                    queue.offer(new Pair(node.left, 2 * idx + 1));
-                }
-
-                if (node.right != null) {
-                    queue.offer(new Pair(node.right, 2 * idx + 2));
-
-                }
-
-                queue.poll();
             }
 
             ans = Math.max(ans, last - first + 1);

@@ -34,6 +34,17 @@ public class Notes {
 
         // 10. Binary Search Tree - insertion,deletion,traversal and rest IMP question
 
+        // 11.
+
+        // tree
+        // ,graph
+        // heap,
+        // backtracking,
+        // trie,greedy ,
+        // DP,
+        // sorting
+        // bit manipulation.
+
         // TODO : few remaining question for TREE
 
         // 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

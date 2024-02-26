@@ -16,11 +16,12 @@ public class BT_A8_BoundaryTraversal {
     // if left is null then go for right side.
     // vice-versa for right side
 
-    public static void traversalIterative(TreeNode root) {
-
+    public static void traversalIterative(TreeNode root)
+    {
         ArrayList<Integer> result = new ArrayList<>();
 
-        if (!isLeafNode(root)) {
+        if (!isLeafNode(root))
+        {
             result.add(root.val);
         }
 
@@ -39,13 +40,15 @@ public class BT_A8_BoundaryTraversal {
 
     private static void getLeftNodes(TreeNode node, ArrayList<Integer> result) {
 
-        if (node == null) {
+        if (node == null)
+        {
             return;
         }
 
         TreeNode current = node.left;
 
-        while (current != null) {
+        while (current != null)
+        {
 
             if (!isLeafNode(current))
             {
@@ -58,29 +61,31 @@ public class BT_A8_BoundaryTraversal {
 
             // first check left side , if that is null then go for right side.
 
-            if (current.left != null) {
-
+            if (current.left != null)
+            {
                 current = current.left;
-
-            } else if (current.right != null) {
-
+            }
+            else if (current.right != null)
+            {
                 current = current.right;
-
             }
         }
     }
 
-    private static void getLeafNodes(TreeNode node, ArrayList<Integer> result) {
-
-        if (isLeafNode(node)) {
+    private static void getLeafNodes(TreeNode node, ArrayList<Integer> result)
+    {
+        if (isLeafNode(node))
+        {
             result.add(node.val);
         }
 
-        if (node.left != null) {
+        if (node.left != null)
+        {
             getLeafNodes(node.left, result);
         }
 
-        if (node.right != null) {
+        if (node.right != null)
+        {
             getLeafNodes(node.right, result);
         }
 
@@ -88,7 +93,8 @@ public class BT_A8_BoundaryTraversal {
 
     private static void getRightNode(TreeNode node, ArrayList<Integer> result) {
 
-        if (node == null) {
+        if (node == null)
+        {
             return;
         }
 
@@ -96,9 +102,11 @@ public class BT_A8_BoundaryTraversal {
 
         ArrayList<Integer> temp = new ArrayList<>();
 
-        while (current != null) {
+        while (current != null)
+        {
 
-            if (!isLeafNode(current)) {
+            if (!isLeafNode(current))
+            {
                 temp.add(current.val);
             }
             else
@@ -106,14 +114,14 @@ public class BT_A8_BoundaryTraversal {
                 break;
             }
 
-            if (current.right != null) {
-
+            if (current.right != null)
+            {
                 current = current.right;
 
-            } else if (current.left != null) {
-
+            }
+            else if (current.left != null)
+            {
                 current = current.left;
-
             }
         }
 
@@ -127,7 +135,8 @@ public class BT_A8_BoundaryTraversal {
 
         ArrayList<Integer> result = new ArrayList<>();
 
-        if (root == null){
+        if (root == null)
+        {
             return;
         }
 
@@ -145,18 +154,20 @@ public class BT_A8_BoundaryTraversal {
 
     private static void printLeftNodes(TreeNode node, ArrayList<Integer> result) {
 
-        if (node == null) {
+        if (node == null)
+        {
             return;
         }
 
-        if (node.left != null) {
-
+        if (node.left != null)
+        {
             result.add(node.val);
 
             printLeftNodes(node.left, result);
 
-        } else if (node.right != null) {
-
+        }
+        else if (node.right != null)
+        {
             result.add(node.val);
 
             printLeftNodes(node.right, result);
@@ -190,23 +201,22 @@ public class BT_A8_BoundaryTraversal {
             return;
         }
 
-        if (node.right != null) {
-
+        if (node.right != null)
+        {
             printRightNodes(node.right, result);
 
             result.add(node.val);                               // adding after
 
-        } else if (node.left != null) {
-
+        }
+        else if (node.left != null)
+        {
             printRightNodes(node.left, result);
 
             result.add(node.val);                               // adding after
-
         }
 
         // here it's recursion so you don't have to reverse the list
         // we are adding after it so , it will get set up.
-
     }
 
 

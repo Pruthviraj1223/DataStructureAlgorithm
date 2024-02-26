@@ -38,5 +38,7 @@ public class BT_B2_CheckTreeSelfBalancedOrNot {
 
         //https://leetcode.com/problems/balanced-binary-tree/
 
+        // maximum height od binary tree is linked with this question
+
     }
 }
