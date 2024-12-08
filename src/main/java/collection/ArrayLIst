@@ -1,0 +1,23 @@
+get(int index)
+size
+clear
+add
+add(int index,element)
+addAll(Collection c)
+indexOf(Object o)
+lastIndexOf(Object o)
+remove(int index)
+remove(Object o)
+removeALl(Collection c)
+removeIf(Predicate p)
+contains(Object o)
+set(int index,Object o)
+subList(int start,int end)
+iterator
+listIterator
+splitIterator
+list.sort(null)     // ascending
+list.sort(Comparator.reverseOrder())    // descending
+
+
+ConcurrentModificationException while iterating using iterator and remove using list.remove
