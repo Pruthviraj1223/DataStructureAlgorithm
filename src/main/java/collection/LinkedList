@@ -1,0 +1,32 @@
+1. List<String> list = new LinkedList<>();
+
+2. LinkedList<String> list = new LinkedList<>();
+
+3. Deque<String> list = new LinkedList<>();
+
+
+
+1st and 2nd,3rd is different.
+
+1st one is similar to ArrayList. singly linked list.
+
+2nd , 3rd is doubly linked list.
+
+method in list is already here.
+below method is extra in case of DLL.
+
+Remember : LinkedList have method of accessing,removing,adding element from index. (add,remove,get) which iterates till index.
+
+addFirst            // void
+addLast
+offerFirst          // return boolean
+offerLast
+peekFirst
+peekLast
+getFirst
+getLast
+pollFirst           // if no element then return null
+pollLast
+removeFirst         // if no element then exception will be thrown , NoSuchElement
+removeLast
+
