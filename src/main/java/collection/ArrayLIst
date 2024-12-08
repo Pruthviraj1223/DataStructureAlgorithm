@@ -9,6 +9,7 @@ lastIndexOf(Object o)
 remove(int index)
 remove(Object o)
 removeALl(Collection c)
+retainAll(Collection c)
 removeIf(Predicate p)
 contains(Object o)
 set(int index,Object o)
@@ -19,5 +20,17 @@ splitIterator
 list.sort(null)     // ascending
 list.sort(Comparator.reverseOrder())    // descending
 
+The size, isEmpty, get, set, iterator, and listIterator operations run in constant time.
 
-ConcurrentModificationException while iterating using iterator and remove using list.remove
+The iterators returned by this class's iterator and listIterator methods are fail-fast: if the list is structurally modified at any time after the iterator is created,
+in any way except through the iterator's own remove or add methods, the iterator will throw a ConcurrentModificationException.
+
+int newCapacity = oldCapacity + (oldCapacity >> 1);     // array list grows like this when it is filled , grow by 50 %
+
+Best practices in creating ArrayList:
+Whenever an ArrayList exceeds the capacity of the internal array it creates a new internal array with 50% more capacity and copies all old elements from the old array to the new one.
+Repeated resizes will add load for memory allocation and garbage collection and the time to do the copy.
+If you have a clear idea of the eventual size of your ArrayList it is best to pass that size as the initialCapacity to the ArrayList constructor.
+However if you are copying another collection into the list it is better to pass that collection into the ArrayList constructor.
+
+
