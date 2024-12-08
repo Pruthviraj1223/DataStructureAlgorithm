@@ -1,0 +1,4 @@
+similar to LinkedList
+similar methods
+internally uses array so , it is faster than stack and linked list
+it is very light weight and efficient

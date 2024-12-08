@@ -35,7 +35,7 @@ public class KthLargestSumContiguousSubarray {
 
                 } else {
 
-                    if (minHeap.size() > 0 && minHeap.peek() < ele) {
+                    if (!minHeap.isEmpty() && minHeap.peek() < ele) {
 
                         minHeap.poll();
 
