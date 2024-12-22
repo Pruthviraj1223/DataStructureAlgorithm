@@ -1,0 +1,9 @@
+Disadvantages of Hashtable
+
+Obsolete: The Hashtable class is considered obsolete and its use is generally discouraged. This is because it was designed prior to the introduction of the Collections framework and does not implement the Map interface, which makes it difficult to use in conjunction with other parts of the framework.
+
+Limited functionality: The Hashtable class provides basic key-value data structure functionality, but does not provide the full range of functionality that is available in the Map interface and its implementations.
+
+Poor performance: The Hashtable class is synchronized, which can result in slower performance compared to other implementations of the Map interface, such as HashMap or ConcurrentHashMap.
+
+Iterator Issue: The iterators of Hashtable are not fail-fast, meaning they don’t detect concurrent modifications during iteration, which can lead to inconsistent results.

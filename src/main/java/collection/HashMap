@@ -1,0 +1,37 @@
+static final int TREEIFY_THRESHOLD = 8;
+
+Time for get,put,remove is O(1)
+
+
+put,putIfAbsent
+get,getOrDefault
+remove(k)
+remove(k,v)
+containsKey,containsValue
+compute,computeIfAbsent
+clear
+clone
+entrySet
+keySet
+values
+putAll
+forEach
+merge
+
+
+
+
+For linkedHashMap look out for internal implementation
+
+LinkedHashMap's performance is slightly worse than HashMap's because of the overhead of maintaining a doubly-linked list.
+LinkedHashMap's linear time performance during iteration is better than HashMap's because n in O(n) is only the number of entries in the map.
+LinkedHashMap offers better performance when iterating through elements, while HashMap offers better performance when accessing large datasets.
+
+
+TreeMap
+
+EnumMap
+
+EnumMap is a specialized implementation of the Map interface in Java that is designed to be used with enums as keys. It is a high-performance implementation that is guaranteed to have constant time performance in many basic operations, such as get() and put().
+The EnumMap class is a strongly typed Map implementation, which means that it can only be used with enums as keys. Each instance of EnumMap is associated with a specific enum class, and the key set of the map is a subset of the enum values. This ensures that the keys are always unique and well-defined.
+One of the primary advantages of using EnumMap is its performance. Since it is designed specifically for use with enums, it can be optimized to take advantage of the unique properties of enums. For example, the EnumMap implementation uses a compact array-based data structure internally, which provides constant time performance for many basic operations.
