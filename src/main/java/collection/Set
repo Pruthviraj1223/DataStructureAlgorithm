@@ -1,0 +1,22 @@
+Set
+AbstractSet
+NavigableSet
+
+
+
+HashSet
+LinkedHashSet
+TreeSet
+
+
+
+
+
+
+
+
+var set = new HashSet<>();
+
+var linked = new LinkedHashSet<>();
+
+var tree = new TreeSet<>();
