@@ -1,0 +1,9 @@
+Comparable -> compareTo (return int) , toString (return String)
+used in Array.sort(Comparable obj)
+single sorting
+
+Comparator -> compare(T t1,T t2)
+used in Collection.sort
+list.sort
+priority queue constructor
+multiple custom sorting
