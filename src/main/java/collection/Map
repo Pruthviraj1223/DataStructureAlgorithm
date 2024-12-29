@@ -1,7 +1,7 @@
 Hierarchy in Map
 
 
-Map,SortedMap
+Map
 AbstractMap
 SortedMap
 NavigableMap
