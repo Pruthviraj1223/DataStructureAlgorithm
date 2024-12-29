@@ -1,0 +1,12 @@
+1. Consumer,Bi-Consumer ->  It represents a function which takes in one/two argument and produces a result. However these kind of functions don’t return any value.
+   accept , andThen
+
+2. Predicate,BiPredicate -> filtering purpose. return boolean
+   and,or,negate,test
+
+3. Function,BiFunction -> A function is a type of functional interface in Java that receives only a single/two argument and returns a value after the required processing.
+   apply,andThen
+
+4. Supplier -> functional interface is also a type of functional interface that does not take any input or argument and yet returns a single output.
+   get()
+
